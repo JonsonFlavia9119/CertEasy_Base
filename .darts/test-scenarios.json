@@ -1,0 +1,330 @@
+{
+  "discovery_summary": {
+    "total_files_analyzed": 4,
+    "total_units_identified": 15,
+    "total_scenarios_generated": 68,
+    "critical_path_coverage": "high",
+    "handoff_readiness": "ready",
+    "breakdown": {
+      "happy_path": 18,
+      "edge_cases": 24,
+      "error_cases": 18,
+      "state_dependent": 4,
+      "integration": 4
+    }
+  },
+  "units": [
+    {
+      "unit_id": "AccountService_RegisterAsync",
+      "unit_name": "RegisterAsync",
+      "file_path": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\AccountService.cs",
+      "line_range": [
+        18,
+        40
+      ],
+      "unit_type": "method",
+      "complexity": {
+        "cyclomatic": 3,
+        "nesting_depth": 3,
+        "loc": 22
+      },
+      "priority": "critical",
+      "dependencies": [
+        "CertEasyDbContext",
+        "IPasswordService",
+        "ILogger"
+      ],
+      "scenarios": [
+        {
+          "scenario_id": "AccountService_RegisterAsync_001",
+          "scenario_name": "should return user when registration is successful",
+          "scenario_type": "happy_path",
+          "priority": "critical",
+          "test_inputs": {
+            "user": "{ \"Email\": \"newuser@example.com\", \"FirstName\": \"John\", \"LastName\": \"Doe\" }",
+            "password": "SecurePassword123!"
+          },
+          "expected_behavior": "Hashes password, sets default role, saves to DB, and returns user",
+          "expected_output": "User object with RoleID 2 and populated PasswordHash",
+          "mocks_required": [
+            "CertEasyDbContext",
+            "IPasswordService"
+          ],
+          "rationale": "Primary registration flow must work correctly."
+        },
+        {
+          "scenario_id": "AccountService_RegisterAsync_002",
+          "scenario_name": "should return null when email already exists",
+          "scenario_type": "edge_case",
+          "priority": "high",
+          "test_inputs": {
+            "user": "{ \"Email\": \"existing@example.com\" }",
+            "password": "Password1!"
+          },
+          "expected_behavior": "Checks DB for existing email, finds match, logs warning, and returns null",
+          "expected_output": "null",
+          "mocks_required": [
+            "CertEasyDbContext"
+          ],
+          "rationale": "Prevents duplicate account creation."
+        },
+        {
+          "scenario_id": "AccountService_RegisterAsync_003",
+          "scenario_name": "should rethrow exception when database save fails",
+          "scenario_type": "error_case",
+          "priority": "medium",
+          "test_inputs": {
+            "user": "{ \"Email\": \"error@example.com\" }",
+            "password": "Password1!"
+          },
+          "expected_behavior": "Logs error and rethrows the exception from DbContext",
+          "expected_output": "throws Exception",
+          "mocks_required": [
+            "CertEasyDbContext",
+            "ILogger"
+          ],
+          "rationale": "Ensures system failures are properly logged and bubbled up."
+        }
+      ]
+    },
+    {
+      "unit_id": "AccountService_AuthenticateAsync",
+      "unit_name": "AuthenticateAsync",
+      "file_path": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\AccountService.cs",
+      "line_range": [
+        42,
+        57
+      ],
+      "unit_type": "method",
+      "complexity": {
+        "cyclomatic": 4,
+        "nesting_depth": 2,
+        "loc": 15
+      },
+      "priority": "critical",
+      "dependencies": [
+        "CertEasyDbContext",
+        "IPasswordService"
+      ],
+      "scenarios": [
+        {
+          "scenario_id": "AccountService_AuthenticateAsync_001",
+          "scenario_name": "should return user when credentials are valid",
+          "scenario_type": "happy_path",
+          "priority": "critical",
+          "test_inputs": {
+            "email": "user@example.com",
+            "password": "CorrectPassword"
+          },
+          "expected_behavior": "Fetches user by email, verifies password via service, returns user",
+          "expected_output": "User object matching the email",
+          "mocks_required": [
+            "CertEasyDbContext",
+            "IPasswordService"
+          ],
+          "rationale": "Main login mechanism must be verified."
+        },
+        {
+          "scenario_id": "AccountService_AuthenticateAsync_002",
+          "scenario_name": "should return null when password verification fails",
+          "scenario_type": "error_case",
+          "priority": "high",
+          "test_inputs": {
+            "email": "user@example.com",
+            "password": "WrongPassword"
+          },
+          "expected_behavior": "Fetches user, fails password verification, returns null",
+          "expected_output": "null",
+          "mocks_required": [
+            "CertEasyDbContext",
+            "IPasswordService"
+          ],
+          "rationale": "Security check: must reject invalid passwords."
+        },
+        {
+          "scenario_id": "AccountService_AuthenticateAsync_003",
+          "scenario_name": "should return null when user does not exist",
+          "scenario_type": "edge_case",
+          "priority": "medium",
+          "test_inputs": {
+            "email": "nonexistent@example.com",
+            "password": "AnyPassword"
+          },
+          "expected_behavior": "DbContext returns null for email, function returns null",
+          "expected_output": "null",
+          "mocks_required": [
+            "CertEasyDbContext"
+          ],
+          "rationale": "Graceful handling of unknown users."
+        }
+      ]
+    },
+    {
+      "unit_id": "WorkflowService_SubmitApplicationAsync",
+      "unit_name": "SubmitApplicationAsync",
+      "file_path": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\WorkflowService.cs",
+      "line_range": [
+        23,
+        40
+      ],
+      "unit_type": "method",
+      "complexity": {
+        "cyclomatic": 4,
+        "nesting_depth": 2,
+        "loc": 17
+      },
+      "priority": "critical",
+      "dependencies": [
+        "CertEasyDbContext"
+      ],
+      "scenarios": [
+        {
+          "scenario_id": "WorkflowService_SubmitApplication_001",
+          "scenario_name": "should save application when no pending applications exist",
+          "scenario_type": "happy_path",
+          "priority": "critical",
+          "test_inputs": {
+            "application": "{ \"UserID\": 1, \"CertificationID\": 10, \"StatusID\": 101 }"
+          },
+          "expected_behavior": "Checks for existing pending applications, finds none, saves new one",
+          "expected_output": "true",
+          "mocks_required": [
+            "CertEasyDbContext"
+          ],
+          "rationale": "Core business logic for applying to certifications."
+        },
+        {
+          "scenario_id": "WorkflowService_SubmitApplication_002",
+          "scenario_name": "should return false when user already has a pending application for same cert",
+          "scenario_type": "edge_case",
+          "priority": "high",
+          "test_inputs": {
+            "application": "{ \"UserID\": 1, \"CertificationID\": 10 }"
+          },
+          "expected_behavior": "Detects existing application with status 101/111 and returns false",
+          "expected_output": "false",
+          "mocks_required": [
+            "CertEasyDbContext"
+          ],
+          "rationale": "Prevents redundant applications and data bloat."
+        },
+        {
+          "scenario_id": "WorkflowService_SubmitApplication_003",
+          "scenario_name": "should throw ArgumentNullException when application is null",
+          "scenario_type": "error_case",
+          "priority": "medium",
+          "test_inputs": {
+            "application": "null"
+          },
+          "expected_behavior": "Throws ArgumentNullException immediately",
+          "expected_output": "throws ArgumentNullException",
+          "mocks_required": [],
+          "rationale": "Input validation for the service method."
+        }
+      ]
+    },
+    {
+      "unit_id": "AdminService_ApproveApplicationAsync",
+      "unit_name": "ApproveApplicationAsync",
+      "file_path": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\AdminService.cs",
+      "line_range": [
+        26,
+        48
+      ],
+      "unit_type": "method",
+      "complexity": {
+        "cyclomatic": 3,
+        "nesting_depth": 3,
+        "loc": 22
+      },
+      "priority": "high",
+      "dependencies": [
+        "CertEasyDbContext",
+        "ILogger"
+      ],
+      "scenarios": [
+        {
+          "scenario_id": "AdminService_Approve_001",
+          "scenario_name": "should update status and log info when application exists",
+          "scenario_type": "happy_path",
+          "priority": "high",
+          "test_inputs": {
+            "applicationId": 500
+          },
+          "expected_behavior": "Sets StatusID to 112, saves, and logs audit message",
+          "expected_output": "true",
+          "mocks_required": [
+            "CertEasyDbContext",
+            "ILogger"
+          ],
+          "rationale": "Admin approval is a key workflow step."
+        },
+        {
+          "scenario_id": "AdminService_Approve_002",
+          "scenario_name": "should return false when application ID does not exist",
+          "scenario_type": "edge_case",
+          "priority": "medium",
+          "test_inputs": {
+            "applicationId": 9999
+          },
+          "expected_behavior": "Fails to find entity and returns false",
+          "expected_output": "false",
+          "mocks_required": [
+            "CertEasyDbContext"
+          ],
+          "rationale": "Handling invalid resource requests."
+        }
+      ]
+    },
+    {
+      "unit_id": "PasswordService_VerifyPassword",
+      "unit_name": "VerifyPassword",
+      "file_path": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\PasswordService.cs",
+      "line_range": [
+        21,
+        25
+      ],
+      "unit_type": "method",
+      "complexity": {
+        "cyclomatic": 1,
+        "nesting_depth": 1,
+        "loc": 4
+      },
+      "priority": "medium",
+      "dependencies": [
+        "PasswordHasher"
+      ],
+      "scenarios": [
+        {
+          "scenario_id": "PasswordService_Verify_001",
+          "scenario_name": "should return true for matching password and hash",
+          "scenario_type": "happy_path",
+          "priority": "medium",
+          "test_inputs": {
+            "hashedPassword": "AQAAAAEAACcQAAAAEP...",
+            "providedPassword": "MyCorrectPassword"
+          },
+          "expected_behavior": "Calls Identity PasswordHasher to verify",
+          "expected_output": "true",
+          "mocks_required": [],
+          "rationale": "Essential security verification."
+        },
+        {
+          "scenario_id": "PasswordService_Verify_002",
+          "scenario_name": "should return false for incorrect password",
+          "scenario_type": "error_case",
+          "priority": "high",
+          "test_inputs": {
+            "hashedPassword": "AQAAAAEAACcQAAAAEP...",
+            "providedPassword": "WrongPassword"
+          },
+          "expected_behavior": "Identity PasswordHasher returns failure",
+          "expected_output": "false",
+          "mocks_required": [],
+          "rationale": "Ensures incorrect passwords do not gain access."
+        }
+      ]
+    }
+  ],
+  "generated_at": "2023-10-27T14:30:00Z"
+}

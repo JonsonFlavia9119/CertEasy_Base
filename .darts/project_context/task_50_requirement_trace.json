@@ -1,0 +1,90 @@
+{
+  "task_id": 50,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Observations:\n\n1. CertEasy.Data Project haven't been added into the solution \n2. CertEasyDb haven't been created \n3. Application launched -> none of the links not working \n4. Login, Register links are not working \n5. Make sure the application process is added\n\nDo not complete the task without complete the specified changes, make the necessary changes. verify it before complete it.\n",
+  "generated_at": "2026-07-16T05:51:32.248Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Observations:\n\n1. CertEasy.Data Project haven't been added into the solution \n2. CertEasyDb haven't been created \n3. Application launched -> none of the links not working \n4. Login, Register links are not working \n5. Make sure the application process is added\n\nDo not complete the task without complete the specified changes, make the necessary changes. verify it before complete it.\n",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend & Infrastructure",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend Account & Layout",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Application Process UI",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project haven't been added into the solution \n2.",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

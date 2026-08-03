@@ -1,0 +1,60 @@
+{
+  "task_id": 62,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Registration is not working\n\nRegister button is throwing the below error\n\nSqlException: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Users_Statuses_StatusID\". The conflict occurred in database \"CertEasyDb\", table \"dbo.Statuses\", column 'Id'. The statement has been terminated.\n\nAnalyze the root cause and fix it.",
+  "generated_at": "2026-08-01T05:33:36.193Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Registration is not working\n\nRegister button is throwing the below error\n\nSqlException: The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Users_Statuses_StatusID\". The conflict occurred in database \"CertEasyDb\", table \"dbo.Statuses\", column 'Id'. The statement has been terminated.\n\nAnalyze the root cause and fix it.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix Status ID mismatch and seeding",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Registration is not working\n\nRegister button is throwing ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Registration is not working\n\nRegister button is throwing the below error\n\nSqlExc",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

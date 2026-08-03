@@ -1,0 +1,39 @@
+2026-07-13 07:13:46.349 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-13 07:14:14.784 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-13 07:14:15.373 +05:30 [INF] Now listening on: https://localhost:64519
+2026-07-13 07:14:15.378 +05:30 [INF] Now listening on: http://localhost:64520
+2026-07-13 07:14:15.421 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-13 07:14:15.423 +05:30 [INF] Hosting environment: Development
+2026-07-13 07:14:15.426 +05:30 [INF] Content root path: C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Web\
+2026-07-13 07:14:16.180 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-07-13 07:14:16.988 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-07-13 07:14:17.066 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-07-13 07:14:17.088 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-13 07:14:17.266 +05:30 [INF] Executed ViewResult - view Index executed in 177.7239ms.
+2026-07-13 07:14:17.270 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-07-13 07:14:17.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-07-13 07:14:17.285 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 212.7906ms
+2026-07-13 07:14:17.288 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-07-13 07:14:17.298 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 26.2619ms
+2026-07-13 07:14:17.316 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 1147.0779ms
+2026-07-13 07:14:17.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 88.8936ms
+2026-07-13 09:42:26.950 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-07-13 09:42:29.575 +05:30 [INF] Now listening on: https://localhost:64519
+2026-07-13 09:42:29.584 +05:30 [INF] Now listening on: http://localhost:64520
+2026-07-13 09:42:29.698 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-13 09:42:29.705 +05:30 [INF] Hosting environment: Development
+2026-07-13 09:42:29.715 +05:30 [INF] Content root path: C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Web\
+2026-07-13 09:42:33.948 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-07-13 09:42:35.366 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-07-13 09:42:35.601 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-07-13 09:42:35.687 +05:30 [INF] Executing ViewResult, running view Index.
+2026-07-13 09:42:36.525 +05:30 [INF] Executed ViewResult - view Index executed in 857.5333ms.
+2026-07-13 09:42:36.652 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 1025.4421ms
+2026-07-13 09:42:36.676 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-07-13 09:42:36.676 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-07-13 09:42:36.679 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-07-13 09:42:36.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 48.3216ms
+2026-07-13 09:42:36.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 2892.3310ms
+2026-07-13 09:42:37.054 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 378.4165ms
+2026-07-13 09:42:37.110 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/favicon.ico - -
+2026-07-13 09:42:37.132 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/favicon.ico - - - 404 0 - 22.6666ms

@@ -1,0 +1,84 @@
+{
+  "task_id": 46,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement a centralized logging system using Serilog. Log all errors, warnings, and critical business events (like status changes) into the database 'Logs' table.\n\nAcceptance Criteria:\n- Table 'Logs' created with fields: ID, LogLevel, Message, Exception, EntityType, EntityID, UserID, CreatedDate.\n- Serilog configured to write to the Logs table.\n- Critical actions (Submission, Approval, Rejection) are logged.\n\nDependencies: Task Project Structure Setup",
+  "generated_at": "2026-07-10T13:15:08.480Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement a centralized logging system using Serilog. Log all errors, warnings, and critical business events (like status changes) into the database 'Logs' table.\n\nAcceptance Criteria:\n- Table 'Logs' created with fields: ID, LogLevel, Message, Exception, EntityType, EntityID, UserID, CreatedDate.\n- Serilog configured to write to the Logs table.\n- Critical actions (Submission, Approval, Rejection) ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Log model and DbContext update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Log.cs",
+        "CertEasy.Model/CertEasyDbContext.cs",
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a centralized logging system using Serilog. Log..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Program.cs Serilog SQL Server configuration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Log.cs",
+        "CertEasy.Model/CertEasyDbContext.cs",
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a centralized logging system using Serilog. Log..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Business Logic — Log critical actions in WorkflowService",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Log.cs",
+        "CertEasy.Model/CertEasyDbContext.cs",
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a centralized logging system using Serilog. Log..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "not_run"
+  }
+}

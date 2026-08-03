@@ -1,0 +1,45 @@
+{
+  "task_id": 60,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "The Registration / Login buttons are not working, there is no backend calls triggered from the from end, verified in the network section in the browser. in .cshtml page I could see the below code but still its not working a asp-controller=\"Account\" asp-action=\"Login\" class=\"btn btn-primary btn-lg px-4 gap-3\">Login</a> in AccountController I could see the below code but its not triggering [HttpGet] public IActionResult Login() { if (User.Identity?.IsAuthenticated == true) return RedirectToAction(\"Index\", \"Home\"); return View(); } Analyze my project level requirements if needed. I need to register or login functionality to be worked now.",
+  "generated_at": "2026-07-31T10:10:17.388Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "The Registration / Login buttons are not working, there is no backend calls triggered from the from end, verified in the network section in the browser. in .cshtml page I could see the below code but still its not working a asp-controller=\"Account\" asp-action=\"Login\" class=\"btn btn-primary btn-lg px-4 gap-3\">Login</a> in AccountController I could see the below code but its not triggering [HttpGet]",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "The Registration / Login buttons are not working, there is no backend calls trig",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

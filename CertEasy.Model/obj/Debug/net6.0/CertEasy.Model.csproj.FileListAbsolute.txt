@@ -1,0 +1,14 @@
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\bin\Debug\net6.0\CertEasy.Model.deps.json
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\bin\Debug\net6.0\CertEasy.Model.runtimeconfig.json
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\bin\Debug\net6.0\CertEasy.Model.dll
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\bin\Debug\net6.0\CertEasy.Model.pdb
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.csproj.AssemblyReference.cache
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.AssemblyInfoInputs.cache
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.AssemblyInfo.cs
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.csproj.CoreCompileInputs.cache
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.dll
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\refint\CertEasy.Model.dll
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.pdb
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\CertEasy.Model.genruntimeconfig.cache
+C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Phase1\CertEasy.Model\obj\Debug\net6.0\ref\CertEasy.Model.dll

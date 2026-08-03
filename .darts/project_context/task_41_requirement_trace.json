@@ -1,0 +1,63 @@
+{
+  "task_id": 41,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement the Certification and Education tables. Both tables use EntityID and EntityTypeID to distinguish between Application (200) and Account (201) levels as per requirement.\n\nAcceptance Criteria:\n- Table 'Certification' created with fields: ID, EntityID, EntityTypeID, CertificationId, CertificationName, CertificationDescription, CreatedDate, CreatedBy.\n- Table 'Education' created with fields: ID, EntityID, EntityTypeID, InstituteName, Qualification, DegreeName, CreatedDate, CreatedBy.\n\nDependencies: Task User and Address Data Models",
+  "generated_at": "2026-07-10T11:17:27.904Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the Certification and Education tables. Both tables use EntityID and EntityTypeID to distinguish between Application (200) and Account (201) levels as per requirement.\n\nAcceptance Criteria:\n- Table 'Certification' created with fields: ID, EntityID, EntityTypeID, CertificationId, CertificationName, CertificationDescription, CreatedDate, CreatedBy.\n- Table 'Education' created with fields: ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Certification and Education Models + DbContext updates",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the Certification and Education tables. Both ta..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Services — Certification and Education Services",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the Certification and Education tables. Both ta..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Controllers — Certification and Education API Controllers",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the Certification and Education tables. Both ta..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

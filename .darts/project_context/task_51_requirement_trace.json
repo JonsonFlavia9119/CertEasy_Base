@@ -1,0 +1,126 @@
+{
+  "task_id": 51,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Observations:\n\n1. CertEasy.Data Project have been added but Migration folder is not there, please add it\n2. CertEasyDb haven't been created, it is mandatory\n3. Login, Register links are not working. In order to use this solution, we need to login\n5. Make sure the application process is added\n\nMake sure the login and register likes are working",
+  "generated_at": "2026-07-27T09:16:55.048Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Observations:\n\n1. CertEasy.Data Project have been added but Migration folder is not there, please add it\n2. CertEasyDb haven't been created, it is mandatory\n3. Login, Register links are not working. In order to use this solution, we need to login\n5. Make sure the application process is added\n\nMake sure the login and register likes are working",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Fix Database and Migrations",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.cs",
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project have been added b...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points & Services — Verify Registration & Workflow",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.cs",
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project have been added b...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend — Verify Links and Wizard",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.cs",
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project have been added b...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.cs",
+        "CertEasy.Data/Migrations/20240101000000_InitialCreate.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations:\n\n1. CertEasy.Data Project have been added but Migration folder is ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 8,
+    "validation_status": "passed"
+  }
+}

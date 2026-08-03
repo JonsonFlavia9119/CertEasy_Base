@@ -1,0 +1,63 @@
+{
+  "task_id": 47,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Set up an email notification system using a service like SendGrid. Create templates for Approval and Rejection. Logic must trigger emails and log them in the Notifications table when an Admin updates an application status to 112 or 113.\n\nAcceptance Criteria:\n- Tables 'NotificationTemplates' and 'Notifications' created.\n- Email service sends notifications on Approval (112) and Rejection (113).\n- Notification record is stored in the database with status 'Sent' or 'Failed'.\n\nDependencies: Task Admin Review and Configuration Dashboard",
+  "generated_at": "2026-07-10T13:16:48.564Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Set up an email notification system using a service like SendGrid. Create templates for Approval and Rejection. Logic must trigger emails and log them in the Notifications table when an Admin updates an application status to 112 or 113.\n\nAcceptance Criteria:\n- Tables 'NotificationTemplates' and 'Notifications' created.\n- Email service sends notifications on Approval (112) and Rejection (113).\n- No",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Models and DbContext Update",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Set up an email notification system using a service like ..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Email Service Implementation",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Set up an email notification system using a service like ..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Service Wiring and Logic Integration",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Set up an email notification system using a service like ..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

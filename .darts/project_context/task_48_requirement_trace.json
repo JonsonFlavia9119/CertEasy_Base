@@ -1,0 +1,45 @@
+{
+  "task_id": 48,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Apply comprehensive validation and security measures. Use KnockoutJS for frontend validation and ensure the backend prevents XSS, CSRF, and SQL Injection using parameterized queries and secure tokens.\n\nAcceptance Criteria:\n- KnockoutJS validation provides real-time feedback for required fields.\n- Numeric ranges for application parameters are enforced.\n- Antiforgery tokens and input sanitization implemented.\n\nDependencies: Task Application Submission Workflow",
+  "generated_at": "2026-07-10T13:18:02.513Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Apply comprehensive validation and security measures. Use KnockoutJS for frontend validation and ensure the backend prevents XSS, CSRF, and SQL Injection using parameterized queries and secure tokens.\n\nAcceptance Criteria:\n- KnockoutJS validation provides real-time feedback for required fields.\n- Numeric ranges for application parameters are enforced.\n- Antiforgery tokens and input sanitization im",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Apply comprehensive validation and security measures. Use KnockoutJS for fronten",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

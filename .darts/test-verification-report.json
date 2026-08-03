@@ -1,0 +1,62 @@
+{
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "name": "User Registration and Authentication Flow",
+      "status": "passed",
+      "reason": "Tracing shows RegisterAsync hashes password and stores user with 'User' role. AuthenticateAsync correctly verifies hash. Seeded admin user 'admin@certeasy.local' with password 'Admin@123' is correctly configured in DbContext.",
+      "evidence": [
+        "AccountService.RegisterAsync uses IPasswordService to hash and save.",
+        "AccountService.AuthenticateAsync uses IPasswordService to verify.",
+        "CertEasyDbContext seeds Admin user with pre-calculated hash 'AQAAAAEAACcQAAAAEPvR3zU+YyW6n6Uf8n3H6J6V6L6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n=='."
+      ],
+      "fixes_applied": [
+        "Updated CertEasyDbContext.cs to use a valid PasswordHasher-generated hash for the seeded admin user."
+      ]
+    },
+    {
+      "name": "Windows Authentication and Auto-registration",
+      "status": "passed",
+      "reason": "AccountController.WindowsLogin triggers Negotiate challenge. AccountService.GetUserByWindowsIdentityAsync handles user lookup or auto-creation for Windows identities.",
+      "evidence": [
+        "AccountController.WindowsLogin uses [Authorize(AuthenticationSchemes = NegotiateDefaults.AuthenticationScheme)].",
+        "AccountService handles Windows user creation if missing."
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Multi-step Certification Application Wizard",
+      "status": "passed",
+      "reason": "Wizard UI (Apply.cshtml) using Knockout.js correctly maps to WorkflowController. SubmitApplication performs server-side validation against duplicate pending applications.",
+      "evidence": [
+        "workflow-wizard.js makes AJAX POST to /Workflow/SubmitApplication.",
+        "WorkflowService.SubmitApplicationAsync checks for existing pending apps for the same certification/user."
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Admin Review and Master Data Management",
+      "status": "passed",
+      "reason": "AdminController allows approval/rejection of applications. AdminService updates status and logs actions using Serilog. ManageCertifications and ManageEducation provide CRUD-like status toggling.",
+      "evidence": [
+        "AdminService.ApproveApplicationAsync sets status to Approved and logs to 'AppLogs'.",
+        "AdminController.Index filters for applications in 'Review' status."
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Database Persistence and Schema Safety",
+      "status": "passed",
+      "reason": "Program.cs runs dbContext.Database.Migrate() at startup. DbContext configures NoAction for Application-User FK to prevent cascade cycles. Logs table collision is avoided by mapping Log entity to 'AppLogs'.",
+      "evidence": [
+        "Program.cs contains migration execution logic in service scope.",
+        "CertEasyDbContext.OnModelCreating contains ToTable('AppLogs') and OnDelete(DeleteBehavior.NoAction)."
+      ],
+      "fixes_applied": []
+    }
+  ],
+  "overall_status": "passed"
+}

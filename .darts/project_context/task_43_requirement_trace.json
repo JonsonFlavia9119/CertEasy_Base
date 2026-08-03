@@ -1,0 +1,146 @@
+{
+  "task_id": 43,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement a dual-authentication system. Standard Users authenticate via email/password (Identity), while Admin users are authenticated via Windows Integrated Security. Use the Users table to manage roles and identities for both.\n\nAcceptance Criteria:\n- User can register with Email and Password using Identity.\n- Passwords are hashed and salted before storage.\n- Admins can log in via Windows Authentication.\n\nDependencies: Task User and Address Data Models",
+  "generated_at": "2026-07-10T11:26:18.491Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement a dual-authentication system. Standard Users authenticate via email/password (Identity), while Admin users are authenticated via Windows Integrated Security. Use the Users table to manage roles and identities for both.\n\nAcceptance Criteria:\n- User can register with Email and Password using Identity.\n- Passwords are hashed and salted before storage.\n- Admins can log in via Windows Authent",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Configure Multi-Scheme Authentication and Password Hashing Service",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/IPasswordService.cs",
+        "CertEasy.Services/PasswordService.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/IAccountService.cs",
+        "CertEasy.Services/AccountService.cs",
+        "CertEasy.Web/Models/RegisterViewModel.cs",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/AccessDenied.cshtml",
+        "CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml"
+      ],
+      "module": "Authentication",
+      "feature": "Dual-Authentication Infrastructure",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Implement Standard User Registration — Service, Controller, and View",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/IPasswordService.cs",
+        "CertEasy.Services/PasswordService.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/IAccountService.cs",
+        "CertEasy.Services/AccountService.cs",
+        "CertEasy.Web/Models/RegisterViewModel.cs",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/AccessDenied.cshtml",
+        "CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml"
+      ],
+      "module": "Authentication",
+      "feature": "User Registration",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Implement Standard Login — Login Logic and Session Management",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/IPasswordService.cs",
+        "CertEasy.Services/PasswordService.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/IAccountService.cs",
+        "CertEasy.Services/AccountService.cs",
+        "CertEasy.Web/Models/RegisterViewModel.cs",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/AccessDenied.cshtml",
+        "CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml"
+      ],
+      "module": "Authentication",
+      "feature": "Identity Authentication (Email/Password)",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-004",
+      "name": "Implement Windows Authentication for Admins",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/IPasswordService.cs",
+        "CertEasy.Services/PasswordService.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/IAccountService.cs",
+        "CertEasy.Services/AccountService.cs",
+        "CertEasy.Web/Models/RegisterViewModel.cs",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Login.cshtml",
+        "CertEasy.Web/Views/Account/AccessDenied.cshtml",
+        "CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml"
+      ],
+      "module": "Authentication",
+      "feature": "Admin Windows Authentication",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 4,
+    "tasks_failed": 0,
+    "files_written": 13,
+    "validation_status": "passed"
+  }
+}

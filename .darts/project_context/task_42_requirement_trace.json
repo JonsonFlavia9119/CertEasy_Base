@@ -1,0 +1,52 @@
+{
+  "task_id": 42,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Create the StatusHistoryChanges table to audit application workflow transitions. Capture both IDs and Names for old/new statuses to maintain a readable history.\n\nAcceptance Criteria:\n- Table 'StatusHistoryChanges' created with ID, EntityID, OldStatusID, OldStatusName, NewStatusID, NewStatusName, ChangedBy, ChangedDate, CreatedDate, CreatedBy.\n- Logic triggers on application status change to insert history records.\n\nDependencies: Task Core Tables and Seeding",
+  "generated_at": "2026-07-10T11:22:02.009Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Create the StatusHistoryChanges table to audit application workflow transitions. Capture both IDs and Names for old/new statuses to maintain a readable history.\n\nAcceptance Criteria:\n- Table 'StatusHistoryChanges' created with ID, EntityID, OldStatusID, OldStatusName, NewStatusID, NewStatusName, ChangedBy, ChangedDate, CreatedDate, CreatedBy.\n- Logic triggers on application status change to insert",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Audit Model and DbContext updates",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Create the StatusHistoryChanges table to audit applicatio..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Logic — Audit Service for status changes",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Create the StatusHistoryChanges table to audit applicatio..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

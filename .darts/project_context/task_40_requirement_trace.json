@@ -1,0 +1,45 @@
+{
+  "task_id": 40,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Create the Addresses and Users tables. Ensure foreign key relationships for RoleID and AddressID. The Users table must support both ASP.NET Identity for standard users and Windows Authentication for Admins.\n\nAcceptance Criteria:\n- Table 'Addresses' created with fields: ID, Line1, Line2, City, State, Pincode, Country, Phone, CreatedDate, CreatedBy.\n- Table 'Users' created with fields: ID, FirstName, LastName, Email, PasswordHash, RoleID, AddressID.\n- System Admin user seeded with Windows Authentication support (null password).\n\nDependencies: Task Core Tables and Seeding",
+  "generated_at": "2026-07-10T11:12:04.892Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Create the Addresses and Users tables. Ensure foreign key relationships for RoleID and AddressID. The Users table must support both ASP.NET Identity for standard users and Windows Authentication for Admins.\n\nAcceptance Criteria:\n- Table 'Addresses' created with fields: ID, Line1, Line2, City, State, Pincode, Country, Phone, CreatedDate, CreatedBy.\n- Table 'Users' created with fields: ID, FirstName",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Models and DbContext",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Address.cs",
+        "CertEasy.Model/User.cs",
+        "CertEasy.Model/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create the Addresses and Users tables. Ensure foreign key..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "not_run"
+  }
+}

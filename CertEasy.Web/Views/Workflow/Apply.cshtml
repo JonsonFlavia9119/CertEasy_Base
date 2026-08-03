@@ -1,0 +1,68 @@
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+
+@{
+    ViewData["Title"] = "Apply for Certification";
+}
+
+<div id="workflow-wizard" class="container mt-4">
+    <input type="hidden" name="__RequestVerificationToken" value="@Antiforgery.GetAndStoreTokens(Context).RequestToken" />
+    <div class="card">
+        <div class="card-header">
+            <h3>Application Wizard</h3>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" data-bind="style: { width: (currentStep() * 25) + '%' }"></div>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Step 1: Profile Confirmation -->
+            <div data-bind="visible: currentStep() === 1">
+                <h4>Step 1: Confirm Profile</h4>
+                <p>Please confirm your profile details before proceeding.</p>
+                <div class="mb-3">
+                    <label class="form-label">Name: @User.Identity.Name</label>
+                </div>
+                <button class="btn btn-primary" data-bind="click: nextStep">Next</button>
+            </div>
+
+            <!-- Step 2: Certification Selection -->
+            <div data-bind="visible: currentStep() === 2">
+                <h4>Step 2: Select Certification</h4>
+                <div class="mb-3">
+                    <label class="form-label">Choose Certification</label>
+                    <select class="form-select" data-bind="options: certifications, optionsText: 'name', optionsValue: 'id', value: selectedCertificationID, optionsCaption: 'Choose...'"></select>
+                </div>
+                <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
+                <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedCertificationID">Next</button>
+            </div>
+
+            <!-- Step 3: Education Details -->
+            <div data-bind="visible: currentStep() === 3">
+                <h4>Step 3: Education & Remarks</h4>
+                <div class="mb-3">
+                    <label class="form-label">Education Level</label>
+                    <select class="form-select" data-bind="options: educationLevels, optionsText: 'name', optionsValue: 'id', value: selectedEducationLevelID, optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Remarks</label>
+                    <textarea class="form-control" data-bind="value: remarks"></textarea>
+                </div>
+                <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
+                <button class="btn btn-success" data-bind="click: submitApplication, enable: selectedEducationLevelID">Submit Application</button>
+            </div>
+
+            <!-- Step 4: Success -->
+            <div data-bind="visible: currentStep() === 4">
+                <div class="alert alert-success">
+                    <h4 class="alert-heading">Success!</h4>
+                    <p data-bind="text: message"></p>
+                    <hr>
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/workflow-wizard.js"></script>
+}

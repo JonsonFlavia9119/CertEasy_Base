@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container py-5">
+    <div class="p-5 mb-4 bg-light rounded-3 text-center shadow-sm">
+        <div class="container-fluid py-5">
+            <h1 class="display-4 fw-bold">Welcome to CertEasy</h1>
+            <p class="col-md-8 mx-auto fs-4">Your path to certification just got simpler. Manage your applications, track your progress, and get certified with ease.</p>
+            
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <a asp-area="" asp-controller="Workflow" asp-action="Apply" class="btn btn-primary btn-lg px-4 gap-3">Start New Application</a>
+                }
+                else
+                {
+                    <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-primary btn-lg px-4 gap-3">Login</a>
+                    <a asp-area="" asp-controller="Account" asp-action="Register" class="btn btn-outline-secondary btn-lg px-4">Register Now</a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 px-3 py-2 rounded">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <h3 class="fs-2">Verified Certs</h3>
+            <p>We provide a streamlined process for CSP, ASP, and other safety certifications recognized globally.</p>
+        </div>
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 px-3 py-2 rounded">
+                <i class="bi bi-speedometer2"></i>
+            </div>
+            <h3 class="fs-2">Fast Tracking</h3>
+            <p>Our intelligent workflow wizard guides you through every step, ensuring you provide all necessary documentation.</p>
+        </div>
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 px-3 py-2 rounded">
+                <i class="bi bi-person-badge"></i>
+            </div>
+            <h3 class="fs-2">Admin Support</h3>
+            <p>Our administrators review applications promptly to help you move forward in your professional career.</p>
+        </div>
+    </div>
+</div>

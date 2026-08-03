@@ -1,0 +1,45 @@
+{
+  "task_id": 39,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Implement the Roles and Statuses tables as defined in the schema. Seed the Roles table with 'Admin' and 'User'. Seed Statuses with: New (101), User Profile (102), Certification Selection (103), Educational Qualification (104), Invoice (110), Review (111), Approved (112), Rejection (113).\n\nAcceptance Criteria:\n- Table 'Roles' created with ID, RoleName, Description, CreatedDate.\n- Table 'Statuses' created with ID, StatusName, CreatedDate, CreatedBy.\n- Initial data for Roles (Admin, User) and Statuses (101-113 range) seeded.\n\nDependencies: Task Project Structure Setup",
+  "generated_at": "2026-07-10T11:10:51.027Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the Roles and Statuses tables as defined in the schema. Seed the Roles table with 'Admin' and 'User'. Seed Statuses with: New (101), User Profile (102), Certification Selection (103), Educational Qualification (104), Invoice (110), Review (111), Approved (112), Rejection (113).\n\nAcceptance Criteria:\n- Table 'Roles' created with ID, RoleName, Description, CreatedDate.\n- Table 'Statuses' c",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Create Role and Status models and update DbContext with seeding",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Role.cs",
+        "CertEasy.Model/Status.cs",
+        "CertEasy.Model/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the Roles and Statuses tables as defined in the..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "not_run"
+  }
+}

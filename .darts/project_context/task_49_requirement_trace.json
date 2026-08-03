@@ -1,0 +1,125 @@
+{
+  "task_id": 49,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Observations\n1.  CertEasy. Data Project haven't been added into the solution\n2.  CertEasyDb haven't been created\n3.  Application launched -> none of the links not working\n4.  Login, Register links are not working\n5.  Make sure the application process is added, if not, please do it",
+  "generated_at": "2026-07-14T14:37:07.274Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Observations\n1.  CertEasy. Data Project haven't been added into the solution\n2.  CertEasyDb haven't been created\n3.  Application launched -> none of the links not working\n4.  Login, Register links are not working\n5.  Make sure the application process is added, if not, please do it",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend - Application Model and DbContext Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations\n1.  CertEasy. Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Backend - Workflow Service Implementation",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations\n1.  CertEasy. Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Entry Points - Database Initialization",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations\n1.  CertEasy. Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-004",
+      "name": "Frontend - Application Workflow Views",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations\n1.  CertEasy. Data Project haven't been adde...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Views/Home/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Observations\n1.  CertEasy. Data Project haven't been added into the solution\n2. ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 5,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

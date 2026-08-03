@@ -1,0 +1,43 @@
+{
+  "task_id": 52,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "DB Creation Issue\n\nSystem.InvalidOperationException\nMessage=The seed entity for entity type 'User' cannot be added because no value was provided for the required property\n\nMake the necessary changes to resolve the DB creation error. ",
+  "generated_at": "2026-07-27T15:01:28.036Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "DB Creation Issue\n\nSystem.InvalidOperationException\nMessage=The seed entity for entity type 'User' cannot be added because no value was provided for the required property\n\nMake the necessary changes to resolve the DB creation error. ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix DB Seed Error",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "DB Creation Issue\n\nSystem.InvalidOperationException\nMessa..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "not_run"
+  }
+}

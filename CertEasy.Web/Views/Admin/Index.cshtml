@@ -1,0 +1,59 @@
+@model CertEasy.Web.Models.AdminDashboardViewModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard - Pending Reviews</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var app in Model.PendingApplications)
+                {
+                    <tr>
+                        <td>@app.Id</td>
+                        <td>@app.User?.FirstName @app.User?.LastName</td>
+                        <td>@app.User?.Email</td>
+                        <td>@app.Status?.StatusName</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <form asp-action="Approve" asp-route-id="@app.Id" method="post">
+                                    <button type="submit" class="btn btn-sm btn-success">Approve</button>
+                                </form>
+                                <form asp-action="Reject" asp-route-id="@app.Id" method="post">
+                                    <button type="submit" class="btn btn-sm btn-danger">Reject</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.PendingApplications.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="text-center">No pending applications for review.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

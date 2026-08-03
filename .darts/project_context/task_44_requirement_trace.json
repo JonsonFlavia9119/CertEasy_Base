@@ -1,0 +1,118 @@
+{
+  "task_id": 44,
+  "task_name": "CertEasy_Phase1",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "Develop the user-facing application workflow. This includes the Profile step (102), Certification selection (103), Education details (104), and Invoice submission (110). Use KnockoutJS for two-way binding and dynamic validation.\n\nAcceptance Criteria:\n- Multi-step wizard UI implemented using Razor and KnockoutJS.\n- Validation prevents moving to next step if fields are empty.\n- Workflow statuses (101-110) updated correctly at each step.\n\nDependencies: Task Certification and Education Models, Task Dual Authentication System",
+  "generated_at": "2026-07-10T12:47:06.120Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Develop the user-facing application workflow. This includes the Profile step (102), Certification selection (103), Education details (104), and Invoice submission (110). Use KnockoutJS for two-way binding and dynamic validation.\n\nAcceptance Criteria:\n- Multi-step wizard UI implemented using Razor and KnockoutJS.\n- Validation prevents moving to next step if fields are empty.\n- Workflow statuses (10",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Implement Workflow Infrastructure",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/IWorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/WorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Models/WorkflowViewModels.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Views/Workflow/Apply.cshtml"
+      ],
+      "module": "Application Workflow",
+      "feature": "Multi-step Application Wizard",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Implement Wizard API",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/IWorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/WorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Models/WorkflowViewModels.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Views/Workflow/Apply.cshtml"
+      ],
+      "module": "Application Workflow",
+      "feature": "Multi-step Application Wizard",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Implement Wizard Frontend Logic",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/IWorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/WorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Models/WorkflowViewModels.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Views/Workflow/Apply.cshtml"
+      ],
+      "module": "Application Workflow",
+      "feature": "Multi-step Application Wizard",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-004",
+      "name": "Implement Wizard UI",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/IWorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Services/WorkflowService.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Models/WorkflowViewModels.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Phase1/CertEasy.Web/Views/Workflow/Apply.cshtml"
+      ],
+      "module": "Application Workflow",
+      "feature": "Multi-step Application Wizard",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 4,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "passed"
+  }
+}
