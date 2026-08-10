@@ -3,6 +3,11 @@ using CertEasy.Web.Models;
 using CertEasy.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace CertEasy.Web.Controllers
 {
@@ -21,9 +26,16 @@ namespace CertEasy.Web.Controllers
         public async Task<IActionResult> Index()
         {
             var applications = await _adminService.GetApplicationsInReviewAsync();
+            var addresses = await _adminService.GetAllAddressesAsync();
+            var certifications = await _adminService.GetCertificationsAsync();
+            var educations = await _adminService.GetAllEducationsAsync();
+
             var viewModel = new AdminDashboardViewModel
             {
-                PendingApplications = applications
+                PendingApplications = applications,
+                Addresses = addresses,
+                Certifications = certifications,
+                Educations = educations
             };
             return View(viewModel);
         }
@@ -32,7 +44,7 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Approve(int id)
         {
-            var result = await _adminService.ApproveApplicationAsync(id);
+            var result = await _adminService.ApproveApplicationAsync(id, User.Identity.Name ?? "Unknown");
             if (result)
             {
                 TempData["SuccessMessage"] = "Application approved successfully.";
@@ -48,7 +60,7 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Reject(int id)
         {
-            var result = await _adminService.RejectApplicationAsync(id);
+            var result = await _adminService.RejectApplicationAsync(id, User.Identity.Name ?? "Unknown");
             if (result)
             {
                 TempData["SuccessMessage"] = "Application rejected successfully.";
@@ -67,13 +79,64 @@ namespace CertEasy.Web.Controllers
             return View(certifications);
         }
 
+        public IActionResult CreateCertification()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCertification(Certification model)
+        public async Task<IActionResult> CreateCertification(Certification model)
         {
             if (ModelState.IsValid)
             {
-                await _adminService.AddCertificationAsync(model);
+                var result = await _adminService.AddCertificationAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Certification created successfully.";
+                    return RedirectToAction(nameof(ManageCertifications));
+                }
+                ModelState.AddModelError("", "Failed to create certification.");
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> EditCertification(int id)
+        {
+            var certification = await _adminService.GetCertificationByIdAsync(id);
+            if (certification == null) return NotFound();
+            return View(certification);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditCertification(Certification model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.UpdateCertificationAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Certification updated successfully.";
+                    return RedirectToAction(nameof(ManageCertifications));
+                }
+                ModelState.AddModelError("", "Failed to update certification.");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteCertification(int id)
+        {
+            var result = await _adminService.DeleteCertificationAsync(id);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Certification deleted successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to delete certification.";
             }
             return RedirectToAction(nameof(ManageCertifications));
         }
@@ -82,23 +145,89 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ToggleCertification(int id)
         {
-            await _adminService.ToggleCertificationStatusAsync(id);
+            await _adminService.ToggleCertificationStatusAsync(id, User.Identity.Name ?? "Unknown");
             return RedirectToAction(nameof(ManageCertifications));
         }
 
         public async Task<IActionResult> ManageEducation()
         {
-            var levels = await _adminService.GetEducationLevelsAsync();
-            return View(levels);
+            try 
+            {
+                var levels = await _adminService.GetEducationLevelsAsync();
+                return View(levels);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving education levels");
+                throw; // Handled by AdminExceptionFilter
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddEducation(EducationLevel model)
+        public async Task<IActionResult> AddEducationLevel(EducationLevel model)
         {
+            // Remove non-model data that might invalidate state if not present
+            ModelState.Remove(nameof(model.CreatedBy));
+            ModelState.Remove(nameof(model.UpdatedBy));
+
             if (ModelState.IsValid)
             {
-                await _adminService.AddEducationLevelAsync(model);
+                var result = await _adminService.AddEducationLevelAsync(model, User.Identity.Name ?? "Unknown");
+                if (result) 
+                {
+                    TempData["SuccessMessage"] = "Education level added successfully.";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Failed to add education level.";
+                }
+            }
+            else
+            {
+                 TempData["ErrorMessage"] = "Invalid data provided.";
+            }
+            return RedirectToAction(nameof(ManageEducation));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditEducationLevel(EducationLevel model)
+        {
+            ModelState.Remove(nameof(model.CreatedBy));
+            ModelState.Remove(nameof(model.UpdatedBy));
+
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.UpdateEducationLevelAsync(model, User.Identity.Name ?? "Unknown");
+                if (result) 
+                {
+                    TempData["SuccessMessage"] = "Education level updated successfully.";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Failed to update education level.";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Invalid data provided.";
+            }
+            return RedirectToAction(nameof(ManageEducation));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEducationLevel(int id)
+        {
+            var result = await _adminService.DeleteEducationLevelAsync(id);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Education level deleted successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to delete education level.";
             }
             return RedirectToAction(nameof(ManageEducation));
         }
@@ -107,8 +236,77 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ToggleEducation(int id)
         {
-            await _adminService.ToggleEducationLevelStatusAsync(id);
+            await _adminService.ToggleEducationLevelStatusAsync(id, User.Identity.Name ?? "Unknown");
             return RedirectToAction(nameof(ManageEducation));
+        }
+
+        // Address Management
+        public async Task<IActionResult> ManageAddresses()
+        {
+            var addresses = await _adminService.GetAllAddressesAsync();
+            return View(addresses);
+        }
+
+        public IActionResult CreateAddress()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateAddress(Address model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.AddAddressAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Address created successfully.";
+                    return RedirectToAction(nameof(ManageAddresses));
+                }
+                ModelState.AddModelError("", "Failed to create address.");
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> EditAddress(int id)
+        {
+            var address = await _adminService.GetAddressByIdAsync(id);
+            if (address == null) return NotFound();
+            return View(address);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditAddress(Address model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.UpdateAddressAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Address updated successfully.";
+                    return RedirectToAction(nameof(ManageAddresses));
+                }
+                ModelState.AddModelError("", "Failed to update address.");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAddress(int id)
+        {
+            var result = await _adminService.DeleteAddressAsync(id);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Address deleted successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to delete address.";
+            }
+            return RedirectToAction(nameof(ManageAddresses));
         }
     }
 }

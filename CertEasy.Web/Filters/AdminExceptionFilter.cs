@@ -24,9 +24,9 @@ namespace CertEasy.Web.Filters
             {
                 _logger.LogError(context.Exception, "Unhandled exception in Admin area at {Path}", context.HttpContext.Request.Path);
 
-                var result = new ViewResult { ViewName = "Error" };
+                var result = new ViewResult { ViewName = "Error" }; // Use relative name to allow fallback search
                 result.ViewData = new ViewDataDictionary(_modelMetadataProvider, context.ModelState);
-                result.ViewData.Add("ErrorMessage", "An unexpected error occurred in the administrative area. The incident has been logged.");
+                result.ViewData["ErrorMessage"] = "An unexpected error occurred in the administrative area. " + context.Exception.Message;
                 
                 context.Result = result;
                 context.ExceptionHandled = true;

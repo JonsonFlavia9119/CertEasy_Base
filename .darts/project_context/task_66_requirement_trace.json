@@ -1,0 +1,66 @@
+{
+  "task_id": 66,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Develop the configuration interface for Address entries, allowing administrators to manage location data. Required fields: Line1, Line2, City, State, ZipCode, Country, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n\nAcceptance Criteria:\n- CRUD operations (Create, Read, Update, Delete) are functional for the Address entity.\n- Form includes all fields: Line1, Line2, City, State, ZipCode, Country.\n- Audit fields (Created/Updated) are populated automatically on save.\n\nTechnical Hints: Use a standard MVC Controller with Create and Edit views. Ensure server-side validation for mandatory fields.\n\nDependencies: Task admin_data_models_and_migrations, Task admin_layout_implementation",
+  "generated_at": "2026-08-04T05:47:05.050Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Develop the configuration interface for Address entries, allowing administrators to manage location data. Required fields: Line1, Line2, City, State, ZipCode, Country, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n\nAcceptance Criteria:\n- CRUD operations (Create, Read, Update, Delete) are functional for the Address entity.\n- Form includes all fields: Line1, Line2, City, State, ZipCode, Country.\n-",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Service & Controller Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/ManageAddresses.cshtml",
+        "CertEasy.Web/Views/Admin/CreateAddress.cshtml",
+        "CertEasy.Web/Views/Admin/EditAddress.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Develop the configuration interface for Address entries, ..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend UI — Address Management Views",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/ManageAddresses.cshtml",
+        "CertEasy.Web/Views/Admin/CreateAddress.cshtml",
+        "CertEasy.Web/Views/Admin/EditAddress.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Develop the configuration interface for Address entries, ..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "not_run"
+  }
+}

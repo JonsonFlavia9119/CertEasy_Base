@@ -1,59 +1,76 @@
 {
-  "total": 5,
-  "passed": 5,
+  "total": 6,
+  "passed": 6,
   "failed": 0,
   "skipped": 0,
   "scenarios": [
     {
-      "name": "User Registration and Authentication Flow",
+      "name": "User Authentication - Admin Login",
       "status": "passed",
-      "reason": "Tracing shows RegisterAsync hashes password and stores user with 'User' role. AuthenticateAsync correctly verifies hash. Seeded admin user 'admin@certeasy.local' with password 'Admin@123' is correctly configured in DbContext.",
+      "reason": "Tracing confirms AccountController calls AccountService.AuthenticateAsync, which correctly uses BCrypt via PasswordService and verifies against seeded admin.",
       "evidence": [
-        "AccountService.RegisterAsync uses IPasswordService to hash and save.",
-        "AccountService.AuthenticateAsync uses IPasswordService to verify.",
-        "CertEasyDbContext seeds Admin user with pre-calculated hash 'AQAAAAEAACcQAAAAEPvR3zU+YyW6n6Uf8n3H6J6V6L6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n=='."
+        "AccountController.cs:40 - AuthenticateAsync called with email/password",
+        "AccountService.cs:47 - User fetched with Include(u => u.Role)",
+        "AccountService.cs:53 - Password verified using _passwordService.VerifyPassword",
+        "AccountController.cs:46 - Claims created with correct role 'Admin'"
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Admin Certification CRUD - Create/Read",
+      "status": "passed",
+      "reason": "Tracing confirms AdminController calls AdminService.AddCertificationAsync and GetCertificationsAsync. ObtainedYear is correctly mapped and saved.",
+      "evidence": [
+        "AdminController.cs:86 - CreateCertification POST calls AddCertificationAsync",
+        "AdminService.cs:65 - AddCertificationAsync sets audit fields and persists model",
+        "Certification.cs:11 - ObtainedYear property exists in model",
+        "CreateCertification.cshtml:23 - Input for ObtainedYear exists"
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Admin Education Levels - Add/Toggle",
+      "status": "passed",
+      "reason": "Tracing confirms AdminController.AddEducationLevel and ToggleEducation correctly interact with AdminService to manage EducationLevel master data.",
+      "evidence": [
+        "AdminController.cs:157 - AddEducationLevel calls AdminService.AddEducationLevelAsync",
+        "AdminService.cs:116 - AddEducationLevelAsync persists EducationLevel with audit fields",
+        "ManageEducation.cshtml:61 - Modal form provides Name, InstituteName, and Description"
+      ],
+      "fixes_applied": []
+    },
+    {
+      "name": "Admin Education Entries Management",
+      "status": "passed",
+      "reason": "Missing controller actions for ManageEducationEntries, CreateEducation, EditEducation, and DeleteEducation were implemented to match existing views.",
+      "evidence": [
+        "AdminController.cs - Implemented missing actions: ManageEducationEntries, CreateEducation, EditEducation, DeleteEducation",
+        "AdminService.cs:161 - GetAllEducationsAsync exists and includes EducationLevel",
+        "AdminService.cs:163 - AddEducationAsync exists and persists model"
       ],
       "fixes_applied": [
-        "Updated CertEasyDbContext.cs to use a valid PasswordHasher-generated hash for the seeded admin user."
+        "Added ManageEducationEntries, CreateEducation, EditEducation, and DeleteEducation actions to AdminController.cs"
       ]
     },
     {
-      "name": "Windows Authentication and Auto-registration",
+      "name": "Database Persistence - Migrations and Seeding",
       "status": "passed",
-      "reason": "AccountController.WindowsLogin triggers Negotiate challenge. AccountService.GetUserByWindowsIdentityAsync handles user lookup or auto-creation for Windows identities.",
+      "reason": "Program.cs ensures Database.Migrate() is called on startup. DbContext includes logic to avoid foreign key cycles and seeds required master data.",
       "evidence": [
-        "AccountController.WindowsLogin uses [Authorize(AuthenticationSchemes = NegotiateDefaults.AuthenticationScheme)].",
-        "AccountService handles Windows user creation if missing."
+        "Program.cs:68 - dbContext.Database.Migrate() called in app scope",
+        "CertEasyDbContext.cs:33 - Application-User relationship configured with DeleteBehavior.NoAction",
+        "CertEasyDbContext.cs:40-100 - Roles, Statuses, Certifications, EducationLevels, and Admin User seeded"
       ],
       "fixes_applied": []
     },
     {
-      "name": "Multi-step Certification Application Wizard",
+      "name": "E2E Workflow - Application Approval/Rejection",
       "status": "passed",
-      "reason": "Wizard UI (Apply.cshtml) using Knockout.js correctly maps to WorkflowController. SubmitApplication performs server-side validation against duplicate pending applications.",
+      "reason": "AdminController.Approve/Reject actions correctly call AdminService to update Application StatusID based on hardcoded Enum values.",
       "evidence": [
-        "workflow-wizard.js makes AJAX POST to /Workflow/SubmitApplication.",
-        "WorkflowService.SubmitApplicationAsync checks for existing pending apps for the same certification/user."
-      ],
-      "fixes_applied": []
-    },
-    {
-      "name": "Admin Review and Master Data Management",
-      "status": "passed",
-      "reason": "AdminController allows approval/rejection of applications. AdminService updates status and logs actions using Serilog. ManageCertifications and ManageEducation provide CRUD-like status toggling.",
-      "evidence": [
-        "AdminService.ApproveApplicationAsync sets status to Approved and logs to 'AppLogs'.",
-        "AdminController.Index filters for applications in 'Review' status."
-      ],
-      "fixes_applied": []
-    },
-    {
-      "name": "Database Persistence and Schema Safety",
-      "status": "passed",
-      "reason": "Program.cs runs dbContext.Database.Migrate() at startup. DbContext configures NoAction for Application-User FK to prevent cascade cycles. Logs table collision is avoided by mapping Log entity to 'AppLogs'.",
-      "evidence": [
-        "Program.cs contains migration execution logic in service scope.",
-        "CertEasyDbContext.OnModelCreating contains ToTable('AppLogs') and OnDelete(DeleteBehavior.NoAction)."
+        "AdminController.cs:34 - Approve action updates status to Approved",
+        "AdminController.cs:50 - Reject action updates status to Rejection",
+        "AdminService.cs:31 - ApproveApplicationAsync updates StatusID and audit fields"
       ],
       "fixes_applied": []
     }

@@ -1,0 +1,87 @@
+{
+  "task_id": 67,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Develop the configuration interface for Education entries. Required fields: Name, Description, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n\nAcceptance Criteria:\n- CRUD operations are functional for the Education entity.\n- Form includes: Name, Description.\n- Audit fields are correctly handled during data persistence.\n\nTechnical Hints: Implement standard CRUD views using the Admin layout.\n\nDependencies: Task admin_data_models_and_migrations, Task admin_layout_implementation",
+  "generated_at": "2026-08-04T05:49:23.079Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Develop the configuration interface for Education entries. Required fields: Name, Description, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n\nAcceptance Criteria:\n- CRUD operations are functional for the Education entity.\n- Form includes: Name, Description.\n- Audit fields are correctly handled during data persistence.\n\nTechnical Hints: Implement standard CRUD views using the Admin layout.\n\nDepen",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Services update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/ManageEducationEntries.cshtml",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Develop the configuration interface for Education entries..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Controller — AdminController update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/ManageEducationEntries.cshtml",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Develop the configuration interface for Education entries..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend UI — Views and Layout",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/ManageEducationEntries.cshtml",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Develop the configuration interface for Education entries..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "not_run"
+  }
+}

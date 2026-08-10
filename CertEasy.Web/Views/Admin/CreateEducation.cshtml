@@ -1,0 +1,52 @@
+@model CertEasy.Model.Education
+@{ ViewData["Title"] = "Create Education Entry"; }
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title mb-0">Create Education Entry</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="CreateEducation">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="InstitutionName" class="form-label"></label>
+                            <input asp-for="InstitutionName" class="form-control" />
+                            <span asp-validation-for="InstitutionName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FieldOfStudy" class="form-label"></label>
+                            <input asp-for="FieldOfStudy" class="form-control" />
+                            <span asp-validation-for="FieldOfStudy" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="EducationLevelId" class="form-label">Education Level</label>
+                            <select asp-for="EducationLevelId" class="form-select">
+                                <option value="">-- Select Level --</option>
+                                @if (ViewBag.EducationLevels != null)
+                                {
+                                    @foreach (var level in ViewBag.EducationLevels)
+                                    {
+                                        <option value="@level.Id">@level.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="EducationLevelId" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="GraduationYear" class="form-label"></label>
+                            <input asp-for="GraduationYear" class="form-control" />
+                            <span asp-validation-for="GraduationYear" class="text-danger"></span>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="ManageEducationEntries" class="btn btn-secondary me-md-2">Back to List</a>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+{
+  "task_id": 72,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "I would like to add ObtainedYear filed in the certifications table also it should reflect in the certification page in admin area. \nPlease add migration to achieve this.",
+  "generated_at": "2026-08-04T14:27:14.329Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I would like to add ObtainedYear filed in the certifications table also it should reflect in the certification page in admin area. \nPlease add migration to achieve this.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Model and Views for ObtainedYear",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20240102000000_AddObtainedYearToCertification.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/ManageCertifications.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to add ObtainedYear filed in the certificati...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Add Migration for ObtainedYear",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20240102000000_AddObtainedYearToCertification.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/ManageCertifications.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to add ObtainedYear filed in the certificati...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20240102000000_AddObtainedYearToCertification.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/ManageCertifications.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to add ObtainedYear filed in the certifications table also it shoul",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 6,
+    "validation_status": "passed"
+  }
+}

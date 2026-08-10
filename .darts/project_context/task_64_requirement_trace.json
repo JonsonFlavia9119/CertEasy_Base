@@ -1,0 +1,46 @@
+{
+  "task_id": 64,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Define the data models and execute migrations for the three core administrative entities: Address, Education, and Certification. This includes all specified audit fields (CreatedDate, UpdatedDate, CreatedBy, UpdatedBy).\n\nAcceptance Criteria:\n- Database migrations are created for Address, Education, and Certification tables.\n- Address table includes: Line1, Line2, City, State, ZipCode, Country, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n- Education table includes: Name, Description, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n- Certification table includes: Name, Description, CreatedDate, UpdatedDate, CreatedBy, UpdatedBy.\n\nTechnical Hints: Use Entity Framework Core migrations. Ensure audit fields have appropriate data types (DateTime for dates, string for users).",
+  "generated_at": "2026-08-04T05:44:36.128Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Define the data models and execute migrations for the three core administrative entities: Address, Education, and Certification. This includes all specified audit fields (CreatedDate, UpdatedDate, CreatedBy, UpdatedBy).\n\nAcceptance Criteria:\n- Database migrations are created for Address, Education, and Certification tables.\n- Address table includes: Line1, Line2, City, State, ZipCode, Country, Cre",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — ALL models + ALL controllers + DbContext updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Address.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Define the data models and execute migrations for the thr..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 4,
+    "validation_status": "not_run"
+  }
+}

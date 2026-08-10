@@ -1,0 +1,114 @@
+{
+  "task_id": 75,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Still I am facing the same error, Education Levels link is not working.\n\ngetting below error \n\nInvalidOperationException: The view 'Error' was not found. The following locations were searched:\n/Views/Admin/Error.cshtml\n/Views/Shared/Error.cshtml\nMicrosoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable<string> originalLocations)\n\nAnalyze the Root Cause and fix the issue without fail. ",
+  "generated_at": "2026-08-09T03:57:56.019Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Still I am facing the same error, Education Levels link is not working.\n\ngetting below error \n\nInvalidOperationException: The view 'Error' was not found. The following locations were searched:\n/Views/Admin/Error.cshtml\n/Views/Shared/Error.cshtml\nMicrosoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable<string> originalLocations)\n\nAnalyze the Root Cause and fix the issue wi",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create missing Error views and update HomeController",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Filters/AdminExceptionFilter.cs",
+        "CertEasy.Web/Views/Shared/Error.cshtml",
+        "CertEasy.Web/Views/Admin/Error.cshtml",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still I am facing the same error, Education Levels link i...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Improve AdminExceptionFilter to handle missing views better",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Filters/AdminExceptionFilter.cs",
+        "CertEasy.Web/Views/Shared/Error.cshtml",
+        "CertEasy.Web/Views/Admin/Error.cshtml",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still I am facing the same error, Education Levels link i...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Fix potential runtime issue in ManageEducation or navigation",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Filters/AdminExceptionFilter.cs",
+        "CertEasy.Web/Views/Shared/Error.cshtml",
+        "CertEasy.Web/Views/Admin/Error.cshtml",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still I am facing the same error, Education Levels link i...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Filters/AdminExceptionFilter.cs",
+        "CertEasy.Web/Views/Shared/Error.cshtml",
+        "CertEasy.Web/Views/Admin/Error.cshtml",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still I am facing the same error, Education Levels link is not working.\n\ngetting",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "passed"
+  }
+}

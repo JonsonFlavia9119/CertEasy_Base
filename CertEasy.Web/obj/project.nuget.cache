@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HVnf45Kmt70=",
+  "dgSpecHash": "U7TDR41Yiy0=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Web\\CertEasy.Web.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Web\\CertEasy.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.aspnetcore.authentication.negotiate\\6.0.0\\microsoft.aspnetcore.authentication.negotiate.6.0.0.nupkg.sha512",
@@ -85,6 +85,7 @@
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\kjohnson\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Model\\CertEasy.Model.csproj": {}
+    "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Model\\CertEasy.Model.csproj": {}
   },
   "projects": {
-    "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Model\\CertEasy.Model.csproj": {
+    "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Model\\CertEasy.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Model\\CertEasy.Model.csproj",
+        "projectUniqueName": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Model\\CertEasy.Model.csproj",
         "projectName": "CertEasy.Model",
-        "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Model\\CertEasy.Model.csproj",
+        "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Model\\CertEasy.Model.csproj",
         "packagesPath": "C:\\Users\\kjohnson\\.nuget\\packages\\",
-        "outputPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Model\\obj\\",
+        "outputPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
