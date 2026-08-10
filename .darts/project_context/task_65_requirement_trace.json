@@ -1,0 +1,64 @@
+{
+  "task_id": 65,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement the Admin Dashboard page using the [REDACTED_LOCATION] control to display all administrative entries. This page acts as the central hub for viewing system configurations.\n\nAcceptance Criteria:\n- The dashboard page correctly implements the [REDACTED_LOCATION] control.\n- All entries from Addresses, Education, and Certification tables are visible in the control.\n- The dashboard is accessible via the Admin Support link.\n\nTechnical Hints: Bind the [REDACTED_LOCATION] control to a view model containing lists of all three entities.\n\nDependencies: Task admin_layout_implementation, Task admin_data_models_and_migrations",
+  "generated_at": "2026-08-04T05:45:49.546Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the Admin Dashboard page using the [REDACTED_LOCATION] control to display all administrative entries. This page acts as the central hub for viewing system configurations.\n\nAcceptance Criteria:\n- The dashboard page correctly implements the [REDACTED_LOCATION] control.\n- All entries from Addresses, Education, and Certification tables are visible in the control.\n- The dashboard is accessibl",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Models + Services + Controllers",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the Admin Dashboard page using the [REDACTED_LO..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend UI — Dashboard View",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the Admin Dashboard page using the [REDACTED_LO..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "not_run"
+  }
+}

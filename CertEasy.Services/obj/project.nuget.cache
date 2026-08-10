@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5WoPoC6vlfA=",
+  "dgSpecHash": "ywfVQn3hMOY=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Phase1\\CertEasy.Services\\CertEasy.Services.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase1\\CertEasy.Services\\CertEasy.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",
@@ -38,6 +38,7 @@
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\serilog\\3.1.1\\serilog.3.1.1.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\kjohnson\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",

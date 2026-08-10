@@ -1,0 +1,102 @@
+{
+  "task_id": 73,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Remove Admin support page\nRemove Education Entries page\nAdd Institute name in the education levels page. Add migration if needed",
+  "generated_at": "2026-08-04T15:13:16.187Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Remove Admin support page\nRemove Education Entries page\nAdd Institute name in the education levels page. Add migration if needed",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Remove Admin support page\nRemove Education Entries page\nA...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Controller and ViewModel Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Remove Admin support page\nRemove Education Entries page\nA...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "UI Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Remove Admin support page\nRemove Education Entries page\nA...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Remove Admin support page\nRemove Education Entries page\nAdd Institute name in th",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "passed"
+  }
+}

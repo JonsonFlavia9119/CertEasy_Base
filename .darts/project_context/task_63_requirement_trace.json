@@ -1,0 +1,48 @@
+{
+  "task_id": 63,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Create a dedicated layout for the Admin section of the application. This ensures that administrative pages have a distinct look and feel and specialized navigation menus compared to the standard user interface.\n\nAcceptance Criteria:\n- A new layout file exists specifically for Admin pages (e.g., _AdminLayout.cshtml).\n- The Admin Support link uses this layout instead of the default user layout.\n- The layout includes a navigation menu specific to administration tasks.\n\nTechnical Hints: Create the layout in the Views/Shared folder. Ensure it contains a @RenderBody() and references the necessary CSS/JS bundles.",
+  "generated_at": "2026-08-04T05:43:18.530Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Create a dedicated layout for the Admin section of the application. This ensures that administrative pages have a distinct look and feel and specialized navigation menus compared to the standard user interface.\n\nAcceptance Criteria:\n- A new layout file exists specifically for Admin pages (e.g., _AdminLayout.cshtml).\n- The Admin Support link uses this layout instead of the default user layout.\n- Th",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create Admin Layout and Wiring",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml",
+        "CertEasy.Web/Views/Admin/_ViewStart.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create a dedicated layout for the Admin section of the ap...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "passed"
+  }
+}

@@ -1,0 +1,16 @@
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Admin Error";
+    var errorMessage = ViewData["ErrorMessage"] as string ?? "An error occurred in the Admin section.";
+}
+
+<div class="alert alert-danger shadow-sm">
+    <h4 class="alert-heading"><i class="bi bi-exclamation-octagon-fill"></i> Administrative Error</h4>
+    <p>@errorMessage</p>
+    <hr>
+    <p class="mb-0">If this issue persists, please check the system logs or contact technical support.</p>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Return to Dashboard</a>
+</div>

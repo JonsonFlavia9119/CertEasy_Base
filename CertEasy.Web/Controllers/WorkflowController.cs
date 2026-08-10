@@ -42,7 +42,6 @@ namespace CertEasy.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> SubmitApplication([FromBody] ApplicationViewModel model)
         {
             if (ModelState.IsValid)

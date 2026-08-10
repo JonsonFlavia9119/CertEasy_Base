@@ -8,6 +8,7 @@ namespace CertEasy.Model
         public string Name { get; set; }
         [MaxLength(500)]
         public string? Description { get; set; }
+        public int? ObtainedYear { get; set; }
         public bool IsActive { get; set; } = true;
     }
 }

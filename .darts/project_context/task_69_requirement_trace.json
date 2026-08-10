@@ -1,0 +1,41 @@
+{
+  "task_id": 69,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Ensure that the new admin functionality is protected by appropriate authorization checks so only authorized administrators can access the configuration pages.\n\nAcceptance Criteria:\n- A secure 'Admin' area or policy is applied to all admin controllers.\n- Non-admin users are redirected or denied access when attempting to reach the Admin Support link or dashboard.\n\nTechnical Hints: Apply [Authorize(Roles = \"Admin\")] or a custom Admin policy to the controllers.\n\nDependencies: Task admin_dashboard_summary_view",
+  "generated_at": "2026-08-04T05:52:08.683Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Ensure that the new admin functionality is protected by appropriate authorization checks so only authorized administrators can access the configuration pages.\n\nAcceptance Criteria:\n- A secure 'Admin' area or policy is applied to all admin controllers.\n- Non-admin users are redirected or denied access when attempting to reach the Admin Support link or dashboard.\n\nTechnical Hints: Apply [Authorize(R",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Verify and validate authorization implementation",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Ensure that the new admin functionality is protected by a..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

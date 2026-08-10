@@ -1,0 +1,580 @@
+2026-08-09 09:07:14.361 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:14.500 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:07:14.632 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:07:14.648 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:07:14.663 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:07:14.707 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-09 09:07:14.796 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-09 09:07:14.809 +05:30 [INF] Database migrations applied successfully.
+2026-08-09 09:07:15.719 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 09:07:16.843 +05:30 [INF] Now listening on: https://localhost:64519
+2026-08-09 09:07:16.850 +05:30 [INF] Now listening on: http://localhost:64520
+2026-08-09 09:07:16.884 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 09:07:16.889 +05:30 [INF] Hosting environment: Development
+2026-08-09 09:07:16.894 +05:30 [INF] Content root path: C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\
+2026-08-09 09:07:18.626 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-08-09 09:07:19.739 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:07:19.795 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-08-09 09:07:19.853 +05:30 [INF] Executing ViewResult, running view Index.
+2026-08-09 09:07:20.524 +05:30 [INF] Executed ViewResult - view Index executed in 674.9912ms.
+2026-08-09 09:07:20.540 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:20.543 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:20.547 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 740.4746ms
+2026-08-09 09:07:20.559 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:07:20.570 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 28.0402ms
+2026-08-09 09:07:20.647 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 2041.2350ms
+2026-08-09 09:07:20.850 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 306.9624ms
+2026-08-09 09:07:20.885 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/favicon.ico - -
+2026-08-09 09:07:20.900 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/favicon.ico - - - 404 0 - 15.5553ms
+2026-08-09 09:07:23.170 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Account/Login - -
+2026-08-09 09:07:23.200 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web)'
+2026-08-09 09:07:23.216 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller CertEasy.Web.Controllers.AccountController (CertEasy.Web).
+2026-08-09 09:07:23.412 +05:30 [INF] Login GET requested.
+2026-08-09 09:07:23.424 +05:30 [INF] Executing ViewResult, running view Login.
+2026-08-09 09:07:23.586 +05:30 [INF] Executed ViewResult - view Login executed in 166.8642ms.
+2026-08-09 09:07:23.612 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:23.652 +05:30 [INF] Executed action CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web) in 425.383ms
+2026-08-09 09:07:23.625 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:23.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 57.0223ms
+2026-08-09 09:07:23.676 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web)'
+2026-08-09 09:07:23.721 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Account/Login - - - 200 - text/html;+charset=utf-8 550.8945ms
+2026-08-09 09:07:23.789 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 164.1744ms
+2026-08-09 09:07:25.782 +05:30 [INF] Request starting HTTP/2 POST https://localhost:64519/Account/Login application/x-www-form-urlencoded 236
+2026-08-09 09:07:25.802 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web)'
+2026-08-09 09:07:25.889 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(CertEasy.Web.Models.LoginViewModel) on controller CertEasy.Web.Controllers.AccountController (CertEasy.Web).
+2026-08-09 09:07:26.057 +05:30 [INF] Login POST requested for johnsonkumar99@gmail.com.
+2026-08-09 09:07:26.091 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:28.792 +05:30 [INF] Executed DbCommand (233ms) [Parameters=[@__email_0='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AddressID], [u].[CreatedBy], [u].[CreatedDate], [u].[Email], [u].[FirstName], [u].[LastName], [u].[PasswordHash], [u].[RoleID], [u].[StatusID], [u].[UpdatedBy], [u].[UpdatedDate], [r].[Id], [r].[CreatedBy], [r].[CreatedDate], [r].[Description], [r].[RoleName], [r].[UpdatedBy], [r].[UpdatedDate]
+FROM [Users] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleID] = [r].[Id]
+WHERE [u].[Email] = @__email_0
+2026-08-09 09:07:35.357 +05:30 [INF] AuthenticationScheme: Cookies signed in.
+2026-08-09 09:07:35.361 +05:30 [INF] User johnsonkumar99@gmail.com logged in successfully.
+2026-08-09 09:07:35.396 +05:30 [INF] Executing RedirectResult, redirecting to /.
+2026-08-09 09:07:35.410 +05:30 [INF] Executed action CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web) in 9511.1105ms
+2026-08-09 09:07:35.415 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AccountController.Login (CertEasy.Web)'
+2026-08-09 09:07:35.432 +05:30 [INF] Request finished HTTP/2 POST https://localhost:64519/Account/Login application/x-www-form-urlencoded 236 - 302 - - 9649.7025ms
+2026-08-09 09:07:35.434 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-08-09 09:07:35.452 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:07:35.454 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-08-09 09:07:35.461 +05:30 [INF] Executing ViewResult, running view Index.
+2026-08-09 09:07:35.476 +05:30 [INF] Executed ViewResult - view Index executed in 14.3694ms.
+2026-08-09 09:07:35.485 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 24.2525ms
+2026-08-09 09:07:35.495 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:07:35.507 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:35.505 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:35.532 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 98.0167ms
+2026-08-09 09:07:35.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 31.9720ms
+2026-08-09 09:07:35.558 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.5015ms
+2026-08-09 09:07:40.940 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - -
+2026-08-09 09:07:40.977 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:40.994 +05:30 [INF] Route matched with {action = "ManageCertifications", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageCertifications() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:07:41.198 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:41.292 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[IsActive], [c].[Name], [c].[ObtainedYear], [c].[UpdatedBy], [c].[UpdatedDate]
+FROM [Certifications] AS [c]
+ORDER BY [c].[Name]
+2026-08-09 09:07:41.421 +05:30 [INF] Executing ViewResult, running view ManageCertifications.
+2026-08-09 09:07:41.480 +05:30 [INF] Executed ViewResult - view ManageCertifications executed in 64.0663ms.
+2026-08-09 09:07:41.492 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web) in 491.3437ms
+2026-08-09 09:07:41.495 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:41.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:41.502 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:41.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 10.8788ms
+2026-08-09 09:07:41.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - - - 200 - text/html;+charset=utf-8 585.1619ms
+2026-08-09 09:07:41.525 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.6981ms
+2026-08-09 09:07:44.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/CreateCertification - -
+2026-08-09 09:07:44.138 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.CreateCertification (CertEasy.Web)'
+2026-08-09 09:07:44.147 +05:30 [INF] Route matched with {action = "CreateCertification", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateCertification() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:07:44.161 +05:30 [INF] Executing ViewResult, running view CreateCertification.
+2026-08-09 09:07:44.271 +05:30 [INF] Executed ViewResult - view CreateCertification executed in 113.5604ms.
+2026-08-09 09:07:44.276 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.CreateCertification (CertEasy.Web) in 119.6857ms
+2026-08-09 09:07:44.283 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.CreateCertification (CertEasy.Web)'
+2026-08-09 09:07:44.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:44.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:44.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/CreateCertification - - - 200 - text/html;+charset=utf-8 175.2756ms
+2026-08-09 09:07:44.295 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 8.0528ms
+2026-08-09 09:07:44.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.8645ms
+2026-08-09 09:07:47.753 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - -
+2026-08-09 09:07:47.775 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:47.783 +05:30 [INF] Route matched with {action = "ManageCertifications", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageCertifications() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:07:47.811 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:47.841 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[IsActive], [c].[Name], [c].[ObtainedYear], [c].[UpdatedBy], [c].[UpdatedDate]
+FROM [Certifications] AS [c]
+ORDER BY [c].[Name]
+2026-08-09 09:07:47.852 +05:30 [INF] Executing ViewResult, running view ManageCertifications.
+2026-08-09 09:07:47.860 +05:30 [INF] Executed ViewResult - view ManageCertifications executed in 7.8811ms.
+2026-08-09 09:07:47.868 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web) in 65.5965ms
+2026-08-09 09:07:47.877 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:47.878 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:47.878 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:47.883 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 5.5887ms
+2026-08-09 09:07:47.895 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - - - 200 - text/html;+charset=utf-8 141.1077ms
+2026-08-09 09:07:47.908 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.1707ms
+2026-08-09 09:07:52.981 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageEducation - -
+2026-08-09 09:07:52.995 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:07:53.010 +05:30 [INF] Route matched with {action = "ManageEducation", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageEducation() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:07:53.028 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:53.110 +05:30 [ERR] Failed executing DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedBy], [e].[CreatedDate], [e].[Description], [e].[InstituteName], [e].[IsActive], [e].[Name], [e].[UpdatedBy], [e].[UpdatedDate]
+FROM [EducationLevels] AS [e]
+2026-08-09 09:07:53.567 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'CertEasy.Data.CertEasyDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:de30dee2-b725-411b-8180-dab3693dd98e
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:de30dee2-b725-411b-8180-dab3693dd98e
+Error Number:207,State:1,Class:16
+2026-08-09 09:07:54.326 +05:30 [ERR] Unhandled exception in Admin area at /Admin/ManageEducation
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CertEasy.Services.AdminService.GetEducationLevelsAsync() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Services\AdminService.cs:line 113
+   at CertEasy.Web.Controllers.AdminController.ManageEducation() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\Controllers\AdminController.cs:line 150
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+ClientConnectionId:de30dee2-b725-411b-8180-dab3693dd98e
+Error Number:207,State:1,Class:16
+2026-08-09 09:07:54.389 +05:30 [INF] Executing ViewResult, running view Error.
+2026-08-09 09:07:54.403 +05:30 [ERR] The view 'Error' was not found. Searched locations: ["/Views/Admin/Error.cshtml","/Views/Shared/Error.cshtml"]
+2026-08-09 09:07:54.430 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web) in 1407.5444ms
+2026-08-09 09:07:54.437 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:07:54.447 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Error' was not found. The following locations were searched:
+/Views/Admin/Error.cshtml
+/Views/Shared/Error.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAlwaysRunResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2026-08-09 09:07:54.593 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageEducation - - - 500 - text/html;+charset=utf-8 1612.9521ms
+2026-08-09 09:07:54.613 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:54.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:07:54.622 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 10.1646ms
+2026-08-09 09:07:54.651 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.1914ms
+2026-08-09 09:07:56.518 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - -
+2026-08-09 09:07:56.531 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:56.536 +05:30 [INF] Route matched with {action = "ManageCertifications", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageCertifications() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:07:56.548 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:07:56.570 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedBy], [c].[CreatedDate], [c].[Description], [c].[IsActive], [c].[Name], [c].[ObtainedYear], [c].[UpdatedBy], [c].[UpdatedDate]
+FROM [Certifications] AS [c]
+ORDER BY [c].[Name]
+2026-08-09 09:07:56.588 +05:30 [INF] Executing ViewResult, running view ManageCertifications.
+2026-08-09 09:07:56.602 +05:30 [INF] Executed ViewResult - view ManageCertifications executed in 13.5391ms.
+2026-08-09 09:07:56.612 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web) in 65.7174ms
+2026-08-09 09:07:56.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:07:56.623 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageCertifications (CertEasy.Web)'
+2026-08-09 09:07:56.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 11.1320ms
+2026-08-09 09:07:56.632 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageCertifications - - - 200 - text/html;+charset=utf-8 114.1908ms
+2026-08-09 09:08:01.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - -
+2026-08-09 09:08:01.526 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:01.531 +05:30 [INF] Route matched with {action = "ManageAddresses", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageAddresses() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:08:01.538 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:08:01.557 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Country], [a].[CreatedBy], [a].[CreatedDate], [a].[Line1], [a].[Line2], [a].[State], [a].[UpdatedBy], [a].[UpdatedDate], [a].[ZipCode]
+FROM [Addresses] AS [a]
+2026-08-09 09:08:01.563 +05:30 [INF] Executing ViewResult, running view ManageAddresses.
+2026-08-09 09:08:01.575 +05:30 [INF] Executed ViewResult - view ManageAddresses executed in 12.3057ms.
+2026-08-09 09:08:01.578 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web) in 42.9378ms
+2026-08-09 09:08:01.581 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:01.586 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:08:01.588 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - - - 200 - text/html;+charset=utf-8 68.0401ms
+2026-08-09 09:08:01.585 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:08:01.615 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 29.9139ms
+2026-08-09 09:08:01.622 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.2520ms
+2026-08-09 09:08:02.864 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - -
+2026-08-09 09:08:02.871 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:02.873 +05:30 [INF] Route matched with {action = "ManageAddresses", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageAddresses() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:08:02.880 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:08:02.892 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Country], [a].[CreatedBy], [a].[CreatedDate], [a].[Line1], [a].[Line2], [a].[State], [a].[UpdatedBy], [a].[UpdatedDate], [a].[ZipCode]
+FROM [Addresses] AS [a]
+2026-08-09 09:08:02.900 +05:30 [INF] Executing ViewResult, running view ManageAddresses.
+2026-08-09 09:08:02.904 +05:30 [INF] Executed ViewResult - view ManageAddresses executed in 4.5199ms.
+2026-08-09 09:08:02.908 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web) in 29.4542ms
+2026-08-09 09:08:02.916 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:08:02.916 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:08:02.917 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:02.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 3.3129ms
+2026-08-09 09:08:02.931 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - - - 200 - text/html;+charset=utf-8 66.8196ms
+2026-08-09 09:08:02.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.5291ms
+2026-08-09 09:08:04.541 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/CreateAddress - -
+2026-08-09 09:08:04.555 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web)'
+2026-08-09 09:08:04.567 +05:30 [INF] Route matched with {action = "CreateAddress", controller = "Admin"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CreateAddress() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:08:04.584 +05:30 [INF] Executing ViewResult, running view CreateAddress.
+2026-08-09 09:08:04.699 +05:30 [INF] Executed ViewResult - view CreateAddress executed in 117.1786ms.
+2026-08-09 09:08:04.710 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web) in 129.3916ms
+2026-08-09 09:08:04.715 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:08:04.717 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:08:04.720 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web)'
+2026-08-09 09:08:04.726 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 11.2057ms
+2026-08-09 09:08:04.739 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/CreateAddress - - - 200 - text/html;+charset=utf-8 198.0179ms
+2026-08-09 09:08:04.752 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 35.5044ms
+2026-08-09 09:08:57.126 +05:30 [INF] Request starting HTTP/2 POST https://localhost:64519/Admin/CreateAddress application/x-www-form-urlencoded 325
+2026-08-09 09:08:57.152 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web)'
+2026-08-09 09:08:57.165 +05:30 [INF] Route matched with {action = "CreateAddress", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAddress(CertEasy.Model.Address) on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:08:57.192 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:08:57.629 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 100), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 200), @p5='?' (Size = 200), @p6='?' (Size = 100), @p7='?' (Size = 100), @p8='?' (DbType = DateTime2), @p9='?' (Size = 20)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Addresses] ([City], [Country], [CreatedBy], [CreatedDate], [Line1], [Line2], [State], [UpdatedBy], [UpdatedDate], [ZipCode])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [Addresses]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2026-08-09 09:08:57.775 +05:30 [INF] Executing RedirectResult, redirecting to /Admin/ManageAddresses.
+2026-08-09 09:08:57.779 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web) in 609.7617ms
+2026-08-09 09:08:57.782 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.CreateAddress (CertEasy.Web)'
+2026-08-09 09:08:57.785 +05:30 [INF] Request finished HTTP/2 POST https://localhost:64519/Admin/CreateAddress application/x-www-form-urlencoded 325 - 302 - - 658.6963ms
+2026-08-09 09:08:57.795 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - -
+2026-08-09 09:08:57.802 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:57.804 +05:30 [INF] Route matched with {action = "ManageAddresses", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageAddresses() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:08:57.807 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:08:57.816 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[City], [a].[Country], [a].[CreatedBy], [a].[CreatedDate], [a].[Line1], [a].[Line2], [a].[State], [a].[UpdatedBy], [a].[UpdatedDate], [a].[ZipCode]
+FROM [Addresses] AS [a]
+2026-08-09 09:08:57.821 +05:30 [INF] Executing ViewResult, running view ManageAddresses.
+2026-08-09 09:08:57.832 +05:30 [INF] Executed ViewResult - view ManageAddresses executed in 11.2191ms.
+2026-08-09 09:08:57.835 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web) in 27.9419ms
+2026-08-09 09:08:57.837 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageAddresses (CertEasy.Web)'
+2026-08-09 09:08:57.846 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:08:57.846 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:08:57.847 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageAddresses - - - 200 - text/html;+charset=utf-8 52.1140ms
+2026-08-09 09:08:57.848 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 2.0364ms
+2026-08-09 09:08:57.863 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.9032ms
+2026-08-09 09:18:30.685 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:18:30.918 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:18:30.994 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:18:31.004 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:18:31.007 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:18:31.067 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-09 09:18:31.100 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-09 09:18:31.103 +05:30 [INF] Database migrations applied successfully.
+2026-08-09 09:18:31.275 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 09:18:31.777 +05:30 [INF] Now listening on: https://localhost:64519
+2026-08-09 09:18:31.782 +05:30 [INF] Now listening on: http://localhost:64520
+2026-08-09 09:18:31.821 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 09:18:31.823 +05:30 [INF] Hosting environment: Development
+2026-08-09 09:18:31.824 +05:30 [INF] Content root path: C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\
+2026-08-09 09:18:32.558 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-08-09 09:18:32.947 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:18:32.975 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-08-09 09:18:32.996 +05:30 [INF] Executing ViewResult, running view Index.
+2026-08-09 09:18:33.216 +05:30 [INF] Executed ViewResult - view Index executed in 216.5829ms.
+2026-08-09 09:18:33.226 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 246.0961ms
+2026-08-09 09:18:33.230 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:18:33.231 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:18:33.236 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:18:33.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 11.4811ms
+2026-08-09 09:18:33.250 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 699.1013ms
+2026-08-09 09:18:33.332 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.2006ms
+2026-08-09 09:18:49.211 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageEducation - -
+2026-08-09 09:18:49.249 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:18:49.263 +05:30 [INF] Route matched with {action = "ManageEducation", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageEducation() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:18:49.332 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:18:50.036 +05:30 [ERR] Failed executing DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedBy], [e].[CreatedDate], [e].[Description], [e].[InstituteName], [e].[IsActive], [e].[Name], [e].[UpdatedBy], [e].[UpdatedDate]
+FROM [EducationLevels] AS [e]
+ORDER BY [e].[Name]
+2026-08-09 09:18:50.196 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'CertEasy.Data.CertEasyDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d366d7d9-ce22-40f6-acc7-9875fbac6786
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d366d7d9-ce22-40f6-acc7-9875fbac6786
+Error Number:207,State:1,Class:16
+2026-08-09 09:18:50.717 +05:30 [ERR] Unhandled exception in Admin area at /Admin/ManageEducation
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CertEasy.Services.AdminService.GetEducationLevelsAsync() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Services\AdminService.cs:line 161
+   at CertEasy.Web.Controllers.AdminController.ManageEducation() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\Controllers\AdminController.cs:line 151
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+ClientConnectionId:d366d7d9-ce22-40f6-acc7-9875fbac6786
+Error Number:207,State:1,Class:16
+2026-08-09 09:18:50.778 +05:30 [INF] Executing ViewResult, running view Error.
+2026-08-09 09:18:50.783 +05:30 [ERR] The view 'Error' was not found. Searched locations: ["/Views/Admin/Error.cshtml","/Views/Shared/Error.cshtml"]
+2026-08-09 09:18:50.797 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web) in 1528.3641ms
+2026-08-09 09:18:50.799 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:18:50.808 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Error' was not found. The following locations were searched:
+/Views/Admin/Error.cshtml
+/Views/Shared/Error.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAlwaysRunResultFilters>g__Awaited|27_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2026-08-09 09:18:50.864 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:18:50.864 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:18:50.867 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 2.8738ms
+2026-08-09 09:18:50.869 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageEducation - - - 500 - text/html;+charset=utf-8 1656.1331ms
+2026-08-09 09:18:50.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.7550ms
+2026-08-09 09:22:55.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-08-09 09:22:55.300 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:22:55.303 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-08-09 09:22:55.308 +05:30 [INF] Executing ViewResult, running view Index.
+2026-08-09 09:22:55.313 +05:30 [INF] Executed ViewResult - view Index executed in 5.2952ms.
+2026-08-09 09:22:55.330 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 22.4458ms
+2026-08-09 09:22:55.333 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:22:55.340 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:22:55.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 9.2770ms
+2026-08-09 09:22:55.344 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 103.7762ms
+2026-08-09 09:32:49.899 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:32:50.027 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:32:50.075 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:32:50.087 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-09 09:32:50.096 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-09 09:32:50.144 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-09 09:32:50.188 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-09 09:32:50.192 +05:30 [INF] Database migrations applied successfully.
+2026-08-09 09:32:50.496 +05:30 [INF] User profile is available. Using 'C:\Users\kjohnson\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-09 09:32:50.909 +05:30 [INF] Now listening on: https://localhost:64519
+2026-08-09 09:32:50.915 +05:30 [INF] Now listening on: http://localhost:64520
+2026-08-09 09:32:50.966 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-09 09:32:50.967 +05:30 [INF] Hosting environment: Development
+2026-08-09 09:32:50.968 +05:30 [INF] Content root path: C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\
+2026-08-09 09:32:51.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/ - -
+2026-08-09 09:32:52.136 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:32:52.165 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CertEasy.Web.Controllers.HomeController (CertEasy.Web).
+2026-08-09 09:32:52.188 +05:30 [INF] Executing ViewResult, running view Index.
+2026-08-09 09:32:52.402 +05:30 [INF] Executed ViewResult - view Index executed in 219.001ms.
+2026-08-09 09:32:52.410 +05:30 [INF] Executed action CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web) in 241.3724ms
+2026-08-09 09:32:52.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:32:52.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:32:52.416 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.HomeController.Index (CertEasy.Web)'
+2026-08-09 09:32:52.423 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 9.7086ms
+2026-08-09 09:32:52.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/ - - - 200 - text/html;+charset=utf-8 715.4593ms
+2026-08-09 09:32:52.493 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 80.2142ms
+2026-08-09 09:32:57.898 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/Admin/ManageEducation - -
+2026-08-09 09:32:57.934 +05:30 [INF] Executing endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:32:57.959 +05:30 [INF] Route matched with {action = "ManageEducation", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ManageEducation() on controller CertEasy.Web.Controllers.AdminController (CertEasy.Web).
+2026-08-09 09:32:58.015 +05:30 [INF] Entity Framework Core 6.0.0 initialized 'CertEasyDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.0' with options: MigrationsAssembly=CertEasy.Data 
+2026-08-09 09:32:58.561 +05:30 [ERR] Failed executing DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedBy], [e].[CreatedDate], [e].[Description], [e].[InstituteName], [e].[IsActive], [e].[Name], [e].[UpdatedBy], [e].[UpdatedDate]
+FROM [EducationLevels] AS [e]
+ORDER BY [e].[Name]
+2026-08-09 09:32:58.674 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'CertEasy.Data.CertEasyDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:667d0445-cc37-4b87-934b-46c7d92dc25e
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:667d0445-cc37-4b87-934b-46c7d92dc25e
+Error Number:207,State:1,Class:16
+2026-08-09 09:32:59.105 +05:30 [ERR] Error retrieving education levels
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CertEasy.Services.AdminService.GetEducationLevelsAsync() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Services\AdminService.cs:line 161
+   at CertEasy.Web.Controllers.AdminController.ManageEducation() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\Controllers\AdminController.cs:line 156
+ClientConnectionId:667d0445-cc37-4b87-934b-46c7d92dc25e
+Error Number:207,State:1,Class:16
+2026-08-09 09:32:59.268 +05:30 [ERR] Unhandled exception in Admin area at /Admin/ManageEducation
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'InstituteName'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at CertEasy.Services.AdminService.GetEducationLevelsAsync() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Services\AdminService.cs:line 161
+   at CertEasy.Web.Controllers.AdminController.ManageEducation() in C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\Controllers\AdminController.cs:line 156
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+ClientConnectionId:667d0445-cc37-4b87-934b-46c7d92dc25e
+Error Number:207,State:1,Class:16
+2026-08-09 09:32:59.297 +05:30 [INF] Executing ViewResult, running view Error.
+2026-08-09 09:32:59.323 +05:30 [INF] Executed ViewResult - view Error executed in 26.9986ms.
+2026-08-09 09:32:59.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - -
+2026-08-09 09:32:59.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:64519/_vs/browserLink - -
+2026-08-09 09:32:59.335 +05:30 [INF] Executed action CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web) in 1367.2983ms
+2026-08-09 09:32:59.339 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_framework/aspnetcore-browser-refresh.js - - - 200 14929 application/javascript;+charset=utf-8 4.0798ms
+2026-08-09 09:32:59.359 +05:30 [INF] Executed endpoint 'CertEasy.Web.Controllers.AdminController.ManageEducation (CertEasy.Web)'
+2026-08-09 09:32:59.365 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 29.9954ms
+2026-08-09 09:32:59.372 +05:30 [INF] Request finished HTTP/2 GET https://localhost:64519/Admin/ManageEducation - - - 200 - text/html;+charset=utf-8 1474.2450ms

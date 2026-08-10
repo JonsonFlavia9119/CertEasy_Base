@@ -1,0 +1,93 @@
+{
+  "task_id": 76,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": " Administrative Error\nAn unexpected error occurred in the administrative area. Invalid column name 'InstituteName'.\n\nFix this issue and add migration if needed.",
+  "generated_at": "2026-08-09T04:32:57.862Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": " Administrative Error\nAn unexpected error occurred in the administrative area. Invalid column name 'InstituteName'.\n\nFix this issue and add migration if needed.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Fix — EducationLevel Model & Migration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": " Administrative Error\nAn unexpected error occurred in the...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend/UI Sync — Ensure views use consistent name",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": " Administrative Error\nAn unexpected error occurred in the...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": " Administrative Error\nAn unexpected error occurred in the administrative area. I",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "passed"
+  }
+}

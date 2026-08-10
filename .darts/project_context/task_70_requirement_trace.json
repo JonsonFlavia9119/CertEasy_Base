@@ -1,0 +1,130 @@
+{
+  "task_id": 70,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "There are 9 errors occurring during build, please fix the compile issues and make sure the admin configuration functionalities are working fine. ",
+  "generated_at": "2026-08-04T08:08:44.159Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "There are 9 errors occurring during build, please fix the compile issues and make sure the admin configuration functionalities are working fine. ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Unify Services and Fix Namespaces",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/CertEasy.Services.csproj",
+        "CertEasy.Data/CertEasy.Data.csproj",
+        "CertEasy.Model/CertEasy.Model.csproj",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There are 9 errors occurring during build, please fix the...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Cleanup Duplicate Service Project",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/CertEasy.Services.csproj",
+        "CertEasy.Data/CertEasy.Data.csproj",
+        "CertEasy.Model/CertEasy.Model.csproj",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There are 9 errors occurring during build, please fix the...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Fix Missing Imports and References",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/CertEasy.Services.csproj",
+        "CertEasy.Data/CertEasy.Data.csproj",
+        "CertEasy.Model/CertEasy.Model.csproj",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There are 9 errors occurring during build, please fix the...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/CertEasy.Web.csproj",
+        "CertEasy.Services/CertEasy.Services.csproj",
+        "CertEasy.Data/CertEasy.Data.csproj",
+        "CertEasy.Model/CertEasy.Model.csproj",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Program.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There are 9 errors occurring during build, please fix the compile issues and mak",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 9,
+    "validation_status": "passed"
+  }
+}

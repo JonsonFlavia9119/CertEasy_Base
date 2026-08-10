@@ -13,11 +13,9 @@ namespace CertEasy.Model
         [Required, MaxLength(100)]
         public string State { get; set; }
         [Required, MaxLength(20)]
-        public string Pincode { get; set; }
+        public string ZipCode { get; set; }
         [Required, MaxLength(100)]
         public string Country { get; set; }
-        [Required, MaxLength(20)]
-        public string Phone { get; set; }
 
         // Navigation property
         public virtual ICollection<User>? Users { get; set; }

@@ -1,0 +1,93 @@
+{
+  "task_id": 78,
+  "task_name": "CertEasy_Admin_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Still facing the migration related error. Find the root cause and fix it. Do not complete this task if this issue haven't been fixed\n\nError details\n\"ALTER TABLE ALTER COLUMN failed because column 'InstituteName' does not exist in table 'EducationLevels'.\"",
+  "generated_at": "2026-08-10T06:45:41.931Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Still facing the migration related error. Find the root cause and fix it. Do not complete this task if this issue haven't been fixed\n\nError details\n\"ALTER TABLE ALTER COLUMN failed because column 'InstituteName' does not exist in table 'EducationLevels'.\"",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix EducationLevel Model and DbContext Seeding",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240103000000_FixEducationLevelColumnName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240105000000_FixEducationLevelStructure.cs",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still facing the migration related error. Find the root c...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Fix Broken Migration and Ensure Consistency",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240103000000_FixEducationLevelColumnName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240105000000_FixEducationLevelStructure.cs",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still facing the migration related error. Find the root c...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20240103000000_FixEducationLevelColumnName.cs",
+        "CertEasy.Data/Migrations/20240104000000_FixInstitutionName.cs",
+        "CertEasy.Data/Migrations/20240105000000_FixEducationLevelStructure.cs",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Data/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Still facing the migration related error. Find the root cause and fix it. Do not",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "passed"
+  }
+}

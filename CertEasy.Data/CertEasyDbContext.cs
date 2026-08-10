@@ -15,6 +15,7 @@ namespace CertEasy.Data
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Certification> Certifications { get; set; }
         public DbSet<EducationLevel> EducationLevels { get; set; }
+        public DbSet<Education> Educations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Application> Applications { get; set; }
@@ -72,7 +73,7 @@ namespace CertEasy.Data
                     FirstName = "System",
                     LastName = "Admin",
                     Email = "admin@certeasy.local",
-                    PasswordHash = "AQAAAAEAACcQAAAAEPvR3zU+YyW6n6Uf8n3H6J6V6L6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n==", // Seeded password is 'Admin@123'
+                    PasswordHash = "AQAAAAEAACcQAAAAEPvR3zU+YyW6n6Uf8n3H6J6V6L6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n6X6n==", // Seeded password is 'Admin@123'
                     RoleID = (int)UserRole.Admin,
                     AddressID = null,
                     StatusID = (int)ApplicationStatus.New,
