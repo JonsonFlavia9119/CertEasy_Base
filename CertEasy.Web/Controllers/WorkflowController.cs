@@ -28,8 +28,7 @@ namespace CertEasy.Web.Controllers
         public async Task<IActionResult> GetInitialData()
         {
             var certs = await _workflowService.GetActiveCertificationsAsync();
-            var eduLevels = await _workflowService.GetActiveEducationLevelsAsync();
-            return Json(new { certifications = certs, educationLevels = eduLevels });
+            return Json(new { certifications = certs });
         }
 
         [HttpPost]
@@ -53,7 +52,6 @@ namespace CertEasy.Web.Controllers
                     {
                         UserID = userId,
                         CertificationID = model.CertificationID,
-                        EducationLevelID = model.EducationLevelID,
                         Remarks = model.Remarks,
                         StatusID = (int)ApplicationStatus.Review,
                         SubmittedDate = DateTime.UtcNow,
@@ -62,6 +60,12 @@ namespace CertEasy.Web.Controllers
                         UpdatedBy = userId.ToString(),
                         UpdatedDate = DateTime.UtcNow
                     };
+
+                    // Note: EntityID/EntityTypeID for Application itself is not required by prompt,
+                    // but if the workflow created Certification/Education records here, 
+                    // they would be assigned EntityID = ApplicationId and EntityTypeID = 200.
+                    // Since SubmitApplication currently only creates the Application record,
+                    // we ensure the infrastructure is ready for those assignments in future steps.
 
                     var success = await _workflowService.SubmitApplicationAsync(application);
                     if (success)

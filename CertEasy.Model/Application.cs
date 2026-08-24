@@ -18,12 +18,6 @@ namespace CertEasy.Model
         public virtual Certification? Certification { get; set; }
 
         [Required]
-        public int EducationLevelID { get; set; }
-
-        [ForeignKey("EducationLevelID")]
-        public virtual EducationLevel? EducationLevel { get; set; }
-
-        [Required]
         public int StatusID { get; set; }
 
         [ForeignKey("StatusID")]

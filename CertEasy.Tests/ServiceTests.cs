@@ -1,4 +1,5 @@
 using CertEasy.Model;
+using CertEasy.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -28,12 +29,12 @@ namespace CertEasy.Tests
             Assert.True(context.Roles.Any(), "Roles should be seeded");
             Assert.True(context.Statuses.Any(), "Statuses should be seeded");
             Assert.True(context.Certifications.Any(), "Certifications should be seeded");
-            Assert.True(context.EducationLevels.Any(), "EducationLevels should be seeded");
+            Assert.True(context.Educations.Any(), "Educations should be seeded");
             Assert.True(context.Users.Any(), "Admin user should be seeded");
 
-            var adminRole = context.Roles.FirstOrDefault(r => r.RoleName == \"Admin\");
+            var adminRole = context.Roles.FirstOrDefault(r => r.RoleName == "Admin");
             Assert.NotNull(adminRole);
-            Assert.Equal(\"System\", adminRole.UpdatedBy);
+            Assert.Equal("System", adminRole.UpdatedBy);
         }
 
         [Fact]
@@ -45,11 +46,11 @@ namespace CertEasy.Tests
             var canConnect = context.Database.CanConnect();
             // Note: CanConnect returns false for InMemory databases in some EF versions, 
             // so we check if we can add and retrieve an entity instead.
-            var testRole = new Role { RoleName = \"Test\", CreatedBy = \"Test\" };
+            var testRole = new Role { RoleName = "Test", CreatedBy = "Test" };
             context.Roles.Add(testRole);
             context.SaveChanges();
 
-            var savedRole = context.Roles.FirstOrDefault(r => r.RoleName == \"Test\");
+            var savedRole = context.Roles.FirstOrDefault(r => r.RoleName == "Test");
             Assert.NotNull(savedRole);
         }
     }

@@ -1,18 +1,18 @@
 using System;
-using CertEasy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using CertEasy.Data;
 
 #nullable disable
 
 namespace CertEasy.Data.Migrations
 {
     [DbContext(typeof(CertEasyDbContext))]
-    [Migration("20240103000000_FixEducationLevelColumnName")]
-    partial class FixEducationLevelColumnName
+    [Migration("20260820070811_RenameEducationLevelsToEducations")]
+    partial class RenameEducationLevelsToEducations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace CertEasy.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CertEasy.Model.EducationLevel", b =>
+            modelBuilder.Entity("CertEasy.Model.Education", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,8 +32,8 @@ namespace CertEasy.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -50,20 +50,19 @@ namespace CertEasy.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EducationLevels");
+                    b.ToTable("Educations", (string)null);
                 });
 #pragma warning restore 612, 618
         }

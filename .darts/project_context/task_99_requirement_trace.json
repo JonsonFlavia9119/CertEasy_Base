@@ -1,0 +1,60 @@
+{
+  "task_id": 99,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "public class AdminService\n\n        public async Task<IEnumerable<Education>> GetAllEducationAsync()\n        {\n            return await _context.Educations.OrderByDescending(e => e.CreatedDate).ToListAsync();\n        }\n\nin SQL\n\nselect * from EducationLevels\nId\tName\tDescription\tIsActive\tCreatedDate\tUpdatedDate\tCreatedBy\tUpdatedBy\tInstituteName\n\nThere is a mismatch between SQL and .NET code. Now I want to modify the table name in SQL, The table name should be 'Educations' so Add a new migration to change the table name in SQL",
+  "generated_at": "2026-08-20T07:11:43.645Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "public class AdminService\n\n        public async Task<IEnumerable<Education>> GetAllEducationAsync()\n        {\n            return await _context.Educations.OrderByDescending(e => e.CreatedDate).ToListAsync();\n        }\n\nin SQL\n\nselect * from EducationLevels\nId\tName\tDescription\tIsActive\tCreatedDate\tUpdatedDate\tCreatedBy\tUpdatedBy\tInstituteName\n\nThere is a mismatch between SQL and .NET code. Now I wa",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Create migration to rename EducationLevels to Educations",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "public class AdminService\n\n        public async Task<IEnu...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "public class AdminService\n\n        public async Task<IEnumerable<Education>> Get",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

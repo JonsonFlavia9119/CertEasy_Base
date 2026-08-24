@@ -1,21 +1,38 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CertEasy.Model
 {
-    public class Education : BaseEntity
+    [Table("Educations")]
+    public class Education
     {
-        [Required, MaxLength(100)]
-        public string Name { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [MaxLength(100)]
+        public string? Name { get; set; }
+
         [MaxLength(500)]
         public string? Description { get; set; }
 
-        [Required, MaxLength(200)]
-        public string InstitutionName { get; set; }
-        [Required, MaxLength(100)]
-        public string FieldOfStudy { get; set; }
-        public int GraduationYear { get; set; }
+        public bool IsActive { get; set; }
 
-        public int EducationLevelId { get; set; }
-        public virtual EducationLevel? EducationLevel { get; set; }
+        [Required]
+        public DateTime CreatedDate { get; set; }
+
+        public DateTime? UpdatedDate { get; set; }
+
+        [MaxLength(100)]
+        public string? CreatedBy { get; set; }
+
+        [MaxLength(100)]
+        public string? UpdatedBy { get; set; }
+
+        [MaxLength(200)]
+        public string? InstituteName { get; set; }
+
+        public int? EntityID { get; set; }
+
+        public int? EntityTypeID { get; set; }
     }
 }

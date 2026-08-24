@@ -1,0 +1,75 @@
+{
+  "task_id": 98,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "In Index.cshtml page\n\n        function DashboardViewModel() {\n            var self = this;\n            \n            self.addresses = ko.observableArray([\n                @foreach (var addr in Model.Addresses)\n                {\n                    @: { street: '@addr.Line1', city: '@addr.City', state: '@addr.State', postalCode: '@addr.ZipCode' },\n                }\n            ]);\n\n\n            self.certifications = ko.observableArray([\n                @foreach (var cert in Model.Certifications)\n                {\n                    @: { name: '@cert.Name', description: '@cert.Description', isActive: @cert.IsActive.ToString().ToLower() },\n                }\n            ]);\n        }\n\nand \n\nAdminController.cs\n\n        public async Task<IActionResult> Index()\n        {\n            var applications = await _adminService.GetApplicationsInReviewAsync();\n            var addresses = await _adminService.GetAllAddressesAsync();\n            var certifications = await _adminService.GetCertificationsAsync();\n\n            var viewModel = new AdminDashboardViewModel\n            { \n                PendingApplications = applications, \n                Addresses = addresses, \n                Certifications = certifications,                \n            };\n            return View(viewModel);\n        }\n\nI don't see any education related code piece in this area, without calling AllEucationAsync method how will the education data should get displayed like Certifications and Address",
+  "generated_at": "2026-08-20T06:43:23.691Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "In Index.cshtml page\n\n        function DashboardViewModel() {\n            var self = this;\n            \n            self.addresses = ko.observableArray([\n                @foreach (var addr in Model.Addresses)\n                {\n                    @: { street: '@addr.Line1', city: '@addr.City', state: '@addr.State', postalCode: '@addr.ZipCode' },\n                }\n            ]);\n\n\n            self",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Backend Models and Controller",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "In Index.cshtml page\n\n        function DashboardViewModel...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Update Admin Dashboard View",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "In Index.cshtml page\n\n        function DashboardViewModel...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "In Index.cshtml page\n\n        function DashboardViewModel() {\n            var se",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

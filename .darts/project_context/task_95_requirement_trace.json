@@ -1,0 +1,47 @@
+{
+  "task_id": 95,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "An unexpected error occurred in the administrative area. Invalid object name 'Educations'.\n\nGetting this error in the Education Quals page in admin area. ",
+  "generated_at": "2026-08-18T11:33:44.411Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "An unexpected error occurred in the administrative area. Invalid object name 'Educations'.\n\nGetting this error in the Education Quals page in admin area. ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix DbContext Table Mapping",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "An unexpected error occurred in the administrative area. ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

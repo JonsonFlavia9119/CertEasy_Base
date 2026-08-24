@@ -16,6 +16,23 @@ namespace CertEasy.Services
             _passwordService = passwordService;
         }
 
+        private async Task CreateAccountForUserAsync(User user, string createdBy)
+        {
+            var account = new Account
+            {
+                UserID = user.Id,
+                UserName = user.Email,
+                Email = user.Email,
+                Status = 1, // Active
+                CreatedDate = DateTime.UtcNow,
+                CreatedBy = createdBy,
+                UpdatedDate = DateTime.UtcNow,
+                UpdatedBy = createdBy
+            };
+            _context.Accounts.Add(account);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<User?> RegisterAsync(User user, string password)
         {
             try
@@ -36,6 +53,9 @@ namespace CertEasy.Services
 
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
+
+                await CreateAccountForUserAsync(user, user.Email);
+
                 return user;
             }
             catch (Exception ex)
@@ -47,7 +67,7 @@ namespace CertEasy.Services
 
         public async Task<User?> AuthenticateAsync(string email, string password)
         {
-            var user = await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Email == email);
+            var user = await _context.Users.Include(u => u.Role).Include(u => u.Account).FirstOrDefaultAsync(u => u.Email == email);
             if (user == null || string.IsNullOrEmpty(user.PasswordHash))
             {
                 return null;
@@ -65,20 +85,18 @@ namespace CertEasy.Services
         {
             if (string.IsNullOrEmpty(windowsIdentifier)) return null;
 
-            var user = await _context.Users.Include(u => u.Role)
+            var user = await _context.Users.Include(u => u.Role).Include(u => u.Account)
                 .FirstOrDefaultAsync(u => u.Email == windowsIdentifier);
 
             if (user == null)
             {
-                // Check if it's the specific seeded admin email
                 if (windowsIdentifier.Equals("admin@certeasy.local", StringComparison.OrdinalIgnoreCase))
                 {
-                    user = await _context.Users.Include(u => u.Role)
+                    user = await _context.Users.Include(u => u.Role).Include(u => u.Account)
                         .FirstOrDefaultAsync(u => u.Email == "admin@certeasy.local");
                 }
                 else
                 {
-                    // Auto-register Windows users if they don't exist
                     string fullName = windowsIdentifier;
                     if (windowsIdentifier.Contains('\\'))
                     {
@@ -106,7 +124,7 @@ namespace CertEasy.Services
                         FirstName = firstName,
                         LastName = lastName,
                         Email = windowsIdentifier,
-                        PasswordHash = "", // No password for Windows users
+                        PasswordHash = "",
                         RoleID = (int)UserRole.User,
                         StatusID = (int)ApplicationStatus.New,
                         CreatedBy = "WindowsAuth",
@@ -116,9 +134,10 @@ namespace CertEasy.Services
                     };
                     _context.Users.Add(user);
                     await _context.SaveChangesAsync();
+
+                    await CreateAccountForUserAsync(user, "WindowsAuth");
                     
-                    // Reload to get navigation properties
-                    user = await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Id == user.Id);
+                    user = await _context.Users.Include(u => u.Role).Include(u => u.Account).FirstOrDefaultAsync(u => u.Id == user.Id);
                 }
             }
             return user;

@@ -1,0 +1,108 @@
+{
+  "task_id": 92,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "I have 2 requirements,\n\n\n\n1. I would like to add a new page called EducationQualification in admin dashboard\n\n\n\nThe table should be like this fields \nCREATE TABLE Education (\n    ID INT PRIMARY KEY IDENTITY,\n    EntityID INT NOT NULL, -- ApplicationID/AccountID \n    EntityTypeID INT NOT NULL, -- ApplicationID(200)/AccountID(201)\n    InstituteName NVARCHAR(100),\n    Qualification NVARCHAR(100),\n    DegreeName NVARCHAR(100),\n    CreatedDate DATETIME DEFAULT GETDATE(),\n    CreatedBy INT FOREIGN KEY REFERENCES Users(ID)\n);\n\n2. I would like to edit Certification table and add the below two fields \n\nEntityID INT NOT NULL, -- ApplicationID/AccountID \nEntityTypeID INT NOT NULL, -- ApplicationID(200)/AccountID(201)",
+  "generated_at": "2026-08-18T08:16:41.719Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I have 2 requirements,\n\n\n\n1. I would like to add a new page called EducationQualification in admin dashboard\n\n\n\nThe table should be like this fields \nCREATE TABLE Education (\n    ID INT PRIMARY KEY IDENTITY,\n    EntityID INT NOT NULL, -- ApplicationID/AccountID \n    EntityTypeID INT NOT NULL, -- ApplicationID(200)/AccountID(201)\n    InstituteName NVARCHAR(100),\n    Qualification NVARCHAR(100),\n   ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Models, DbContext, and Services",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml",
+        "CertEasy.Data/Migrations/20260818081628_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have 2 requirements,\n\n\n\n1. I would like to add a new pa...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "UI Layer — Controller and Views",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml",
+        "CertEasy.Data/Migrations/20260818081628_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have 2 requirements,\n\n\n\n1. I would like to add a new pa...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Views/Admin/CreateEducation.cshtml",
+        "CertEasy.Web/Views/Admin/EditEducation.cshtml",
+        "CertEasy.Web/Views/Admin/CreateCertification.cshtml",
+        "CertEasy.Web/Views/Admin/EditCertification.cshtml",
+        "CertEasy.Data/Migrations/20260818081628_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have 2 requirements,\n\n\n\n1. I would like to add a new page called EducationQual",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 10,
+    "validation_status": "passed"
+  }
+}
