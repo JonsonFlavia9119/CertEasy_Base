@@ -18,10 +18,7 @@ namespace CertEasy.Services
             return await _context.Certifications.Where(c => c.IsActive).ToListAsync();
         }
 
-        public async Task<IEnumerable<EducationLevel>> GetActiveEducationLevelsAsync()
-        {
-            return await _context.EducationLevels.Where(e => e.IsActive).ToListAsync();
-        }
+
 
         public async Task<bool> SubmitApplicationAsync(Application application)
         {
@@ -54,7 +51,6 @@ namespace CertEasy.Services
             return await _context.Applications
                 .Include(a => a.Certification)
                 .Include(a => a.Status)
-                .Include(a => a.EducationLevel)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
     }

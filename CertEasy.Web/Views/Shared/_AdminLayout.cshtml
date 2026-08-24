@@ -47,13 +47,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "ManageEducation" ? "active" : "")" asp-controller="Admin" asp-action="ManageEducation">
-                                Education Levels
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "ManageAddresses" ? "active" : "")" asp-controller="Admin" asp-action="ManageAddresses">
+                                Addresses
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "ManageAddresses" ? "active" : "")" asp-controller="Admin" asp-action="ManageAddresses">
-                                Addresses
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "ManageEducation" ? "active" : "")" asp-controller="Admin" asp-action="ManageEducation">
+                                Education Quals
                             </a>
                         </li>
                     </ul>

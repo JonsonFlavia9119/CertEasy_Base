@@ -1,0 +1,41 @@
+{
+  "task_id": 97,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Agent Summary\nI have explicitly mapped the Education entity to the Educations table in both the CertEasyDbContext and the Education model class. This dual-layer mapping (Fluent API and Data Annotations) ensures that Entity Framework correctly resolves the table name in the SQL Server database, effectively fixing the \"Invalid object name 'Educations'\" error encountered in the admin area.\n\nChanges Summary:\nBackend Implementation\nCertEasy.Data\\CertEasyDbContext.cs: Verified and reinforced the mapping in OnModelCreating using modelBuilder.Entity<Education>().ToTable(\"Educations\");. This ensures the database provider explicitly looks for the pluralized table name.\nCertEasy.Model\\Education.cs: Added/Verified the [Table(\"Educations\")] attribute to the Education class to provide metadata-level mapping consistency.\nThese changes provide a production-ready solution that prevents the database engine from failing to locate the table due to naming convention mismatches between the model and the actual schema.\n\ncsharp\nCopy\n// CertEasy.Data\\CertEasyDbContext.cs\nprotected override void OnModelCreating(ModelBuilder modelBuilder)\n{\n    base.OnModelCreating(modelBuilder);\n    // ...\n    modelBuilder.Entity<Education>().ToTable(\"Educations\");\n    // ...\n}\n\n// CertEasy.Model\\Education.cs\n[Table(\"Educations\")]\npublic class Education\n{\n    // ...\n}\n",
+  "generated_at": "2026-08-20T06:24:17.399Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Agent Summary\nI have explicitly mapped the Education entity to the Educations table in both the CertEasyDbContext and the Education model class. This dual-layer mapping (Fluent API and Data Annotations) ensures that Entity Framework correctly resolves the table name in the SQL Server database, effectively fixing the \"Invalid object name 'Educations'\" error encountered in the admin area.\n\nChanges S",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Verify and Finalize Backend Mapping",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Agent Summary\nI have explicitly mapped the Education enti..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "not_run"
+  }
+}

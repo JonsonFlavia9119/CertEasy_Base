@@ -1,0 +1,45 @@
+{
+  "task_id": 102,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "There is no entity type mapped to the table 'Accounts' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.",
+  "generated_at": "2026-08-21T10:58:12.790Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "There is no entity type mapped to the table 'Accounts' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — DbContext update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "There is no entity type mapped to the table 'Accounts' wh...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

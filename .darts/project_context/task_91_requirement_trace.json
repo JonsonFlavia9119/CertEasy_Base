@@ -1,0 +1,87 @@
+{
+  "task_id": 91,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "I would like to remove the educationlevel page from the admin dashboard. I will add it in the future\nPlease make the changes in the code and database as well",
+  "generated_at": "2026-08-18T07:08:16.749Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I would like to remove the educationlevel page from the admin dashboard. I will add it in the future\nPlease make the changes in the code and database as well",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Cleanup — Remove EducationLevel from DbContext, Services and Controller",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Web/Views/Admin/ManageEducation.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to remove the educationlevel page from the a..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "UI Cleanup — Remove EducationLevel link from Layout",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Web/Views/Admin/ManageEducation.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to remove the educationlevel page from the a..."
+    },
+    {
+      "task_id": "T-003",
+      "name": "Database Cleanup — Remove EducationLevel model file and view",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Shared/_AdminLayout.cshtml",
+        "CertEasy.Model/EducationLevel.cs",
+        "CertEasy.Web/Views/Admin/ManageEducation.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I would like to remove the educationlevel page from the a..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "not_run"
+  }
+}

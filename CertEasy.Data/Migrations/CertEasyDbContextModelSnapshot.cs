@@ -21,6 +21,67 @@ namespace CertEasy.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("CertEasy.Model.Account", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserID")
+                        .IsUnique();
+
+                    b.ToTable("Accounts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "System",
+                            CreatedDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Email = "admin@certeasy.local",
+                            Status = 1,
+                            UpdatedBy = "System",
+                            UpdatedDate = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            UserID = 1,
+                            UserName = "admin@certeasy.local"
+                        });
+                });
+
             modelBuilder.Entity("CertEasy.Model.Address", b =>
                 {
                     b.Property<int>("Id")
@@ -104,8 +165,6 @@ namespace CertEasy.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EducationLevelID");
-
                     b.HasIndex("StatusID");
 
                     b.HasIndex("UserID");
@@ -128,16 +187,16 @@ namespace CertEasy.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -159,88 +218,37 @@ namespace CertEasy.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
-                    b.Property<int>("EducationLevelId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FieldOfStudy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<int>("GraduationYear")
-                        .HasColumnType("int");
-
-                    b.Property<string>("InstitutionName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EducationLevelId");
-
-                    b.ToTable("Educations");
-                });
-
-            modelBuilder.Entity("CertEasy.Model.EducationLevel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
-
-                    b.Property<string>("InstitutionName")
-                        .HasColumnType("nvarchar(200)")
-                        .HasMaxLength(200);
+                    b.Property<string>("InstituteName")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EducationLevels");
+                    b.ToTable("Educations", (string)null);
                 });
 
             modelBuilder.Entity("CertEasy.Model.Log", b =>
@@ -395,14 +403,19 @@ namespace CertEasy.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CertEasy.Model.Application", b =>
+            modelBuilder.Entity("CertEasy.Model.Account", b =>
                 {
-                    b.HasOne("CertEasy.Model.EducationLevel", "EducationLevel")
-                        .WithMany()
-                        .HasForeignKey("EducationLevelID")
+                    b.HasOne("CertEasy.Model.User", "User")
+                        .WithOne("Account")
+                        .HasForeignKey("CertEasy.Model.Account", "UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CertEasy.Model.Application", b =>
+                {
                     b.HasOne("CertEasy.Model.Status", "Status")
                         .WithMany()
                         .HasForeignKey("StatusID")
@@ -415,22 +428,9 @@ namespace CertEasy.Data.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("EducationLevel");
-
                     b.Navigation("Status");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CertEasy.Model.Education", b =>
-                {
-                    b.HasOne("CertEasy.Model.EducationLevel", "EducationLevel")
-                        .WithMany()
-                        .HasForeignKey("EducationLevelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EducationLevel");
                 });
 
             modelBuilder.Entity("CertEasy.Model.User", b =>
@@ -456,6 +456,11 @@ namespace CertEasy.Data.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("CertEasy.Model.User", b =>
+                {
+                    b.Navigation("Account");
                 });
 #pragma warning restore 612, 618
         }

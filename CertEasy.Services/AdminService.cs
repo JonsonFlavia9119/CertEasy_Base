@@ -20,6 +20,12 @@ namespace CertEasy.Services
             _logger = logger;
         }
 
+        private async Task<int?> GetAccountIdForUserAsync(string userName)
+        {
+            var user = await _context.Users.Include(u => u.Account).FirstOrDefaultAsync(u => u.Email == userName);
+            return user?.Account?.Id;
+        }
+
         public async Task<IEnumerable<Application>> GetApplicationsInReviewAsync()
         {
             return await _context.Applications
@@ -67,7 +73,6 @@ namespace CertEasy.Services
             }
         }
 
-        // Certification Management
         public async Task<IEnumerable<Certification>> GetCertificationsAsync()
         {
             return await _context.Certifications.OrderBy(c => c.Name).ToListAsync();
@@ -86,6 +91,10 @@ namespace CertEasy.Services
                 certification.CreatedBy = adminUser;
                 certification.UpdatedDate = DateTime.UtcNow;
                 certification.UpdatedBy = adminUser;
+                
+                certification.EntityID = await GetAccountIdForUserAsync(adminUser);
+                certification.EntityTypeID = 201; // Admin Area
+
                 _context.Certifications.Add(certification);
                 return await _context.SaveChangesAsync() > 0;
             }
@@ -155,93 +164,6 @@ namespace CertEasy.Services
             }
         }
 
-        // Education Level Management
-        public async Task<IEnumerable<EducationLevel>> GetEducationLevelsAsync()
-        {
-            return await _context.EducationLevels.OrderBy(e => e.Name).ToListAsync();
-        }
-
-        public async Task<EducationLevel?> GetEducationLevelByIdAsync(int id)
-        {
-            return await _context.EducationLevels.FindAsync(id);
-        }
-
-        public async Task<bool> AddEducationLevelAsync(EducationLevel level, string adminUser)
-        {
-            try
-            {
-                level.CreatedDate = DateTime.UtcNow;
-                level.CreatedBy = adminUser;
-                level.UpdatedDate = DateTime.UtcNow;
-                level.UpdatedBy = adminUser;
-                _context.EducationLevels.Add(level);
-                return await _context.SaveChangesAsync() > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error adding education level");
-                return false;
-            }
-        }
-
-        public async Task<bool> UpdateEducationLevelAsync(EducationLevel level, string adminUser)
-        {
-            try
-            {
-                var existing = await _context.EducationLevels.FindAsync(level.Id);
-                if (existing == null) return false;
-
-                existing.Name = level.Name;
-                existing.Description = level.Description;
-                existing.IsActive = level.IsActive;
-                existing.UpdatedDate = DateTime.UtcNow;
-                existing.UpdatedBy = adminUser;
-
-                return await _context.SaveChangesAsync() > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error updating education level {Id}", level.Id);
-                return false;
-            }
-        }
-
-        public async Task<bool> DeleteEducationLevelAsync(int id)
-        {
-            try
-            {
-                var item = await _context.EducationLevels.FindAsync(id);
-                if (item == null) return false;
-                _context.EducationLevels.Remove(item);
-                return await _context.SaveChangesAsync() > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error deleting education level {Id}", id);
-                return false;
-            }
-        }
-
-        public async Task<bool> ToggleEducationLevelStatusAsync(int id, string adminUser)
-        {
-            try
-            {
-                var level = await _context.EducationLevels.FindAsync(id);
-                if (level == null) return false;
-
-                level.IsActive = !level.IsActive;
-                level.UpdatedDate = DateTime.UtcNow;
-                level.UpdatedBy = adminUser;
-                return await _context.SaveChangesAsync() > 0;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error toggling education level status {Id}", id);
-                return false;
-            }
-        }
-
-        // Address Management
         public async Task<IEnumerable<Address>> GetAllAddressesAsync() => await _context.Addresses.ToListAsync();
         public async Task<Address?> GetAddressByIdAsync(int id) => await _context.Addresses.FindAsync(id);
         public async Task<bool> AddAddressAsync(Address address, string adminUser)
@@ -295,9 +217,16 @@ namespace CertEasy.Services
             }
         }
 
-        // Education Entry Management
-        public async Task<IEnumerable<Education>> GetAllEducationsAsync() => await _context.Educations.Include(e => e.EducationLevel).ToListAsync();
-        public async Task<Education?> GetEducationByIdAsync(int id) => await _context.Educations.FindAsync(id);
+        public async Task<IEnumerable<Education>> GetAllEducationAsync()
+        {
+            return await _context.Educations.OrderByDescending(e => e.CreatedDate).ToListAsync();
+        }
+
+        public async Task<Education?> GetEducationByIdAsync(int id)
+        {
+            return await _context.Educations.FindAsync(id);
+        }
+
         public async Task<bool> AddEducationAsync(Education education, string adminUser)
         {
             try
@@ -306,15 +235,20 @@ namespace CertEasy.Services
                 education.CreatedBy = adminUser;
                 education.UpdatedDate = DateTime.UtcNow;
                 education.UpdatedBy = adminUser;
+
+                education.EntityID = await GetAccountIdForUserAsync(adminUser);
+                education.EntityTypeID = 201; // Admin Area
+
                 _context.Educations.Add(education);
                 return await _context.SaveChangesAsync() > 0;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error adding education");
+                _logger.LogError(ex, "Error adding education qualification");
                 return false;
             }
         }
+
         public async Task<bool> UpdateEducationAsync(Education education, string adminUser)
         {
             try
@@ -322,17 +256,22 @@ namespace CertEasy.Services
                 var existing = await _context.Educations.FindAsync(education.Id);
                 if (existing == null) return false;
 
-                _context.Entry(existing).CurrentValues.SetValues(education);
+                existing.Name = education.Name;
+                existing.Description = education.Description;
+                existing.IsActive = education.IsActive;
+                existing.InstituteName = education.InstituteName;
                 existing.UpdatedDate = DateTime.UtcNow;
                 existing.UpdatedBy = adminUser;
+
                 return await _context.SaveChangesAsync() > 0;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating education {Id}", education.Id);
+                _logger.LogError(ex, "Error updating education qualification {Id}", education.Id);
                 return false;
             }
         }
+
         public async Task<bool> DeleteEducationAsync(int id)
         {
             try
@@ -344,7 +283,7 @@ namespace CertEasy.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error deleting education {Id}", id);
+                _logger.LogError(ex, "Error deleting education qualification {Id}", id);
                 return false;
             }
         }

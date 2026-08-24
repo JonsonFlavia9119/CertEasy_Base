@@ -93,17 +93,19 @@
                                     <thead>
                                         <tr>
                                             <th>Institution</th>
-                                            <th>Level</th>
-                                            <th>Field</th>
-                                            <th>Year</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody data-bind="foreach: educations">
                                         <tr>
                                             <td data-bind="text: institution"></td>
-                                            <td data-bind="text: educationLevel"></td>
-                                            <td data-bind="text: fieldOfStudy"></td>
-                                            <td data-bind="text: graduationYear"></td>
+                                            <td data-bind="text: name"></td>
+                                            <td data-bind="text: description"></td>
+                                            <td>
+                                                <span class="badge" data-bind="text: isActive ? 'Active' : 'Inactive', css: isActive ? 'bg-success' : 'bg-secondary'"></span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -153,7 +155,7 @@
             self.educations = ko.observableArray([
                 @foreach (var edu in Model.Educations)
                 {
-                    @: { institution: '@edu.InstitutionName', educationLevel: '@edu.EducationLevel?.Name', fieldOfStudy: '@edu.FieldOfStudy', graduationYear: '@edu.GraduationYear' },
+                    @: { institution: '@edu.InstituteName', name: '@edu.Name', description: '@edu.Description', isActive: @edu.IsActive.ToString().ToLower() },
                 }
             ]);
 

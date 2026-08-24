@@ -28,12 +28,12 @@ namespace CertEasy.Web.Controllers
             var applications = await _adminService.GetApplicationsInReviewAsync();
             var addresses = await _adminService.GetAllAddressesAsync();
             var certifications = await _adminService.GetCertificationsAsync();
-            var educations = await _adminService.GetAllEducationsAsync();
+            var educations = await _adminService.GetAllEducationAsync();
 
             var viewModel = new AdminDashboardViewModel
-            {
-                PendingApplications = applications,
-                Addresses = addresses,
+            { 
+                PendingApplications = applications, 
+                Addresses = addresses, 
                 Certifications = certifications,
                 Educations = educations
             };
@@ -149,97 +149,6 @@ namespace CertEasy.Web.Controllers
             return RedirectToAction(nameof(ManageCertifications));
         }
 
-        public async Task<IActionResult> ManageEducation()
-        {
-            try 
-            {
-                var levels = await _adminService.GetEducationLevelsAsync();
-                return View(levels);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error retrieving education levels");
-                throw; // Handled by AdminExceptionFilter
-            }
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddEducationLevel(EducationLevel model)
-        {
-            // Remove non-model data that might invalidate state if not present
-            ModelState.Remove(nameof(model.CreatedBy));
-            ModelState.Remove(nameof(model.UpdatedBy));
-
-            if (ModelState.IsValid)
-            {
-                var result = await _adminService.AddEducationLevelAsync(model, User.Identity.Name ?? "Unknown");
-                if (result) 
-                {
-                    TempData["SuccessMessage"] = "Education level added successfully.";
-                }
-                else
-                {
-                    TempData["ErrorMessage"] = "Failed to add education level.";
-                }
-            }
-            else
-            {
-                 TempData["ErrorMessage"] = "Invalid data provided.";
-            }
-            return RedirectToAction(nameof(ManageEducation));
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditEducationLevel(EducationLevel model)
-        {
-            ModelState.Remove(nameof(model.CreatedBy));
-            ModelState.Remove(nameof(model.UpdatedBy));
-
-            if (ModelState.IsValid)
-            {
-                var result = await _adminService.UpdateEducationLevelAsync(model, User.Identity.Name ?? "Unknown");
-                if (result) 
-                {
-                    TempData["SuccessMessage"] = "Education level updated successfully.";
-                }
-                else
-                {
-                    TempData["ErrorMessage"] = "Failed to update education level.";
-                }
-            }
-            else
-            {
-                TempData["ErrorMessage"] = "Invalid data provided.";
-            }
-            return RedirectToAction(nameof(ManageEducation));
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteEducationLevel(int id)
-        {
-            var result = await _adminService.DeleteEducationLevelAsync(id);
-            if (result)
-            {
-                TempData["SuccessMessage"] = "Education level deleted successfully.";
-            }
-            else
-            {
-                TempData["ErrorMessage"] = "Failed to delete education level.";
-            }
-            return RedirectToAction(nameof(ManageEducation));
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ToggleEducation(int id)
-        {
-            await _adminService.ToggleEducationLevelStatusAsync(id, User.Identity.Name ?? "Unknown");
-            return RedirectToAction(nameof(ManageEducation));
-        }
-
         // Address Management
         public async Task<IActionResult> ManageAddresses()
         {
@@ -307,6 +216,75 @@ namespace CertEasy.Web.Controllers
                 TempData["ErrorMessage"] = "Failed to delete address.";
             }
             return RedirectToAction(nameof(ManageAddresses));
+        }
+
+        // Education Qualification Management
+        public async Task<IActionResult> ManageEducation()
+        {
+            var education = await _adminService.GetAllEducationAsync();
+            return View(education);
+        }
+
+        public IActionResult CreateEducation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateEducation(Education model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.AddEducationAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Education qualification created successfully.";
+                    return RedirectToAction(nameof(ManageEducation));
+                }
+                ModelState.AddModelError("", "Failed to create education qualification.");
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> EditEducation(int id)
+        {
+            var education = await _adminService.GetEducationByIdAsync(id);
+            if (education == null) return NotFound();
+            return View(education);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditEducation(Education model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.UpdateEducationAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Education qualification updated successfully.";
+                    return RedirectToAction(nameof(ManageEducation));
+                }
+                ModelState.AddModelError("", "Failed to update education qualification.");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEducation(int id)
+        {
+            var result = await _adminService.DeleteEducationAsync(id);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Education qualification deleted successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to delete education qualification.";
+            }
+            return RedirectToAction(nameof(ManageEducation));
         }
     }
 }

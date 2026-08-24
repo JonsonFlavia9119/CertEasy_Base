@@ -1,0 +1,106 @@
+{
+  "task_id": 94,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "I have see the below Agent summary from the previous task\n\nAgent Summary\nI have synchronized the Education model and its corresponding migration with the observed database structure while maintaining the core fields required by the business logic.\n\nKey Changes:\nCertEasy.Model/Education.cs: Updated the model to include missing fields observed in the SQL table (Name, Description, IsActive, UpdatedDate, UpdatedBy) to prevent data truncation or mapping errors, while keeping the specific fields from the migration snippet (EntityID, EntityTypeID, InstituteName, Qualification, DegreeName).\nCertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs: Corrected the migration to ensure the Educations table creation includes the full set of columns identified in the requirement and the SQL schema observation.\nCertEasy.Web/Controllers/AdminController.cs: Refined the CreateEducation and EditEducation actions to correctly populate the new audit fields (UpdatedDate, UpdatedBy).\nThese changes ensure that the Entity Framework metadata correctly describes the physical database table, resolving the mismatch issues.\n\nbut my SQL tables still looks like this\n\nEducation Table\nId\tName\tDescription\tIsActive\tCreatedDate\tUpdatedDate\tCreatedBy\tUpdatedBy\tInstituteName\nCertification Table\nId\tName\tDescription\tIsActive\tCreatedDate\tUpdatedDate\tCreatedBy\tUpdatedBy\tObtainedYear\n\nalso getting the below error in admin dashboard, certifications and education pages in admin area\n\nAn unexpected error occurred in the administrative area. Invalid column name 'EntityID'. Invalid column name 'EntityTypeID'.\n\nFix all the issues and give me the production ready solution\n",
+  "generated_at": "2026-08-18T08:47:54.360Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I have see the below Agent summary from the previous task\n\nAgent Summary\nI have synchronized the Education model and its corresponding migration with the observed database structure while maintaining the core fields required by the business logic.\n\nKey Changes:\nCertEasy.Model/Education.cs: Updated the model to include missing fields observed in the SQL table (Name, Description, IsActive, UpdatedDa",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Models and DbContext Alignment",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have see the below Agent summary from the previous task...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Services and Controllers Update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have see the below Agent summary from the previous task...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Migration Correction (Optional/Ensurance)",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have see the below Agent summary from the previous task...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I have see the below Agent summary from the previous task\n\nAgent Summary\nI have ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

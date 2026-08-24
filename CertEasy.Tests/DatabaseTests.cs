@@ -1,4 +1,5 @@
 using CertEasy.Model;
+using CertEasy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Xunit;
@@ -60,7 +61,7 @@ namespace CertEasy.Tests
             Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(User)));
             Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(Status)));
             Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(Certification)));
-            Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(EducationLevel)));
+            Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(Education)));
             Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(Address)));
             Assert.True(typeof(BaseEntity).IsAssignableFrom(typeof(Application)));
         }

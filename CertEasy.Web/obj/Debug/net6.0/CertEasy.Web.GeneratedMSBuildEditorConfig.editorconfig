@@ -12,109 +12,105 @@ build_property.EntryPointFilePath =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CertEasy.Web
 build_property.RootNamespace = CertEasy.Web
-build_property.ProjectDir = C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web\
+build_property.ProjectDir = C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase2\CertEasy.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase1\CertEasy.Web
+build_property.MSBuildProjectDirectory = C:\DARTS-development-environment\sandbox\kjohnson\CertEasy_Admin_Phase2\CertEasy.Web
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 6.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Account/AccessDenied.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Account/Login.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Account/Register.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/CreateAddress.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/CreateAddress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQWRkcmVzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/CreateCertification.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/CreateCertification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2VydGlmaWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/CreateEducation.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/CreateEducation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlRWR1Y2F0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/EditAddress.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/EditAddress.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEFkZHJlc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/EditCertification.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/EditCertification.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENlcnRpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/EditEducation.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/EditEducation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEVkdWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/Error.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/Index.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/ManageAddresses.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/ManageAddresses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQWRkcmVzc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/ManageCertifications.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/ManageCertifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ2VydGlmaWNhdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/ManageEducation.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/ManageEducation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlRWR1Y2F0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/ManageEducationEntries.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlRWR1Y2F0aW9uRW50cmllcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Admin/_ViewStart.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Home/Index.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Shared/Error.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Shared/_AdminLayout.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Shared/_Layout.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/Workflow/Apply.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/Workflow/Apply.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya2Zsb3dcQXBwbHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/_ViewImports.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase1/CertEasy.Web/Views/_ViewStart.cshtml]
+[C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

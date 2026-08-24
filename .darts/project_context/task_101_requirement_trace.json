@@ -1,0 +1,81 @@
+{
+  "task_id": 101,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Title: Add Account entity and assign EntityId/EntityTypeId to Certification and Education\n\nUse the project's existing EF Core, entity, relationship, service, DTO, and migration patterns.\n\nRequirements:\n\n1. Account\n- Create a new Account table/entity with:\n  Id\n  UserName\n  Email\n  UserId\n  Status\n  CreatedOn\n  UpdatedOn\n  CreatedBy\n  UpdatedBy\n- Establish a one-to-one relationship: User -> Account.\n- Each User must have exactly one Account. Do not allow duplicate Accounts for the same User.\n- When a new User is created, automatically create the corresponding Account using the existing User creation workflow.\n- Add the required EF Core migration.\n- Follow the project's existing conventions for keys, data types, nullability, indexes, timestamps, and relationships.\n\n2. Certification and Education\n- When created from the Admin area:\n  EntityId = AccountId\n  EntityTypeId = 201\n- When created from the Application process:\n  EntityId = ApplicationId\n  EntityTypeId = 200\n- Do not implement Application-process changes if that workflow does not currently exist; prepare the model/database structure without changing unrelated functionality.\n- Preserve existing data and behavior.\n\n3. Code changes\n- Update DTOs/view models/services only where required by the existing architecture.\n- Reuse existing patterns; do not introduce a new architectural pattern.\n- Do not make unrelated changes.\n\n4. Validation\n- Build the solution.\n- Validate EF Core relationships and migration.\n- Verify that existing User, Certification, and Education functionality is not broken.\n- Check that duplicate Accounts cannot be created for the same User.\n\nOutput:\n- List all files changed.\n- Provide migration name(s).\n- Briefly explain the User -> Account relationship.\n- Briefly explain how EntityId/EntityTypeId are assigned.\n- Report any assumptions or issues found.",
+  "generated_at": "2026-08-21T04:52:32.209Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Title: Add Account entity and assign EntityId/EntityTypeId to Certification and Education\n\nUse the project's existing EF Core, entity, relationship, service, DTO, and migration patterns.\n\nRequirements:\n\n1. Account\n- Create a new Account table/entity with:\n  Id\n  UserName\n  Email\n  UserId\n  Status\n  CreatedOn\n  UpdatedOn\n  CreatedBy\n  UpdatedBy\n- Establish a one-to-one relationship: User -> Account",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Models + DbContext + Services",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Title: Add Account entity and assign EntityId/EntityTypeI...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Migrations — Create and Apply",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Title: Add Account entity and assign EntityId/EntityTypeI...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Title: Add Account entity and assign EntityId/EntityTypeId to Certification and ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

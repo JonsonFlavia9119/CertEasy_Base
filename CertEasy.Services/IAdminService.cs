@@ -18,14 +18,6 @@ namespace CertEasy.Services
         Task<bool> DeleteCertificationAsync(int id);
         Task<bool> ToggleCertificationStatusAsync(int id, string adminUser);
 
-        // Education Level Management
-        Task<IEnumerable<EducationLevel>> GetEducationLevelsAsync();
-        Task<EducationLevel?> GetEducationLevelByIdAsync(int id);
-        Task<bool> AddEducationLevelAsync(EducationLevel level, string adminUser);
-        Task<bool> UpdateEducationLevelAsync(EducationLevel level, string adminUser);
-        Task<bool> DeleteEducationLevelAsync(int id);
-        Task<bool> ToggleEducationLevelStatusAsync(int id, string adminUser);
-
         // Address Management
         Task<IEnumerable<Address>> GetAllAddressesAsync();
         Task<Address?> GetAddressByIdAsync(int id);
@@ -33,8 +25,8 @@ namespace CertEasy.Services
         Task<bool> UpdateAddressAsync(Address address, string adminUser);
         Task<bool> DeleteAddressAsync(int id);
 
-        // Education Entry Management (Marked for removal from Admin support flow)
-        Task<IEnumerable<Education>> GetAllEducationsAsync();
+        // Education Management
+        Task<IEnumerable<Education>> GetAllEducationAsync();
         Task<Education?> GetEducationByIdAsync(int id);
         Task<bool> AddEducationAsync(Education education, string adminUser);
         Task<bool> UpdateEducationAsync(Education education, string adminUser);

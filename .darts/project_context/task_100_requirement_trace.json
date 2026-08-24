@@ -1,0 +1,62 @@
+{
+  "task_id": 100,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Add nullable int fields EntityID and EntityTypeID to the existing Certification and Eductions entity/table.\n\nUse the project's existing EF Core patterns and migration approach.\n\nRequirements:\n- Update the entity/model.\n- Add an EF Core migration for the existing Certification table.\n- Update DTOs/view models only where required by the existing architecture.\n- Build and validate the solution.\n- Report the files changed and migration name.",
+  "generated_at": "2026-08-20T11:24:19.825Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Add nullable int fields EntityID and EntityTypeID to the existing Certification and Eductions entity/table.\n\nUse the project's existing EF Core patterns and migration approach.\n\nRequirements:\n- Update the entity/model.\n- Add an EF Core migration for the existing Certification table.\n- Update DTOs/view models only where required by the existing architecture.\n- Build and validate the solution.\n- Rep",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Update Models and Migration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/Migrations/20260820112311_AddEntityFieldsToCertificationAndEducation.cs",
+        "CertEasy.Data/Migrations/20260820112311_AddEntityFieldsToCertificationAndEducation.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Add nullable int fields EntityID and EntityTypeID to the ..."
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Update DbContext Seed",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Certification.cs",
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/Migrations/20260820112311_AddEntityFieldsToCertificationAndEducation.cs",
+        "CertEasy.Data/Migrations/20260820112311_AddEntityFieldsToCertificationAndEducation.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Add nullable int fields EntityID and EntityTypeID to the ..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 4,
+    "validation_status": "not_run"
+  }
+}

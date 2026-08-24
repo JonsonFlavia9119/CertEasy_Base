@@ -1,0 +1,66 @@
+{
+  "task_id": 96,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Agent Summary\nThe issue was caused by a mismatch between the entity configuration in the CertEasyDbContext and the actual table name in the database. The Education entity was previously commented out for explicit table mapping, leading to potential inconsistency or failure if the database expected 'Educations' specifically. I have explicitly mapped the Education entity to the Educations table in the OnModelCreating method to ensure it correctly resolves.\n\nChanges Made:\nBackend Implementation\nCertEasy.Data\\CertEasyDbContext.cs:\nExplicitly mapped the Education entity to the Educations table using modelBuilder.Entity<Education>().ToTable(\"Educations\");. This ensures that Entity Framework looks for the correct table name in the SQL Server database, resolving the \"Invalid object name 'Educations'\" error.\nNo changes were required in the AdminController or frontend views as they were already correctly referencing the service and model; the root cause was the database mapping.\n\nThis issue still exists. I could see the An unexpected error occurred in the administrative area. Invalid object name 'Educations'. in the Education Quals page in admin area. Please do the needed changes and fix this issue as like production ready solution",
+  "generated_at": "2026-08-18T11:50:30.248Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Agent Summary\nThe issue was caused by a mismatch between the entity configuration in the CertEasyDbContext and the actual table name in the database. The Education entity was previously commented out for explicit table mapping, leading to potential inconsistency or failure if the database expected 'Educations' specifically. I have explicitly mapped the Education entity to the Educations table in t",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Fix Entity Mapping",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Data/CertEasyDbContext.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Model/Education.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Agent Summary\nThe issue was caused by a mismatch between ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Data/CertEasyDbContext.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_Admin_Phase2/CertEasy.Model/Education.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Agent Summary\nThe issue was caused by a mismatch between the entity configuratio",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "passed"
+  }
+}

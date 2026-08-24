@@ -1,0 +1,68 @@
+{
+  "task_id": 93,
+  "task_name": "CertEasy_Admin_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "There is a mismatch between EF and SQL table\n\nEF code in migration looks like this\n\n                    ID = table.Column<int>(type: \"int\", nullable: false)\n                        .Annotation(\"SqlServer:Identity\", \"1, 1\"),\n                    EntityID = table.Column<int>(type: \"int\", nullable: false),\n                    EntityTypeID = table.Column<int>(type: \"int\", nullable: false),\n                    InstituteName = table.Column<string>(type: \"nvarchar(100)\", maxLength: 100, nullable: true),\n                    Qualification = table.Column<string>(type: \"nvarchar(100)\", maxLength: 100, nullable: true),\n                    DegreeName = table.Column<string>(type: \"nvarchar(100)\", maxLength: 100, nullable: true),\n                    CreatedDate = table.Column<DateTime>(type: \"datetime2\", nullable: false),\n                    CreatedBy = table.Column<int>(type: \"int\", nullable: true)\n\nbut the SQL table looks like this\n\nId\tName\tDescription\tIsActive\tCreatedDate\tUpdatedDate\tCreatedBy\tUpdatedBy\tInstituteName\n\nlooks like the migration have not been applied correctly. Take a input from my previous task and follow the requirements",
+  "generated_at": "2026-08-18T08:28:07.751Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "There is a mismatch between EF and SQL table\n\nEF code in migration looks like this\n\n                    ID = table.Column<int>(type: \"int\", nullable: false)\n                        .Annotation(\"SqlServer:Identity\", \"1, 1\"),\n                    EntityID = table.Column<int>(type: \"int\", nullable: false),\n                    EntityTypeID = table.Column<int>(type: \"int\", nullable: false),\n            ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Align Models and Re-generate Migration logic",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs",
+        "CertEasy.Web/Controllers/AdminController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There is a mismatch between EF and SQL table\n\nEF code in ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Update AdminController to handle corrected Model",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/Education.cs",
+        "CertEasy.Data/Migrations/20260818081632_AddEducationAndEditCertification.cs",
+        "CertEasy.Web/Controllers/AdminController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "There is a mismatch between EF and SQL table\n\nEF code in ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

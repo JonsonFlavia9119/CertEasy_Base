@@ -21,8 +21,10 @@ namespace CertEasy.Model
         [ForeignKey("AddressID")]
         public virtual Address? Address { get; set; }
 
-        public int StatusID { get; set; } = (int)ApplicationStatus.New;
+        public int StatusID { get; set; }
         [ForeignKey("StatusID")]
         public virtual Status? Status { get; set; }
+
+        public virtual Account? Account { get; set; }
     }
 }
