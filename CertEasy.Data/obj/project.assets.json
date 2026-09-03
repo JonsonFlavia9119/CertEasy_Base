@@ -2137,11 +2137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\CertEasy.Data.csproj",
+      "projectUniqueName": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\CertEasy.Data.csproj",
       "projectName": "CertEasy.Data",
-      "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\CertEasy.Data.csproj",
+      "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\CertEasy.Data.csproj",
       "packagesPath": "C:\\Users\\kjohnson\\.nuget\\packages\\",
-      "outputPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\obj\\",
+      "outputPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2163,8 +2163,8 @@
           "framework": "net6.0",
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\CertEasy.Model.csproj": {
-              "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\CertEasy.Model.csproj"
+            "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\CertEasy.Model.csproj": {
+              "projectPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\CertEasy.Model.csproj"
             }
           }
         }

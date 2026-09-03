@@ -1,61 +1,73 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\",
+  "WorkspaceRootPath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|solutionrelative:certeasy.services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\.darts\\project_context\\task_124_requirement_trace.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.darts\\project_context\\task_124_requirement_trace.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.data\\migrations\\20260821044635_addaccountentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\20260821044635_addaccountentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.data\\migrations\\certeasydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\certeasydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.data\\migrations\\20260821044635_addaccountentity.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\migrations\\20260821044635_addaccountentity.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\20260821044635_addaccountentity.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.data\\certeasydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\migrations\\certeasydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\certeasydbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\migrations\\20260902070615_addexamstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\20260902070615_addexamstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\views\\admin\\manageexams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\views\\admin\\manageexams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\certeasydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\certeasydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|solutionrelative:certeasy.services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\migrations\\20260821044635_addaccountentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\20260821044635_addaccountentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|solutionrelative:certeasy.model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.web\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.data\\migrations\\20260820070811_renameeducationlevelstoeducations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.data\\migrations\\20260820070811_renameeducationlevelstoeducations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D4444444-4444-4444-4444-444444444444}|CertEasy.Data\\CertEasy.Data.csproj|solutionrelative:certeasy.data\\migrations\\20260820070811_renameeducationlevelstoeducations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.web\\controllers\\workflowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.web\\controllers\\workflowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3333333-3333-3333-3333-333333333333}|CertEasy.Web\\CertEasy.Web.csproj|solutionrelative:certeasy.web\\controllers\\workflowcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.services\\workflowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.services\\workflowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2222222-2222-2222-2222-222222222222}|CertEasy.Services\\CertEasy.Services.csproj|solutionrelative:certeasy.services\\workflowservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_admin_phase2\\certeasy.model\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|c:\\darts-development-environment\\sandbox\\kjohnson\\certeasy_applicationprocess_phase2\\certeasy.model\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1111111-1111-1111-1111-111111111111}|CertEasy.Model\\CertEasy.Model.csproj|solutionrelative:certeasy.model\\application.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -66,83 +78,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "CertEasy.Web\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "CertEasy.Web\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAcwCoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T04:53:41.505Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CertEasyDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
-              "RelativeToolTip": "CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
-              "ViewState": "AgIAALABAAAAAAAAAAAmwNQBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T06:47:16.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20260821044635_AddAccountEntity.Designer.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
-              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
-              "RelativeToolTip": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T06:47:13.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "20260821044635_AddAccountEntity.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
-              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
-              "RelativeToolTip": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAiwCEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-24T06:47:08.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Account.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\Account.cs",
-              "RelativeDocumentMoniker": "CertEasy.Model\\Account.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\Account.cs",
-              "RelativeToolTip": "CertEasy.Model\\Account.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-21T05:14:57.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "20260820070811_RenameEducationLevelsToEducations.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
               "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
               "RelativeToolTip": "CertEasy.Data\\Migrations\\20260820070811_RenameEducationLevelsToEducations.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -150,24 +102,146 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Services\\AdminService.cs",
-              "RelativeDocumentMoniker": "CertEasy.Services\\AdminService.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Services\\AdminService.cs",
-              "RelativeToolTip": "CertEasy.Services\\AdminService.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAwwAsAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CertEasyDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
+              "RelativeToolTip": "CertEasy.Data\\Migrations\\CertEasyDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAAwAwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-20T06:34:05.296Z",
+              "WhenOpened": "2026-08-24T06:47:16.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Program.cs",
+              "RelativeDocumentMoniker": "CertEasy.Web\\Program.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Program.cs",
+              "RelativeToolTip": "CertEasy.Web\\Program.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAiwEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T07:18:55.727Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20260902070615_AddExamsTable.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260902070615_AddExamsTable.cs",
+              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260902070615_AddExamsTable.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260902070615_AddExamsTable.cs",
+              "RelativeToolTip": "CertEasy.Data\\Migrations\\20260902070615_AddExamsTable.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAiwCwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T09:42:35.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260821044635_AddAccountEntity.Designer.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
+              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
+              "RelativeToolTip": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.Designer.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwCwAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T06:47:13.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "task_124_requirement_trace.json",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\.darts\\project_context\\task_124_requirement_trace.json",
+              "RelativeDocumentMoniker": ".darts\\project_context\\task_124_requirement_trace.json",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\.darts\\project_context\\task_124_requirement_trace.json",
+              "RelativeToolTip": ".darts\\project_context\\task_124_requirement_trace.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-02T07:04:02.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CertEasy.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CertEasy.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAiwDsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T04:53:41.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\Account.cs",
+              "RelativeDocumentMoniker": "CertEasy.Model\\Account.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\Account.cs",
+              "RelativeToolTip": "CertEasy.Model\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T05:14:57.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20260821044635_AddAccountEntity.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
+              "RelativeDocumentMoniker": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
+              "RelativeToolTip": "CertEasy.Data\\Migrations\\20260821044635_AddAccountEntity.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwCEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T06:47:08.504Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageExams.cshtml",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Views\\Admin\\ManageExams.cshtml",
+              "RelativeDocumentMoniker": "CertEasy.Web\\Views\\Admin\\ManageExams.cshtml",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Views\\Admin\\ManageExams.cshtml",
+              "RelativeToolTip": "CertEasy.Web\\Views\\Admin\\ManageExams.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-02T08:41:42.988Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "CertEasy.Services\\AdminService.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Services\\AdminService.cs",
+              "RelativeToolTip": "CertEasy.Services\\AdminService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAwwAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T06:34:05.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CertEasyDbContext.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\CertEasyDbContext.cs",
+              "RelativeDocumentMoniker": "CertEasy.Data\\CertEasyDbContext.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Data\\CertEasyDbContext.cs",
+              "RelativeToolTip": "CertEasy.Data\\CertEasyDbContext.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAcwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-18T07:19:15.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\AdminController.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "CertEasy.Web\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\AdminController.cs",
               "RelativeToolTip": "CertEasy.Web\\Controllers\\AdminController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAUwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -175,36 +249,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Program.cs",
-              "RelativeDocumentMoniker": "CertEasy.Web\\Program.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Program.cs",
-              "RelativeToolTip": "CertEasy.Web\\Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAiwEcAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T07:18:55.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CertEasyDbContext.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\CertEasyDbContext.cs",
-              "RelativeDocumentMoniker": "CertEasy.Data\\CertEasyDbContext.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Data\\CertEasyDbContext.cs",
-              "RelativeToolTip": "CertEasy.Data\\CertEasyDbContext.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAmwGwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-18T07:19:15.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Views\\Admin\\Index.cshtml",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "CertEasy.Web\\Views\\Admin\\Index.cshtml",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Views\\Admin\\Index.cshtml",
               "RelativeToolTip": "CertEasy.Web\\Views\\Admin\\Index.cshtml",
               "ViewState": "AgIAAIkAAAAAAAAAAAAswJsAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -212,11 +261,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "WorkflowController.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\WorkflowController.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\WorkflowController.cs",
               "RelativeDocumentMoniker": "CertEasy.Web\\Controllers\\WorkflowController.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\Controllers\\WorkflowController.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\Controllers\\WorkflowController.cs",
               "RelativeToolTip": "CertEasy.Web\\Controllers\\WorkflowController.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAswDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -224,11 +273,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "WorkflowService.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Services\\WorkflowService.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Services\\WorkflowService.cs",
               "RelativeDocumentMoniker": "CertEasy.Services\\WorkflowService.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Services\\WorkflowService.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Services\\WorkflowService.cs",
               "RelativeToolTip": "CertEasy.Services\\WorkflowService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAwwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -236,11 +285,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Application.cs",
-              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\Application.cs",
+              "DocumentMoniker": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\Application.cs",
               "RelativeDocumentMoniker": "CertEasy.Model\\Application.cs",
-              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\Application.cs",
+              "ToolTip": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\Application.cs",
               "RelativeToolTip": "CertEasy.Model\\Application.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAjwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

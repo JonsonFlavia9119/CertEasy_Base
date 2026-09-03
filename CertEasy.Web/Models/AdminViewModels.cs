@@ -9,5 +9,6 @@ namespace CertEasy.Web.Models
         public IEnumerable<Address> Addresses { get; set; } = new List<Address>();
         public IEnumerable<Certification> Certifications { get; set; } = new List<Certification>();
         public IEnumerable<Education> Educations { get; set; } = new List<Education>();
+        public IEnumerable<Exam> Exams { get; set; } = new List<Exam>();
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ogpq172+2kk=",
+  "dgSpecHash": "7j3lk5r29tc=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Services\\CertEasy.Services.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Services\\CertEasy.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.0\\microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",

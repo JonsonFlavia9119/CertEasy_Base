@@ -24,23 +24,34 @@
                 <button class="btn btn-primary" data-bind="click: nextStep">Next</button>
             </div>
 
-            <!-- Step 2: Certification Selection -->
+            <!-- Step 2: Exam Selection -->
             <div data-bind="visible: currentStep() === 2">
-                <h4>Step 2: Select Certification</h4>
+                <h4>Step 2: Select Exam Session</h4>
+                <div class="mb-3">
+                    <label class="form-label">Choose Exam Center & Slot</label>
+                    <select class="form-select" data-bind="options: exams, optionsText: function(item) { return item.examName + ' - ' + item.examCenter + ' (' + new Date(item.examSlot).toLocaleString() + ')'; }, optionsValue: 'id', value: selectedExamID, optionsCaption: 'Choose...' "></select>
+                </div>
+                <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
+                <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedExamID">Next</button>
+            </div>
+
+            <!-- Step 3: Certification Selection -->
+            <div data-bind="visible: currentStep() === 3">
+                <h4>Step 3: Select Certification</h4>
                 <div class="mb-3">
                     <label class="form-label">Choose Certification</label>
-                    <select class="form-select" data-bind="options: certifications, optionsText: 'name', optionsValue: 'id', value: selectedCertificationID, optionsCaption: 'Choose...'"></select>
+                    <select class="form-select" data-bind="options: certifications, optionsText: 'name', optionsValue: 'id', value: selectedCertificationID, optionsCaption: 'Choose...' "></select>
                 </div>
                 <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
                 <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedCertificationID">Next</button>
             </div>
 
-            <!-- Step 3: Education Details -->
-            <div data-bind="visible: currentStep() === 3">
-                <h4>Step 3: Education & Remarks</h4>
+            <!-- Step 4: Education Details -->
+            <div data-bind="visible: currentStep() === 4">
+                <h4>Step 4: Education & Remarks</h4>
                 <div class="mb-3">
                     <label class="form-label">Education Level</label>
-                    <select class="form-select" data-bind="options: educationLevels, optionsText: 'name', optionsValue: 'id', value: selectedEducationLevelID, optionsCaption: 'Choose...'"></select>
+                    <select class="form-select" data-bind="options: educationLevels, optionsText: 'name', optionsValue: 'id', value: selectedEducationLevelID, optionsCaption: 'Choose...' "></select>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Remarks</label>
@@ -50,8 +61,8 @@
                 <button class="btn btn-success" data-bind="click: submitApplication, enable: selectedEducationLevelID">Submit Application</button>
             </div>
 
-            <!-- Step 4: Success -->
-            <div data-bind="visible: currentStep() === 4">
+            <!-- Step 5: Success -->
+            <div data-bind="visible: currentStep() === 5">
                 <div class="alert alert-success">
                     <h4 class="alert-heading">Success!</h4>
                     <p data-bind="text: message"></p>

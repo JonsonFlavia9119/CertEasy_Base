@@ -1,0 +1,92 @@
+@model IEnumerable<CertEasy.Model.Exam>
+@{
+    ViewData["Title"] = "Exam Configuration";
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+    <p>Manage available exams, centers, and slots.</p>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <a asp-action="CreateExam" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> Create New Exam
+        </a>
+    </div>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Center</th>
+                        <th>Slot (Date/Time)</th>
+                        <th>Created</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-muted">No exams configured yet.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ExamName</td>
+                                <td>@item.ExamCenter</td>
+                                <td>@item.ExamSlot.ToString("g")</td>
+                                <td>@item.CreatedDate.ToShortDateString()</td>
+                                <td class="text-end">
+                                    <div class="btn-group btn-group-sm">
+                                        <a asp-action="EditExam" asp-route-id="@item.Id" class="btn btn-outline-primary" title="Edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-outline-danger" title="Delete" 
+                                                onclick="confirmDelete(@item.Id, '@item.ExamName')">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                    <form id="delete-form-@item.Id" asp-action="DeleteExam" asp-route-id="@item.Id" method="post" style="display:none;">
+                                        @Html.AntiForgeryToken()
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function confirmDelete(id, name) {
+            if (confirm('Are you sure you want to delete the exam: ' + name + '?')) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        }
+    </script>
+}

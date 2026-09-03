@@ -1,0 +1,81 @@
+{
+  "task_id": 127,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement a data grid to display submitted applications. This grid should be accessible to both normal users (filtered for their own data) and admins (viewing all data). Ensure the grid includes the exam details associated with each application.\n\nAcceptance Criteria:\n- Normal users can see a grid of their own submitted applications\n- Admin users can see a grid of all submitted applications across the system\n- The grid displays application details including the associated exam information\n\nDependencies: Task Application Flow Integration: Exam Selection Step",
+  "generated_at": "2026-09-01T07:58:18.253Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement a data grid to display submitted applications. This grid should be accessible to both normal users (filtered for their own data) and admins (viewing all data). Ensure the grid includes the exam details associated with each application.\n\nAcceptance Criteria:\n- Normal users can see a grid of their own submitted applications\n- Admin users can see a grid of all submitted applications across ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend - Update WorkflowService and Controller",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Views/Workflow/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a data grid to display submitted applications. ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend UI - Grid View and Layout Updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Views/Workflow/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a data grid to display submitted applications. ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Views/Workflow/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement a data grid to display submitted applications. This grid should be acc",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

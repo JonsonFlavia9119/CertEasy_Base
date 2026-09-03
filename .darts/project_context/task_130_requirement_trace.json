@@ -1,0 +1,90 @@
+{
+  "task_id": 130,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "\"There is no entity type mapped to the table 'Exams' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.\"}\n\nI have checked there is no migration have been added for exams, could you verify the code snipped and create a migration if needed probably new table(exam) , foreign key (examId) reference in applications table  . As a user I need this exam entity should be available in admin area as well as application process. Provide me a production ready code.",
+  "generated_at": "2026-09-02T09:44:56.141Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "\"There is no entity type mapped to the table 'Exams' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.\"}\n\nI have checked there is no migration have been added for exams, could you verify the code snipped and create a migration if needed probably new table(exam) , foreign key (examId) reference in application",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Data and Models Verification",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "\"There is no entity type mapped to the table 'Exams' whic...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Services — Update Workflow Service",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "\"There is no entity type mapped to the table 'Exams' whic...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend UI — Application Process Exam Selection",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "\"There is no entity type mapped to the table 'Exams' whic...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "\"There is no entity type mapped to the table 'Exams' which is used in a data ope",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -22,6 +23,11 @@ namespace CertEasy.Model
 
         [ForeignKey("StatusID")]
         public virtual Status? Status { get; set; }
+
+        public int? ExamID { get; set; }
+
+        [ForeignKey("ExamID")]
+        public virtual Exam? Exam { get; set; }
 
         public string? Remarks { get; set; }
 

@@ -3,9 +3,16 @@ function WorkflowViewModel() {
 
     self.currentStep = ko.observable(1);
     self.certifications = ko.observableArray([]);
-    self.educationLevels = ko.observableArray([]);
+    self.exams = ko.observableArray([]);
+    self.educationLevels = ko.observableArray([
+        { id: 1, name: 'High School' },
+        { id: 2, name: "Bachelor's Degree" },
+        { id: 3, name: "Master's Degree" },
+        { id: 4, name: 'PhD' }
+    ]);
 
     self.selectedCertificationID = ko.observable();
+    self.selectedExamID = ko.observable();
     self.selectedEducationLevelID = ko.observable();
     self.remarks = ko.observable('');
     self.message = ko.observable('');
@@ -21,13 +28,14 @@ function WorkflowViewModel() {
     self.loadData = function () {
         $.getJSON('/Workflow/GetInitialData', function (data) {
             self.certifications(data.certifications);
-            self.educationLevels(data.educationLevels);
+            self.exams(data.exams);
         });
     };
 
     self.submitApplication = function () {
         var data = {
             CertificationID: parseInt(self.selectedCertificationID()),
+            ExamID: parseInt(self.selectedExamID()),
             EducationLevelID: parseInt(self.selectedEducationLevelID()),
             Remarks: self.remarks()
         };
@@ -43,7 +51,7 @@ function WorkflowViewModel() {
             success: function (response) {
                 if (response.success) {
                     self.message(response.message);
-                    self.currentStep(4);
+                    self.currentStep(5);
                 }
             },
             error: function (err) {

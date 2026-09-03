@@ -19,23 +19,33 @@ namespace CertEasy.Data
         public DbSet<Application> Applications { get; set; }
         public DbSet<Education> Educations { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Exam> Exams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Log>().ToTable("AppLogs");
-
             modelBuilder.Entity<Education>().ToTable("Educations");
-
             modelBuilder.Entity<Account>().ToTable("Accounts");
-
             modelBuilder.Entity<Status>().ToTable("Statuses");
+            modelBuilder.Entity<Exam>().ToTable("Exams");
+            modelBuilder.Entity<Application>().ToTable("Applications");
+
+            modelBuilder.Entity<Application>()
+                .Property(a => a.ExamID)
+                .HasColumnName("ExamID");
 
             modelBuilder.Entity<Application>()
                 .HasOne(a => a.User)
                 .WithMany()
                 .HasForeignKey(a => a.UserID)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Application>()
+                .HasOne(a => a.Exam)
+                .WithMany()
+                .HasForeignKey(a => a.ExamID)
                 .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Account>()
@@ -67,8 +77,8 @@ namespace CertEasy.Data
             );
 
             modelBuilder.Entity<Certification>().HasData(
-                new Certification { Id = 1, Name = "Certified Safety Professional (CSP)", Description = "Leading safety certification", IsActive = true, CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate, EntityID = null, EntityTypeID = null },
-                new Certification { Id = 2, Name = "Associate Safety Professional (ASP)", Description = "Entry-level safety certification", IsActive = true, CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate, EntityID = null, EntityTypeID = null }
+                new Certification { Id = 1, Name = "Certified Safety Professional (CSP)", Description = "Leading safety certification", IsActive = true, CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate },
+                new Certification { Id = 2, Name = "Associate Safety Professional (ASP)", Description = "Entry-level safety certification", IsActive = true, CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate }
             );
 
             modelBuilder.Entity<User>().HasData(
@@ -78,7 +88,7 @@ namespace CertEasy.Data
                     FirstName = "System",
                     LastName = "Admin",
                     Email = "admin@certeasy.local",
-                    PasswordHash = "[HIDDEN]",
+                    PasswordHash = "AQAAAAEAACcQAAAAEPvH/9R7xK9n8x5...",
                     RoleID = (int)UserRole.Admin,
                     AddressID = null,
                     StatusID = (int)ApplicationStatus.New,
@@ -102,6 +112,11 @@ namespace CertEasy.Data
                     UpdatedBy = seededBy,
                     UpdatedDate = seededDate
                 }
+            );
+
+            modelBuilder.Entity<Exam>().HasData(
+                new Exam { Id = 1, ExamName = "Spring 2024 Exam Session", ExamCenter = "New York Testing Center", ExamSlot = new DateTime(2024, 4, 15, 10, 0, 0, DateTimeKind.Utc), CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate },
+                new Exam { Id = 2, ExamName = "Spring 2024 Exam Session", ExamCenter = "Chicago Testing Center", ExamSlot = new DateTime(2024, 4, 16, 14, 0, 0, DateTimeKind.Utc), CreatedDate = seededDate, CreatedBy = seededBy, UpdatedBy = seededBy, UpdatedDate = seededDate }
             );
         }
     }

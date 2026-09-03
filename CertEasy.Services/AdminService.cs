@@ -31,6 +31,8 @@ namespace CertEasy.Services
             return await _context.Applications
                 .Include(a => a.User)
                 .Include(a => a.Status)
+                .Include(a => a.Exam)
+                .Include(a => a.Certification)
                 .Where(a => a.StatusID == (int)ApplicationStatus.Review)
                 .ToListAsync();
         }
@@ -284,6 +286,74 @@ namespace CertEasy.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error deleting education qualification {Id}", id);
+                return false;
+            }
+        }
+
+        // Exam Management Implementation
+        public async Task<IEnumerable<Exam>> GetAllExamsAsync()
+        {
+            return await _context.Exams.OrderByDescending(e => e.ExamSlot).ToListAsync();
+        }
+
+        public async Task<Exam?> GetExamByIdAsync(int id)
+        {
+            return await _context.Exams.FindAsync(id);
+        }
+
+        public async Task<bool> AddExamAsync(Exam exam, string adminUser)
+        {
+            try
+            {
+                exam.CreatedDate = DateTime.UtcNow;
+                exam.CreatedBy = adminUser;
+                exam.UpdatedDate = DateTime.UtcNow;
+                exam.UpdatedBy = adminUser;
+                _context.Exams.Add(exam);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error adding exam");
+                return false;
+            }
+        }
+
+        public async Task<bool> UpdateExamAsync(Exam exam, string adminUser)
+        {
+            try
+            {
+                var existing = await _context.Exams.FindAsync(exam.Id);
+                if (existing == null) return false;
+
+                existing.ExamName = exam.ExamName;
+                existing.ExamCenter = exam.ExamCenter;
+                existing.ExamSlot = exam.ExamSlot;
+                existing.UpdatedDate = DateTime.UtcNow;
+                existing.UpdatedBy = adminUser;
+
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating exam {Id}", exam.Id);
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteExamAsync(int id)
+        {
+            try
+            {
+                var exam = await _context.Exams.FindAsync(id);
+                if (exam == null) return false;
+
+                _context.Exams.Remove(exam);
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting exam {Id}", id);
                 return false;
             }
         }

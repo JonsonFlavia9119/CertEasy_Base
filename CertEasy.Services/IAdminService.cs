@@ -31,5 +31,12 @@ namespace CertEasy.Services
         Task<bool> AddEducationAsync(Education education, string adminUser);
         Task<bool> UpdateEducationAsync(Education education, string adminUser);
         Task<bool> DeleteEducationAsync(int id);
+
+        // Exam Management
+        Task<IEnumerable<Exam>> GetAllExamsAsync();
+        Task<Exam?> GetExamByIdAsync(int id);
+        Task<bool> AddExamAsync(Exam exam, string adminUser);
+        Task<bool> UpdateExamAsync(Exam exam, string adminUser);
+        Task<bool> DeleteExamAsync(int id);
     }
 }

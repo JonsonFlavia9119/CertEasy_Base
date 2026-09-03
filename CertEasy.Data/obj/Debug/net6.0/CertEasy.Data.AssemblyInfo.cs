@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CertEasy.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d86f51e46dcbc936cd3bf3fd567ee2ab102a586e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c758a57de271fb9467b4bf87314fcc635969fa7")]
 [assembly: System.Reflection.AssemblyProductAttribute("CertEasy.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CertEasy.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
