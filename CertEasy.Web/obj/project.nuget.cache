@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9nTGqcGOnCo=",
+  "dgSpecHash": "ihD5zU5coDc=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Web\\CertEasy.Web.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Web\\CertEasy.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.aspnetcore.authentication.negotiate\\6.0.0\\microsoft.aspnetcore.authentication.negotiate.6.0.0.nupkg.sha512",

@@ -1,0 +1,90 @@
+{
+  "task_id": 125,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Develop a management interface within the admin area to allow administrators to configure available exams. This includes a grid view and a form with fields: exam_name, exam_center, and exam_slot.\n\nAcceptance Criteria:\n- Admin user can navigate to the Exam Configuration page\n- Admin can create, read, update, and delete exam records\n- Form includes fields for Name, Center, and Slot (Date/Time)\n\nDependencies: Task Database Schema Update for Exams",
+  "generated_at": "2026-09-01T07:48:36.476Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Develop a management interface within the admin area to allow administrators to configure available exams. This includes a grid view and a form with fields: exam_name, exam_center, and exam_slot.\n\nAcceptance Criteria:\n- Admin user can navigate to the Exam Configuration page\n- Admin can create, read, update, and delete exam records\n- Form includes fields for Name, Center, and Slot (Date/Time)\n\nDepe",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Service & Controller updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a management interface within the admin area to a...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Layout & View wiring",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a management interface within the admin area to a...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend UI — Exam CRUD Views",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a management interface within the admin area to a...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a management interface within the admin area to allow administrators to ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

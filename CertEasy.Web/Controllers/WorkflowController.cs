@@ -3,6 +3,11 @@ using CertEasy.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using CertEasy.Model;
+using System.Security.Claims;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
 
 namespace CertEasy.Web.Controllers
 {
@@ -10,12 +15,40 @@ namespace CertEasy.Web.Controllers
     public class WorkflowController : Controller
     {
         private readonly IWorkflowService _workflowService;
+        private readonly IAdminService _adminService;
         private readonly ILogger<WorkflowController> _logger;
 
-        public WorkflowController(IWorkflowService workflowService, ILogger<WorkflowController> logger)
+        public WorkflowController(IWorkflowService workflowService, IAdminService adminService, ILogger<WorkflowController> logger)
         {
             _workflowService = workflowService;
+            _adminService = adminService;
             _logger = logger;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+            IEnumerable<CertEasy.Model.Application> applications;
+
+            if (userRole == "Admin")
+            {
+                applications = await _workflowService.GetAllApplicationsAsync();
+            }
+            else
+            {
+                var userIdStr = User.FindFirst("UserId")?.Value;
+                if (int.TryParse(userIdStr, out int userId))
+                {
+                    applications = await _workflowService.GetUserApplicationsAsync(userId);
+                }
+                else
+                {
+                    applications = new List<CertEasy.Model.Application>();
+                }
+            }
+
+            return View(applications);
         }
 
         [HttpGet]
@@ -28,7 +61,8 @@ namespace CertEasy.Web.Controllers
         public async Task<IActionResult> GetInitialData()
         {
             var certs = await _workflowService.GetActiveCertificationsAsync();
-            return Json(new { certifications = certs });
+            var exams = await _workflowService.GetExamsAsync();
+            return Json(new { certifications = certs, exams = exams });
         }
 
         [HttpPost]
@@ -52,20 +86,15 @@ namespace CertEasy.Web.Controllers
                     {
                         UserID = userId,
                         CertificationID = model.CertificationID,
+                        ExamID = model.ExamID,
                         Remarks = model.Remarks,
-                        StatusID = (int)ApplicationStatus.Review,
+                        StatusID = (int)ApplicationStatus.Review, // Move to review status upon submission
                         SubmittedDate = DateTime.UtcNow,
                         CreatedBy = userId.ToString(),
                         CreatedDate = DateTime.UtcNow,
                         UpdatedBy = userId.ToString(),
                         UpdatedDate = DateTime.UtcNow
                     };
-
-                    // Note: EntityID/EntityTypeID for Application itself is not required by prompt,
-                    // but if the workflow created Certification/Education records here, 
-                    // they would be assigned EntityID = ApplicationId and EntityTypeID = 200.
-                    // Since SubmitApplication currently only creates the Application record,
-                    // we ensure the infrastructure is ready for those assignments in future steps.
 
                     var success = await _workflowService.SubmitApplicationAsync(application);
                     if (success)

@@ -1,0 +1,105 @@
+{
+  "task_id": 129,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "getting the below errors \nError 1\n\npath : https://localhost:7123/Admin\n\nAdministrative Error\nAn unexpected error occurred in the administrative area. Invalid column name 'ExamID'.\n\nIf this issue persists, please check the system logs or contact technical support.\n\nError 2\npath : https://localhost:7123/Admin/ManageExams\n\nAdministrative Error\nAn unexpected error occurred in the administrative area. Invalid object name 'Exams'.\n\nIf this issue persists, please check the system logs or contact technical support.\n\nError 3\nPath : https://localhost:7123/Workflow\n\nAn unhandled exception occurred while processing the request.\nSqlException: Invalid object name 'Exams'.\n\nFix this issues and make sure the new enhancements should not affect the existing workflow. ",
+  "generated_at": "2026-09-02T08:45:19.802Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "getting the below errors \nError 1\n\npath : https://localhost:7123/Admin\n\nAdministrative Error\nAn unexpected error occurred in the administrative area. Invalid column name 'ExamID'.\n\nIf this issue persists, please check the system logs or contact technical support.\n\nError 2\npath : https://localhost:7123/Admin/ManageExams\n\nAdministrative Error\nAn unexpected error occurred in the administrative area. ",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Fix Model/Context sync and ensure Exams table is defined",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "getting the below errors \nError 1\n\npath : https://localho...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Verify Program.cs registration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "getting the below errors \nError 1\n\npath : https://localho...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend services — Verify Service calls",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "getting the below errors \nError 1\n\npath : https://localho...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-004",
+      "name": "Frontend UI — Verify Views",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "getting the below errors \nError 1\n\npath : https://localho...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "getting the below errors \nError 1\n\npath : https://localhost:7123/Admin\n\nAdminist",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 5,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

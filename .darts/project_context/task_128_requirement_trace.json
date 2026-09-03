@@ -1,0 +1,47 @@
+{
+  "task_id": 128,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Exception:\nSystem.IO.IOException: 'Failed to bind to address https://localhost:64519.'\n\nInner exception\n1. System.AggregateException: 'One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions.) (An attempt was made to access a socket in a way forbidden by its access permissions.)'\n2. System.Net.Sockets.SocketException: 'An attempt was made to access a socket in a way forbidden by its access permissions.'",
+  "generated_at": "2026-09-01T11:28:04.396Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Exception:\nSystem.IO.IOException: 'Failed to bind to address https://localhost:64519.'\n\nInner exception\n1. System.AggregateException: 'One or more errors occurred. (An attempt was made to access a socket in a way forbidden by its access permissions.) (An attempt was made to access a socket in a way forbidden by its access permissions.)'\n2. System.Net.Sockets.SocketException: 'An attempt was made t",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Configuration — Update launchSettings.json with available ports",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Properties/launchSettings.json"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Exception:\nSystem.IO.IOException: 'Failed to bind to addr...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": 126,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "Integrate the exam selection step into the application wizard flow. It must be positioned after person profile selection and before the certification page. The view must display available exams for user selection. Upon selection, the application record must be updated with the chosen ExamId and the application status must be set to 111.\n\nAcceptance Criteria:\n- The exam selection step appears immediately after 'Person Profile Selection'\n- The 'Certification' page follows the 'Exam Selection' step\n- Users can see a list of available exams populated from the database\n- Selecting an exam updates the application status to 111 and saves the ExamId to the application record\n\nDependencies: Task Admin Exam Configuration Interface, Task Database Schema Update for Exams",
+  "generated_at": "2026-09-01T07:52:36.642Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Integrate the exam selection step into the application wizard flow. It must be positioned after person profile selection and before the certification page. The view must display available exams for user selection. Upon selection, the application record must be updated with the chosen ExamId and the application status must be set to 111.\n\nAcceptance Criteria:\n- The exam selection step appears immed",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Reorder Wizard steps and update application submission status",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "Application Workflow",
+      "feature": "Exam Selection Reordering",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": 132,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "# Fix EF Core Database.Migrate() Error\n\nThe application fails during startup when executing:\n\n```csharp\ndbContext.Database.Migrate();\n```\n\nwith:\n\n\"There is no entity type mapped to the table 'Exams' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.\"\n\nImportant context:\n\n* The error occurs during migration execution, not when creating the migration.\n* The current EF Core model snapshot already contains the Account entity.\n* Exams is mapped to the `Exams` table.\n* Exams has seed data using `HasData()`.\n* ExamId field should be nullable in Applications table\nInvestigate the runtime migration process before making changes.\n\nCheck:\n\n1. The runtime `CertEasyDbContext` being used by `Database.Migrate()`.\n2. `dbContext.Database.GetPendingMigrations()`.\n3. `dbContext.Database.GetAppliedMigrations()`.\n4. The database `__EFMigrationsHistory` table.\n5. All migrations in the migrations folder.\n6. `AddAccountEntity` migration.\n7. `AddAccountEntity.Designer.cs`.\n8. `CertEasyDbContextModelSnapshot`.\n9. All `HasData()` configurations.\n10. Whether multiple DbContexts or migration assemblies are configured.\n11. Whether the database schema is partially created or partially migrated.\n12. Whether `Database.Migrate()` is being executed more than once or from multiple startup paths.\n\nFirst identify exactly which migration is failing and why.\n\nDo not manually modify generated migration or snapshot files unless absolutely necessary.\n\nIf this is a local database and the migration history/schema is inconsistent, determine the safest way to bring the local database back into sync with the current EF Core model.\n\nIf the database can safely be recreated because it contains only development/test data, clearly state that as an option, but do not delete or recreate the database without explicit confirmation.\n\nDo not make unrelated code changes.\n\nAfter resolving the issue:\n\n* Run `GetPendingMigrations()`.\n* Run `Database.Migrate()`.\n* Confirm that all pending migrations apply successfully.\n* Confirm that `__EFMigrationsHistory` is updated.\n* Build the solution.\n* Verify that the application starts successfully.\n\nReport:\n\n1. Exact migration that failed.\n2. Root cause.\n3. Database/migration-history inconsistency, if any.\n4. Files changed.\n5. Commands/actions performed.\n6. Final migration status.\n7. Build/startup result.",
+  "generated_at": "2026-09-02T11:02:52.490Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "# Fix EF Core Database.Migrate() Error\n\nThe application fails during startup when executing:\n\n```csharp\ndbContext.Database.Migrate();\n```\n\nwith:\n\n\"There is no entity type mapped to the table 'Exams' which is used in a data operation. Either add the corresponding entity type to the model, or specify the column types in the data operation.\"\n\nImportant context:\n\n* The error occurs during migration ex",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix EF Core Migration Error and Nullable ExamID",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260902070615_AddExamsTable.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "# Fix EF Core Database.Migrate() Error\n\nThe application f...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Verify and Apply Migrations",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260902070615_AddExamsTable.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "# Fix EF Core Database.Migrate() Error\n\nThe application f...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260902070615_AddExamsTable.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "# Fix EF Core Database.Migrate() Error\n\nThe application fails during startup whe",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

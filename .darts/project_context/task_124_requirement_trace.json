@@ -1,0 +1,90 @@
+{
+  "task_id": 124,
+  "task_name": "CertEasy_ApplicationProcess_Phase2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Create the Exam database table and update the Applications table to store the selected exam reference. Fields for Exam: id, exam_name (text), exam_center (text), exam_slot (datetime). Update Applications table with: exam_id (Foreign Key).\n\nAcceptance Criteria:\n- Exam table exists with columns: id, exam_name (text), exam_center (text), exam_slot (datetime)\n- Applications table is updated to include 'exam_id' column",
+  "generated_at": "2026-09-01T07:42:01.953Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Create the Exam database table and update the Applications table to store the selected exam reference. Fields for Exam: id, exam_name (text), exam_center (text), exam_slot (datetime). Update Applications table with: exam_id (Foreign Key).\n\nAcceptance Criteria:\n- Exam table exists with columns: id, exam_name (text), exam_center (text), exam_slot (datetime)\n- Applications table is updated to include",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Models and DbContext",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Models/ApplicationViewModel.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create the Exam database table and update the Application...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Services and Repositories",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Models/ApplicationViewModel.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create the Exam database table and update the Application...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Models/ApplicationViewModel.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Controllers/WorkflowController.cs",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "C:/DARTS-development-environment/sandbox/kjohnson/CertEasy_ApplicationProcess_Phase2/CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create the Exam database table and update the Applications table to store the se",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 4,
+    "validation_status": "passed"
+  }
+}

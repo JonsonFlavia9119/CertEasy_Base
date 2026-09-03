@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9SGfuwTPSyk=",
+  "dgSpecHash": "/6/Y4Kfqs8k=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_Admin_Phase2\\CertEasy.Model\\CertEasy.Model.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_ApplicationProcess_Phase2\\CertEasy.Model\\CertEasy.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

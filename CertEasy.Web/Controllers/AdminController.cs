@@ -29,13 +29,15 @@ namespace CertEasy.Web.Controllers
             var addresses = await _adminService.GetAllAddressesAsync();
             var certifications = await _adminService.GetCertificationsAsync();
             var educations = await _adminService.GetAllEducationAsync();
+            var exams = await _adminService.GetAllExamsAsync();
 
             var viewModel = new AdminDashboardViewModel
-            { 
-                PendingApplications = applications, 
-                Addresses = addresses, 
+            {
+                PendingApplications = applications,
+                Addresses = addresses,
                 Certifications = certifications,
-                Educations = educations
+                Educations = educations,
+                Exams = exams
             };
             return View(viewModel);
         }
@@ -285,6 +287,75 @@ namespace CertEasy.Web.Controllers
                 TempData["ErrorMessage"] = "Failed to delete education qualification.";
             }
             return RedirectToAction(nameof(ManageEducation));
+        }
+
+        // Exam Management
+        public async Task<IActionResult> ManageExams()
+        {
+            var exams = await _adminService.GetAllExamsAsync();
+            return View(exams);
+        }
+
+        public IActionResult CreateExam()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateExam(Exam model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.AddExamAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Exam created successfully.";
+                    return RedirectToAction(nameof(ManageExams));
+                }
+                ModelState.AddModelError("", "Failed to create exam.");
+            }
+            return View(model);
+        }
+
+        public async Task<IActionResult> EditExam(int id)
+        {
+            var exam = await _adminService.GetExamByIdAsync(id);
+            if (exam == null) return NotFound();
+            return View(exam);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditExam(Exam model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _adminService.UpdateExamAsync(model, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Exam updated successfully.";
+                    return RedirectToAction(nameof(ManageExams));
+                }
+                ModelState.AddModelError("", "Failed to update exam.");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteExam(int id)
+        {
+            var result = await _adminService.DeleteExamAsync(id);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Exam deleted successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to delete exam.";
+            }
+            return RedirectToAction(nameof(ManageExams));
         }
     }
 }
