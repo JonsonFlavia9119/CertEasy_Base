@@ -1,0 +1,57 @@
+{
+  "hash": "97546413a6105984431d13287498a073",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Develop a [REDACTED] configuration page in the admin area so an admin user can configure the [REDACTED] settings for email configuration."
+    },
+    {
+      "req_id": "R-002",
+      "text": "Each application in the grid must display an Approve button."
+    },
+    {
+      "req_id": "R-003",
+      "text": "Each application in the grid must display a Reject button."
+    },
+    {
+      "req_id": "R-004",
+      "text": "Only admin users shall have permission to Approve or Reject applications."
+    },
+    {
+      "req_id": "R-005",
+      "text": "The Approve and Reject buttons must not be visible to non-admin users."
+    },
+    {
+      "req_id": "R-006",
+      "text": "When an admin user approves an application, an approval email must be sent to the recipient's emailId from the users table."
+    },
+    {
+      "req_id": "R-007",
+      "text": "The approval email must have the subject 'Application Approved'."
+    },
+    {
+      "req_id": "R-008",
+      "text": "The approval email body must include application details containing the ID and [REDACTED]."
+    },
+    {
+      "req_id": "R-009",
+      "text": "When an admin user rejects an application, a rejection email must be sent to the recipient's emailId from the users table."
+    },
+    {
+      "req_id": "R-010",
+      "text": "The rejection email must have the subject 'Application Rejected'."
+    },
+    {
+      "req_id": "R-011",
+      "text": "The rejection email body must include application details containing the ID and [REDACTED]."
+    },
+    {
+      "req_id": "R-012",
+      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 112 when an application is approved."
+    },
+    {
+      "req_id": "R-013",
+      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 113 when an application is rejected."
+    }
+  ]
+}

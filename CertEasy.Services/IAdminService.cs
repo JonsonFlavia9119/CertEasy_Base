@@ -6,6 +6,7 @@ namespace CertEasy.Services
 {
     public interface IAdminService
     {
+        Task<IEnumerable<Application>> GetAllApplicationsAsync();
         Task<IEnumerable<Application>> GetApplicationsInReviewAsync();
         Task<bool> ApproveApplicationAsync(int id, string adminUser);
         Task<bool> RejectApplicationAsync(int id, string adminUser);
@@ -38,5 +39,10 @@ namespace CertEasy.Services
         Task<bool> AddExamAsync(Exam exam, string adminUser);
         Task<bool> UpdateExamAsync(Exam exam, string adminUser);
         Task<bool> DeleteExamAsync(int id);
+
+        // Email Configuration
+        Task<EmailConfiguration> GetEmailConfigurationAsync();
+        Task<bool> UpdateEmailConfigurationAsync(EmailConfiguration model, string adminUser);
+        Task<bool> SendTestEmailAsync(string targetEmail);
     }
 }

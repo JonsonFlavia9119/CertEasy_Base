@@ -8,6 +8,7 @@ using Serilog;
 using Serilog.Sinks.MSSqlServer;
 using System.Collections.ObjectModel;
 using System.Data;
+using Resend;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,10 +18,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 var columnOptions = new ColumnOptions();
 columnOptions.Store.Remove(StandardColumn.Properties);
 columnOptions.Store.Remove(StandardColumn.MessageTemplate);
+// Removed problematic additional columns EntityType and EntityID as they are causing runtime errors during DB queries
 columnOptions.AdditionalColumns = new Collection<SqlColumn>
 {
-    new SqlColumn { ColumnName = "EntityType", DataType = SqlDbType.NVarChar, DataLength = 100, AllowNull = true },
-    new SqlColumn { ColumnName = "EntityID", DataType = SqlDbType.NVarChar, DataLength = 100, AllowNull = true },
     new SqlColumn { ColumnName = "UserID", DataType = SqlDbType.Int, AllowNull = true }
 };
 
@@ -31,7 +31,7 @@ Serilog.Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/admin-audit.txt", rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information)
     .WriteTo.MSSqlServer(
         connectionString: connectionString,
-        sinkOptions: new MSSqlServerSinkOptions { TableName = "Logs", AutoCreateSqlTable = true },
+        sinkOptions: new MSSqlServerSinkOptions { TableName = "AppLogs", AutoCreateSqlTable = true },
         columnOptions: columnOptions)
     .CreateLogger();
 
@@ -55,11 +55,22 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     })
     .AddNegotiate();
 
+// Add HttpClient for Resend
+builder.Services.AddHttpClient();
+
+// Configure Resend client
+// API Key is retrieved dynamically in ResendEmailService from the database per the requirement.
+// We do NOT register ResendClient here via AddHttpClient<IResend, ResendClient> because it requires 
+// IOptions<ResendClientOptions> which we don't have statically. 
+// ResendEmailService manually instantiates ResendClient using the dynamic API key.
+
 // Register custom services
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IAdminService, AdminService>();
 builder.Services.AddScoped<IPasswordService, PasswordService>();
 builder.Services.AddScoped<IWorkflowService, WorkflowService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IEmailService, ResendEmailService>();
 
 var app = builder.Build();
 

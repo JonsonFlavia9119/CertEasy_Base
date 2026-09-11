@@ -1,0 +1,75 @@
+{
+  "task_id": 135,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Implement the backend logic to update the application status. When an admin clicks Approve, the StatusID in the [REDACTED]'s table must be set to 112. When Reject is clicked, the StatusID must be set to 113. Ensure the [REDACTED_LOCATION] field is updated accordingly.\n\nAcceptance Criteria:\n- Clicking 'Approve' updates the StatusID to 112 in the [REDACTED]'s table for the specific application.\n- Clicking 'Reject' updates the StatusID to 113 in the [REDACTED]'s table for the specific application.\n- The [REDACTED_LOCATION] field is correctly updated based on the status change.\n\nDependencies: Task Admin Approval Actions in Application Grid",
+  "generated_at": "2026-09-03T09:46:30.542Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the backend logic to update the application status. When an admin clicks Approve, the StatusID in the [REDACTED]'s table must be set to 112. When Reject is clicked, the StatusID must be set to 113. Ensure the [REDACTED_LOCATION] field is updated accordingly.\n\nAcceptance Criteria:\n- Clicking 'Approve' updates the StatusID to 112 in the [REDACTED]'s table for the specific application.\n- Cl",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Implementation — Update AdminService for Approve/Reject logic",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the backend logic to update the application sta...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Controller and UI Check — Ensure AdminController and Index view are correctly wired",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the backend logic to update the application sta...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement the backend logic to update the application status. When an admin clic",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

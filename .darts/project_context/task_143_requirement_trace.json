@@ -1,0 +1,110 @@
+{
+  "task_id": 143,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "I want to implement transactional email sending in my ASP.NET Core\napplication.\n\nUse Resend as the email service provider instead of SMTP.\n\nRequirements:\n\n1. Create an IEmailService abstraction.\n2. Create a ResendEmailService implementation.\n3. Use the official Resend .NET SDK.\n4. Store the Resend API key securely in configuration/secrets.\n5. Do not hard-code the API key.\n6. Configure the Resend client through dependency injection.\n7. Create a SendAsync method that accepts:\n   - recipient email\n   - subject\n   - HTML body\n8. Create a method for sending an application-rejected email.\n9. When an administrator rejects an application:\n   - update the application status\n   - save the database changes\n   - send the rejection notification email\n10. Add proper logging and exception handling.\n11. Add a \"Send Test Email\" API so administrators can verify\n    the email configuration.\n12. Refactor the existing SMTP Configuration page into a generic\n    Email Configuration page for Resend.\n13. Do not expose the API key in the UI after it has been saved.\n14. Keep the email provider implementation behind IEmailService\n    so that SMTP or another provider can be added later without\n    changing business logic.\n15. Use recipient email address from users table, application table has the userId\n16. Explain all NuGet packages, configuration changes,\n    dependency injection registrations, database changes,\n    controller/API changes, and frontend changes required.",
+  "generated_at": "2026-09-04T06:00:52.504Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I want to implement transactional email sending in my ASP.NET Core\napplication.\n\nUse Resend as the email service provider instead of SMTP.\n\nRequirements:\n\n1. Create an IEmailService abstraction.\n2. Create a ResendEmailService implementation.\n3. Use the official Resend .NET SDK.\n4. Store the Resend API key securely in configuration/secrets.\n5. Do not hard-code the API key.\n6. Configure the Resend c",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — IEmailService, ResendEmailService, Models, and AdminService updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs",
+        "CertEasy.Services/NotificationService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I want to implement transactional email sending in my ASP...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Program.cs registration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs",
+        "CertEasy.Services/NotificationService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I want to implement transactional email sending in my ASP...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Frontend UI — Email Configuration Page refactoring",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs",
+        "CertEasy.Services/NotificationService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I want to implement transactional email sending in my ASP...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs",
+        "CertEasy.Services/NotificationService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I want to implement transactional email sending in my ASP.NET Core\napplication.\n",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 4,
+    "validation_status": "passed"
+  }
+}

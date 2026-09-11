@@ -10,7 +10,7 @@
         <div class="card-header">
             <h3>Application Wizard</h3>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" data-bind="style: { width: (currentStep() * 25) + '%' }"></div>
+                <div class="progress-bar" role="progressbar" data-bind="style: { width: (currentStep() * 16.6) + '%' }"></div>
             </div>
         </div>
         <div class="card-body">
@@ -58,11 +58,24 @@
                     <textarea class="form-control" data-bind="value: remarks"></textarea>
                 </div>
                 <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
-                <button class="btn btn-success" data-bind="click: submitApplication, enable: selectedEducationLevelID">Submit Application</button>
+                <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedEducationLevelID">Next (Review)</button>
             </div>
 
-            <!-- Step 5: Success -->
+            <!-- Step 5: Review -->
             <div data-bind="visible: currentStep() === 5">
+                <h4>Step 5: Review Application</h4>
+                <div class="alert alert-info">
+                    <p><strong>Certification:</strong> <span data-bind="text: selectedCertificationName"></span></p>
+                    <p><strong>Exam:</strong> <span data-bind="text: selectedExamName"></span></p>
+                    <p><strong>Education:</strong> <span data-bind="text: selectedEducationName"></span></p>
+                    <p><strong>Remarks:</strong> <span data-bind="text: remarks"></span></p>
+                </div>
+                <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
+                <button class="btn btn-success" data-bind="click: submitApplication">Submit Application</button>
+            </div>
+
+            <!-- Step 6: Success -->
+            <div data-bind="visible: currentStep() === 6">
                 <div class="alert alert-success">
                     <h4 class="alert-heading">Success!</h4>
                     <p data-bind="text: message"></p>

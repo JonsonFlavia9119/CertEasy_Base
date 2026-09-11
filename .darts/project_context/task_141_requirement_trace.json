@@ -1,0 +1,75 @@
+{
+  "task_id": 141,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Requirement;\n\nAs a admin user, I would like to configure Email service provider in admin area\n\ninput;\n\n* Create a new page for email service provider configuration in Admin area\n*  Fields should be\n -> Email provider name\n -> Sender Email\n -> Sender Name \n -> API Key\n -> Test Email button\n\ncheck;\n\n* Add migration if needed\n* Ensure its sync with appropriate entity and SQL DB\n* Avoid migration error\n\nDesired output\n* Clean and production ready code\n* Follow existing code flow\n",
+  "generated_at": "2026-09-04T05:30:43.617Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Requirement;\n\nAs a admin user, I would like to configure Email service provider in admin area\n\ninput;\n\n* Create a new page for email service provider configuration in Admin area\n*  Fields should be\n -> Email provider name\n -> Sender Email\n -> Sender Name \n -> API Key\n -> Test Email button\n\ncheck;\n\n* Add migration if needed\n* Ensure its sync with appropriate entity and SQL DB\n* Avoid migration erro",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Update Models, ViewModels, Service Interface, and Service Implementation",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Requirement;\n\nAs a admin user, I would like to configure ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Controller and View — Update AdminController and EmailConfiguration view",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Requirement;\n\nAs a admin user, I would like to configure ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Requirement;\n\nAs a admin user, I would like to configure Email service provider ",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

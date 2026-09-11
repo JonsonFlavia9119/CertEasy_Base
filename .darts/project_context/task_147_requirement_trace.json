@@ -1,0 +1,49 @@
+{
+  "task_id": 147,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Getting the below error while clicking on Approve button\n\nThe UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_Applications_Statuses_StatusID\". The conflict occurred in database \"CertEasyDb\", table \"dbo.Statuses\", column 'Id'.'",
+  "generated_at": "2026-09-11T07:24:17.409Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The application must successfully process approvals without triggering a foreign key constraint error on the application status.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix invalid Application StatusID FK values in AdminService to use valid Status IDs from ApplicationStatus enum",
+      "status": "completed",
+      "req_refs": [
+        "R-001"
+      ],
+      "files_written": [
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Getting the below error while clicking on Approve button\n...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 1,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

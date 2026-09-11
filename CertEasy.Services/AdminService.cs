@@ -13,17 +13,32 @@ namespace CertEasy.Services
     {
         private readonly CertEasyDbContext _context;
         private readonly ILogger<AdminService> _logger;
+        private readonly INotificationService _notificationService;
+        private readonly IEmailService _emailService;
 
-        public AdminService(CertEasyDbContext context, ILogger<AdminService> logger)
+        public AdminService(CertEasyDbContext context, ILogger<AdminService> logger, INotificationService notificationService, IEmailService emailService)
         {
-            _context = context;
-            _logger = logger;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _notificationService = notificationService ?? throw new ArgumentNullException(nameof(notificationService));
+            _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
         }
 
         private async Task<int?> GetAccountIdForUserAsync(string userName)
         {
             var user = await _context.Users.Include(u => u.Account).FirstOrDefaultAsync(u => u.Email == userName);
             return user?.Account?.Id;
+        }
+
+        public async Task<IEnumerable<Application>> GetAllApplicationsAsync()
+        {
+            return await _context.Applications
+                .Include(a => a.Certification)
+                .Include(a => a.Status)
+                .Include(a => a.Exam)
+                .Include(a => a.User)
+                .OrderByDescending(a => a.SubmittedDate)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Application>> GetApplicationsInReviewAsync()
@@ -47,7 +62,13 @@ namespace CertEasy.Services
                 app.StatusID = (int)ApplicationStatus.Approved;
                 app.UpdatedDate = DateTime.UtcNow;
                 app.UpdatedBy = adminUser;
-                return await _context.SaveChangesAsync() > 0;
+
+                var success = await _context.SaveChangesAsync() > 0;
+                if (success)
+                {
+                    await _notificationService.SendApplicationStatusEmailAsync(id, true);
+                }
+                return success;
             }
             catch (Exception ex)
             {
@@ -66,7 +87,13 @@ namespace CertEasy.Services
                 app.StatusID = (int)ApplicationStatus.Rejection;
                 app.UpdatedDate = DateTime.UtcNow;
                 app.UpdatedBy = adminUser;
-                return await _context.SaveChangesAsync() > 0;
+
+                var success = await _context.SaveChangesAsync() > 0;
+                if (success)
+                {
+                    await _notificationService.SendApplicationStatusEmailAsync(id, false);
+                }
+                return success;
             }
             catch (Exception ex)
             {
@@ -93,9 +120,6 @@ namespace CertEasy.Services
                 certification.CreatedBy = adminUser;
                 certification.UpdatedDate = DateTime.UtcNow;
                 certification.UpdatedBy = adminUser;
-                
-                certification.EntityID = await GetAccountIdForUserAsync(adminUser);
-                certification.EntityTypeID = 201; // Admin Area
 
                 _context.Certifications.Add(certification);
                 return await _context.SaveChangesAsync() > 0;
@@ -238,9 +262,6 @@ namespace CertEasy.Services
                 education.UpdatedDate = DateTime.UtcNow;
                 education.UpdatedBy = adminUser;
 
-                education.EntityID = await GetAccountIdForUserAsync(adminUser);
-                education.EntityTypeID = 201; // Admin Area
-
                 _context.Educations.Add(education);
                 return await _context.SaveChangesAsync() > 0;
             }
@@ -354,6 +375,96 @@ namespace CertEasy.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error deleting exam {Id}", id);
+                return false;
+            }
+        }
+
+        // Email Configuration
+        public async Task<EmailConfiguration> GetEmailConfigurationAsync()
+        {
+            try
+            {
+                var config = await _context.EmailConfigurations.FirstOrDefaultAsync();
+                if (config == null)
+                {
+                    config = new EmailConfiguration
+                    {
+                        ProviderName = "Resend",
+                        SenderEmail = "noreply@certeasy.local",
+                        SenderName = "CertEasy Notifications",
+                        CreatedBy = "System",
+                        CreatedDate = DateTime.UtcNow
+                    };
+                    _context.EmailConfigurations.Add(config);
+                    await _context.SaveChangesAsync();
+                }
+                return config;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving email configuration");
+                return new EmailConfiguration
+                {
+                    ProviderName = "Resend",
+                    SenderEmail = "noreply@certeasy.local",
+                    SenderName = "CertEasy Notifications"
+                };
+            }
+        }
+
+        public async Task<bool> UpdateEmailConfigurationAsync(EmailConfiguration model, string adminUser)
+        {
+            try
+            {
+                var existing = await _context.EmailConfigurations.FirstOrDefaultAsync();
+                if (existing == null)
+                {
+                    model.CreatedBy = adminUser;
+                    model.CreatedDate = DateTime.UtcNow;
+                    model.UpdatedBy = adminUser;
+                    model.UpdatedDate = DateTime.UtcNow;
+                    _context.EmailConfigurations.Add(model);
+                }
+                else
+                {
+                    existing.ProviderName = model.ProviderName;
+                    existing.SenderEmail = model.SenderEmail;
+                    existing.SenderName = model.SenderName;
+                    // Only update API Key if a new one is provided (security: do not expose or overwrite with empty/placeholder from UI)
+                    if (!string.IsNullOrEmpty(model.ApiKey) && model.ApiKey != "********")
+                    {
+                        existing.ApiKey = model.ApiKey;
+                    }
+                    existing.EnableSsl = model.EnableSsl;
+                    existing.UpdatedDate = DateTime.UtcNow;
+                    existing.UpdatedBy = adminUser;
+                    _context.EmailConfigurations.Update(existing);
+                }
+
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating email configuration");
+                return false;
+            }
+        }
+
+        public async Task<bool> SendTestEmailAsync(string targetEmail)
+        {
+            try
+            {
+                var config = await GetEmailConfigurationAsync();
+                _logger.LogInformation("Sending test email via Resend Provider to {Email}", targetEmail);
+                
+                string subject = "Test Email - CertEasy";
+                string body = "<h3>Test Email</h3><p>This is a test email to verify your Resend configuration in CertEasy.</p>";
+                
+                return await _emailService.SendAsync(targetEmail, subject, body);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error sending test email to {Email}", targetEmail);
                 return false;
             }
         }

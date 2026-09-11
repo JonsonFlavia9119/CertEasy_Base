@@ -13,9 +13,5 @@ namespace CertEasy.Model
         public int? ObtainedYear { get; set; }
         
         public bool IsActive { get; set; }
-
-        public int? EntityID { get; set; }
-
-        public int? EntityTypeID { get; set; }
     }
 }

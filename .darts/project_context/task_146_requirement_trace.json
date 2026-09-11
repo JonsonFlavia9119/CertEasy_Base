@@ -1,0 +1,60 @@
+{
+  "task_id": 146,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Requirements,\n\n* As an admin user, I need email notifications to be sent on Application Approval or Rejection. \n* Use the resend email send functionality to send emails \n* Use from Email \"onboarding@resend.dev\"\n* Use recipient email \"delivered@resend.dev\" \n* The Subject would be Application Reject or Application Approval based on action in application grid\n* The body content should be UserName, ApplicationId, Exam Name and SubmittedDateTime\n\nCheck;\n\n* Ensure email notifications are being send every action performed in Application grid (Approval/Rejection)\n* Ensure other functionalities should not get affected\n\nDesired output;\n\nAn recipient should get email notifications upon every action performed by the Admin user",
+  "generated_at": "2026-09-04T11:28:19.471Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Requirements,\n\n* As an admin user, I need email notifications to be sent on Application Approval or Rejection. \n* Use the resend email send functionality to send emails \n* Use from Email \"onboarding@resend.dev\"\n* Use recipient email \"delivered@resend.dev\" \n* The Subject would be Application Reject or Application Approval based on action in application grid\n* The body content should be UserName, Ap",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend - Email Logic Implementation",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Requirements,\n\n* As an admin user, I need email notificat...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Requirements,\n\n* As an admin user, I need email notifications to be sent on Appl",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 2,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

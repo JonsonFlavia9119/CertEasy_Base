@@ -4,12 +4,7 @@ function WorkflowViewModel() {
     self.currentStep = ko.observable(1);
     self.certifications = ko.observableArray([]);
     self.exams = ko.observableArray([]);
-    self.educationLevels = ko.observableArray([
-        { id: 1, name: 'High School' },
-        { id: 2, name: "Bachelor's Degree" },
-        { id: 3, name: "Master's Degree" },
-        { id: 4, name: 'PhD' }
-    ]);
+    self.educationLevels = ko.observableArray([]);
 
     self.selectedCertificationID = ko.observable();
     self.selectedExamID = ko.observable();
@@ -17,22 +12,53 @@ function WorkflowViewModel() {
     self.remarks = ko.observable('');
     self.message = ko.observable('');
 
+    self.selectedCertificationName = ko.computed(function () {
+        var cert = ko.utils.arrayFirst(self.certifications(), function (item) {
+            return item.id === self.selectedCertificationID();
+        });
+        return cert ? cert.name : 'Not selected';
+    });
+
+    self.selectedExamName = ko.computed(function () {
+        var exam = ko.utils.arrayFirst(self.exams(), function (item) {
+            return item.id === self.selectedExamID();
+        });
+        return exam ? (exam.examName + ' - ' + exam.examCenter) : 'Not selected';
+    });
+
+    self.selectedEducationName = ko.computed(function () {
+        var edu = ko.utils.arrayFirst(self.educationLevels(), function (item) {
+            return item.id === self.selectedEducationLevelID();
+        });
+        return edu ? edu.name : 'Not selected';
+    });
+
     self.nextStep = function () {
-        self.currentStep(self.currentStep() + 1);
+        if (self.currentStep() < 5) {
+            self.currentStep(self.currentStep() + 1);
+        }
     };
 
     self.prevStep = function () {
-        self.currentStep(self.currentStep() - 1);
+        if (self.currentStep() > 1) {
+            self.currentStep(self.currentStep() - 1);
+        }
     };
 
     self.loadData = function () {
         $.getJSON('/Workflow/GetInitialData', function (data) {
             self.certifications(data.certifications);
             self.exams(data.exams);
+            self.educationLevels(data.educations);
         });
     };
 
     self.submitApplication = function () {
+        if (!self.selectedEducationLevelID()) {
+            alert('Please select an education level.');
+            return;
+        }
+
         var data = {
             CertificationID: parseInt(self.selectedCertificationID()),
             ExamID: parseInt(self.selectedExamID()),
@@ -51,7 +77,9 @@ function WorkflowViewModel() {
             success: function (response) {
                 if (response.success) {
                     self.message(response.message);
-                    self.currentStep(5);
+                    self.currentStep(6);
+                } else {
+                    alert(response.message);
                 }
             },
             error: function (err) {
