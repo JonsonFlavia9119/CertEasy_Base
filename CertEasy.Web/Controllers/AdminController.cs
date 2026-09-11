@@ -18,28 +18,36 @@ namespace CertEasy.Web.Controllers
         private readonly ILogger<AdminController> _logger;
 
         public AdminController(IAdminService adminService, ILogger<AdminController> logger)
-        {
+        { 
             _adminService = adminService;
             _logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
-            var applications = await _adminService.GetApplicationsInReviewAsync();
-            var addresses = await _adminService.GetAllAddressesAsync();
-            var certifications = await _adminService.GetCertificationsAsync();
-            var educations = await _adminService.GetAllEducationAsync();
-            var exams = await _adminService.GetAllExamsAsync();
-
-            var viewModel = new AdminDashboardViewModel
+            try
             {
-                PendingApplications = applications,
-                Addresses = addresses,
-                Certifications = certifications,
-                Educations = educations,
-                Exams = exams
-            };
-            return View(viewModel);
+                var applications = await _adminService.GetAllApplicationsAsync();
+                var addresses = await _adminService.GetAllAddressesAsync();
+                var certifications = await _adminService.GetCertificationsAsync();
+                var educations = await _adminService.GetAllEducationAsync();
+                var exams = await _adminService.GetAllExamsAsync();
+
+                var viewModel = new AdminDashboardViewModel
+                { 
+                    PendingApplications = applications ?? new List<Application>(),
+                    Addresses = addresses ?? new List<Address>(),
+                    Certifications = certifications ?? new List<Certification>(),
+                    Educations = educations ?? new List<Education>(),
+                    Exams = exams ?? new List<Exam>()
+                };
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error loading admin dashboard");
+                return View(new AdminDashboardViewModel());
+            }
         }
 
         [HttpPost]
@@ -60,7 +68,7 @@ namespace CertEasy.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Reject(int id)
+        public async Task<IActionResult> Reject(int id, string remarks)
         {
             var result = await _adminService.RejectApplicationAsync(id, User.Identity.Name ?? "Unknown");
             if (result)
@@ -74,7 +82,6 @@ namespace CertEasy.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Master Data Actions
         public async Task<IActionResult> ManageCertifications()
         {
             var certifications = await _adminService.GetCertificationsAsync();
@@ -151,7 +158,6 @@ namespace CertEasy.Web.Controllers
             return RedirectToAction(nameof(ManageCertifications));
         }
 
-        // Address Management
         public async Task<IActionResult> ManageAddresses()
         {
             var addresses = await _adminService.GetAllAddressesAsync();
@@ -220,7 +226,6 @@ namespace CertEasy.Web.Controllers
             return RedirectToAction(nameof(ManageAddresses));
         }
 
-        // Education Qualification Management
         public async Task<IActionResult> ManageEducation()
         {
             var education = await _adminService.GetAllEducationAsync();
@@ -289,7 +294,6 @@ namespace CertEasy.Web.Controllers
             return RedirectToAction(nameof(ManageEducation));
         }
 
-        // Exam Management
         public async Task<IActionResult> ManageExams()
         {
             var exams = await _adminService.GetAllExamsAsync();
@@ -356,6 +360,73 @@ namespace CertEasy.Web.Controllers
                 TempData["ErrorMessage"] = "Failed to delete exam.";
             }
             return RedirectToAction(nameof(ManageExams));
+        }
+
+        public async Task<IActionResult> EmailConfiguration()
+        {
+            var config = await _adminService.GetEmailConfigurationAsync();
+            if (config == null)
+            {
+                config = new EmailConfiguration { ProviderName = "Resend" };
+            }
+
+            var viewModel = new EmailConfigurationViewModel
+            { 
+                Id = config.Id,
+                ProviderName = config.ProviderName,
+                SenderEmail = config.SenderEmail,
+                SenderName = config.SenderName,
+                ApiKey = string.IsNullOrEmpty(config.ApiKey) ? "" : "********",
+                EnableSsl = config.EnableSsl
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EmailConfiguration(EmailConfigurationViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var config = new EmailConfiguration
+                { 
+                    Id = model.Id,
+                    ProviderName = model.ProviderName,
+                    SenderEmail = model.SenderEmail,
+                    SenderName = model.SenderName,
+                    ApiKey = model.ApiKey,
+                    EnableSsl = model.EnableSsl
+                };
+
+                var result = await _adminService.UpdateEmailConfigurationAsync(config, User.Identity.Name ?? "Unknown");
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Email configuration updated successfully.";
+                    return RedirectToAction(nameof(EmailConfiguration));
+                }
+                ModelState.AddModelError("", "Failed to update email configuration.");
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> TestEmail(string targetEmail)
+        {
+            if (string.IsNullOrEmpty(targetEmail))
+            {
+                return Json(new { success = false, message = "Please enter a valid email address." });
+            }
+
+            var result = await _adminService.SendTestEmailAsync(targetEmail);
+            if (result)
+            {
+                return Json(new { success = true, message = "Test email initiated successfully via Resend." });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Failed to initiate test email. Please check your API Key and logs." });
+            }
         }
     }
 }

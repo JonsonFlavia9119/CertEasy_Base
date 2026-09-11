@@ -30,9 +30,5 @@ namespace CertEasy.Model
 
         [MaxLength(200)]
         public string? InstituteName { get; set; }
-
-        public int? EntityID { get; set; }
-
-        public int? EntityTypeID { get; set; }
     }
 }

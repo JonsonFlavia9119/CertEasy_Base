@@ -7,7 +7,8 @@ namespace CertEasy.Web.Models
         [Required]
         public int CertificationID { get; set; }
 
-        public int? EducationLevelID { get; set; } // Optional if not required for application entity directly
+        [Required(ErrorMessage = "Education Level is required.")]
+        public int? EducationLevelID { get; set; }
 
         [Required]
         public int ExamID { get; set; }

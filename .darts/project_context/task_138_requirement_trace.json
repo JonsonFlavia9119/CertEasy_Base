@@ -1,0 +1,99 @@
+{
+  "task_id": 138,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "I noticed something has changed in the application process, before there is an review page along with Submit button, not the review page is not showing, instead the \"SubmitAppliction\" button is showing in the education page.\n\nGetting this below error during application submission. \n\n\"Cannot insert the value NULL into column 'EducationLevelID', table 'CertEasyDb.dbo.Applications'; column does not allow nulls. INSERT fails.The statement has been terminated.\"",
+  "generated_at": "2026-09-03T11:19:02.162Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "I noticed something has changed in the application process, before there is an review page along with Submit button, not the review page is not showing, instead the \"SubmitAppliction\" button is showing in the education page.\n\nGetting this below error during application submission. \n\n\"Cannot insert the value NULL into column 'EducationLevelID', table 'CertEasyDb.dbo.Applications'; column does not a",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Backend Models and DB Context",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Models/ApplicationViewModel.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I noticed something has changed in the application proces...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Update Frontend Wizard UI and Review Logic",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Models/ApplicationViewModel.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I noticed something has changed in the application proces...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Models/ApplicationViewModel.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "I noticed something has changed in the application process, before there is an r",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "passed"
+  }
+}

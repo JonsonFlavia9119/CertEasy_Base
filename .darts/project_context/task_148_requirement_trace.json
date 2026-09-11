@@ -1,0 +1,46 @@
+{
+  "task_id": 148,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Getting the below error while clicking on Approve button\n\nThe UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_Applications_Statuses_StatusID\". The conflict occurred in database \"CertEasyDb\", table \"dbo.Statuses\", column 'Id'.'",
+  "generated_at": "2026-09-11T07:28:12.524Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The system must ensure valid StatusID foreign key references exist in the Statuses master table when updating application statuses.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Seed Statuses master table data in DbContext and Migration",
+      "status": "completed",
+      "req_refs": [
+        "R-001"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260911072740_SeedStatusesData.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Getting the below error while clicking on Approve button\n..."
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 1,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "not_run"
+  }
+}

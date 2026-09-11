@@ -1,0 +1,102 @@
+{
+  "task_id": 144,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInvalid column name 'ProviderName'.\" \nwhile executing \"var config = await _context.EmailConfigurations.FirstOrDefaultAsync();\" \n\nObservations;\n\nI have observed there is no field exists in EmailConfiguration table in SQL\n\nCheck;\n\n* Ensure the EmailConfiguration entity is correctly synced with EmailConfigurations table in SQL DB\n* Add a migration if needed\n* Ensure an admin user can save EmailConfiguration\n* Ensure the Test Email should be working fine\n\nDesired output;\n\n* EmailConfiguration page should be working\n* Test Email functionality should send a test email\n* Write a production ready code without any issues\n",
+  "generated_at": "2026-09-04T08:19:39.182Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInvalid column name 'ProviderName'.\" \nwhile executing \"var config = await _context.EmailConfigurations.FirstOrDefaultAsync();\" \n\nObservations;\n\nI have observed there is no field exists in EmailConfiguration table in SQL\n\nCheck;\n\n* Ensure the EmailConfiguration entity is correctly synced with EmailConfigurations table in SQL DB\n* Add a migration",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Database Sync — Add migration for missing EmailConfiguration columns",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20260904081906_FixEmailConfigurationColumns.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInv...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Controller Refinement — Fix EmailConfiguration POST action and TestEmail",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20260904081906_FixEmailConfigurationColumns.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInv...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "View Refinement — Correct view model reference and UI alignment",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20260904081906_FixEmailConfigurationColumns.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInv...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Data/Migrations/20260904081906_FixEmailConfigurationColumns.cs",
+        "CertEasy.Services/AdminService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Issue;\n\nGetting the \"Invalid column name 'ApiKey'.\\r\\nInvalid column name 'Provi",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 4,
+    "tasks_completed": 3,
+    "tasks_failed": 0,
+    "files_written": 2,
+    "validation_status": "passed"
+  }
+}

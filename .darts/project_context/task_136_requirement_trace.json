@@ -1,0 +1,81 @@
+{
+  "task_id": 136,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement the notification service that triggers after an application status update. For approvals, send an email with Subject \"Application Approved\" containing the application ID and [REDACTED] details. For rejections, send an email with Subject \"Application Rejected\" containing the same details. The recipient email address must be fetched from the emailId field in the users table.\n\nAcceptance Criteria:\n- Upon approval, an email is sent to the recipient's emailId (retrieved from the users table).\n- The approval email has Subject: 'Application Approved' and includes the Application ID and [REDACTED] details in the body.\n- Upon rejection, an email is sent to the recipient's emailId.\n- The rejection email has Subject: 'Application Rejected' and includes the Application ID and [REDACTED] details in the body.\n\nDependencies: Task Admin Email Configuration Page, Task Update Application Status Logic",
+  "generated_at": "2026-09-03T09:51:02.536Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Implement the notification service that triggers after an application status update. For approvals, send an email with Subject \"Application Approved\" containing the application ID and [REDACTED] details. For rejections, send an email with Subject \"Application Rejected\" containing the same details. The recipient email address must be fetched from the emailId field in the users table.\n\nAcceptance Cr",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend Notification Service and AdminService Integration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/NotificationService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the notification service that triggers after an...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry point registration",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/NotificationService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the notification service that triggers after an...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/NotificationService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Implement the notification service that triggers after an application status upd",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

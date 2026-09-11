@@ -1,0 +1,81 @@
+{
+  "task_id": 145,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Update the existing Resend email integration so that the **Resend API key is retrieved from the `EmailConfigurations.ApiKey` database field and used dynamically when sending each email**.\n\nDo not move the API key to `appsettings.json`, User Secrets, environment variables, or any other configuration source.\n\nInspect the installed Resend NuGet package version and use the correct API for that version.\n\nUpdate the existing `SendAsync()` implementation and dependency injection configuration as needed.\n\nEnsure:\n\n* `config.ApiKey` is actually passed to the Resend client.\n* `config.SenderEmail` and `config.SenderName` continue to come from the database.\n* No hard-coded API key is used.\n* `\"PLACEHOLDER\"` is completely removed.\n* Missing API key is handled with proper logging and returns `false`.\n* The API key is never written to logs.\n* Make only the necessary changes and do not modify unrelated code.\n",
+  "generated_at": "2026-09-04T10:56:14.719Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Update the existing Resend email integration so that the **Resend API key is retrieved from the `EmailConfigurations.ApiKey` database field and used dynamically when sending each email**.\n\nDo not move the API key to `appsettings.json`, User Secrets, environment variables, or any other configuration source.\n\nInspect the installed Resend NuGet package version and use the correct API for that version",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Update ResendEmailService for dynamic API key",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Update the existing Resend email integration so that the ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Entry points — Update Program.cs for dynamic Resend configuration",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Update the existing Resend email integration so that the ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Services/ResendEmailService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Update the existing Resend email integration so that the **Resend API key is ret",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

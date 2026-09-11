@@ -1,0 +1,145 @@
+{
+  "task_id": 142,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Requirement,\n\nAs an admin user I choose \"Resend\" email provider over SMPT so  the SMPT setting are no longer needed.\n\nTO DO\n\n* Remove SMPT related fields in UI, ViewModels, backend code, Entity, SQL DB\n* the fields are\n -> SMTP Server\n -> SMTP Port\n -> SMTP Username\n -> SMTP Password\n\nCheck;\n* Remove only specified columns and its related codes\n* Do not remove unnecessary codes \n* Email configuration should work after removing the specified fields\n* Add migration if needed\n\nDesired output\n* Email configuration page should work after removing SMTP related fields \n* Clean and production ready code with zero errors",
+  "generated_at": "2026-09-04T05:46:07.608Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Requirement,\n\nAs an admin user I choose \"Resend\" email provider over SMPT so  the SMPT setting are no longer needed.\n\nTO DO\n\n* Remove SMPT related fields in UI, ViewModels, backend code, Entity, SQL DB\n* the fields are\n -> SMTP Server\n -> SMTP Port\n -> SMTP Username\n -> SMTP Password\n\nCheck;\n* Remove only specified columns and its related codes\n* Do not remove unnecessary codes \n* Email configurat",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — Remove SMTP fields from Entity, ViewModel, and DbContext",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EmailConfiguration.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.cs",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Requirement,\n\nAs an admin user I choose \"Resend\" email pr...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Logic — Update Services to remove SMTP logic and use Resend/API Key",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EmailConfiguration.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.cs",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Requirement,\n\nAs an admin user I choose \"Resend\" email pr...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Web — Update Controller and View to remove SMTP fields from UI",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EmailConfiguration.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.cs",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Requirement,\n\nAs an admin user I choose \"Resend\" email pr...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-004",
+      "name": "Database — Add EF Core Migration to remove columns",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EmailConfiguration.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.cs",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Requirement,\n\nAs an admin user I choose \"Resend\" email pr...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [
+        "CertEasy.Model/EmailConfiguration.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/EmailConfiguration.cshtml",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.cs",
+        "CertEasy.Data/Migrations/20260904054549_RemoveSmtpFieldsFinal.Designer.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Requirement,\n\nAs an admin user I choose \"Resend\" email provider over SMPT so  th",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 5,
+    "tasks_completed": 4,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "passed"
+  }
+}

@@ -62,13 +62,13 @@ namespace CertEasy.Web.Controllers
         {
             var certs = await _workflowService.GetActiveCertificationsAsync();
             var exams = await _workflowService.GetExamsAsync();
-            return Json(new { certifications = certs, exams = exams });
+            var educations = await _workflowService.GetAllEducationsAsync();
+            return Json(new { certifications = certs, exams = exams, educations = educations });
         }
 
         [HttpPost]
         public async Task<IActionResult> SaveStep([FromBody] dynamic stepData)
         {
-            // Endpoint for wizard to save steps
             if (stepData == null) return BadRequest("Invalid data");
             _logger.LogInformation("Step saved");
             return Json(new { success = true });
@@ -87,8 +87,9 @@ namespace CertEasy.Web.Controllers
                         UserID = userId,
                         CertificationID = model.CertificationID,
                         ExamID = model.ExamID,
+                        EducationLevelID = model.EducationLevelID.Value,
                         Remarks = model.Remarks,
-                        StatusID = (int)ApplicationStatus.Review, // Move to review status upon submission
+                        StatusID = (int)ApplicationStatus.Review,
                         SubmittedDate = DateTime.UtcNow,
                         CreatedBy = userId.ToString(),
                         CreatedDate = DateTime.UtcNow,

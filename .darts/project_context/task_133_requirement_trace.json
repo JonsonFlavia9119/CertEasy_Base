@@ -1,0 +1,75 @@
+{
+  "task_id": 133,
+  "task_name": "CertEasy_AdminActions_Phase1",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Develop a [REDACTED] configuration page in the admin area to allow admin users to configure [REDACTED] settings for email configuration. This page should provide fields to save essential SMTP or service-specific email settings.\n\nAcceptance Criteria:\n- The [REDACTED] configuration page exists within the admin area.\n- Admin users can enter and save [REDACTED] email configuration settings.\n- The configuration settings are correctly persisted for use in the notification service.",
+  "generated_at": "2026-09-03T09:36:58.979Z",
+  "requirements": [
+    {
+      "req_id": "R-FULL",
+      "text": "Develop a [REDACTED] configuration page in the admin area to allow admin users to configure [REDACTED] settings for email configuration. This page should provide fields to save essential SMTP or service-specific email settings.\n\nAcceptance Criteria:\n- The [REDACTED] configuration page exists within the admin area.\n- Admin users can enter and save [REDACTED] email configuration settings.\n- The conf",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend — EmailConfiguration model, DbContext update, IAdminService and AdminService updates",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a [REDACTED] configuration page in the admin area...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Frontend UI — EmailConfiguration ViewModel, AdminController updates, Email Configuration View, and Layout update",
+      "status": "completed",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a [REDACTED] configuration page in the admin area...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-0",
+      "name": "Analysing and planning implementation...",
+      "status": "pending",
+      "req_refs": [
+        "REQ-FULL"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a [REDACTED] configuration page in the admin area to allow admin users t",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 0,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 0,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

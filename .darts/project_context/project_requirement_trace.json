@@ -1,0 +1,131 @@
+{
+  "project_id": 11,
+  "project_name": "CertEasy_AdminActions_Phase1",
+  "source_requirement_hash": "97546413a6105984431d13287498a073",
+  "generated_at": "2026-09-09T12:40:37.964Z",
+  "last_updated_at": "2026-09-11T08:11:31.632Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Develop a [REDACTED] configuration page in the admin area so an admin user can configure the [REDACTED] settings for email configuration.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-002",
+      "text": "Each application in the grid must display an Approve button.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-003",
+      "text": "Each application in the grid must display a Reject button.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-004",
+      "text": "Only admin users shall have permission to Approve or Reject applications.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-005",
+      "text": "The Approve and Reject buttons must not be visible to non-admin users.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-006",
+      "text": "When an admin user approves an application, an approval email must be sent to the recipient's emailId from the users table.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-007",
+      "text": "The approval email must have the subject 'Application Approved'.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-008",
+      "text": "The approval email body must include application details containing the ID and [REDACTED].",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-009",
+      "text": "When an admin user rejects an application, a rejection email must be sent to the recipient's emailId from the users table.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-010",
+      "text": "The rejection email must have the subject 'Application Rejected'.",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-011",
+      "text": "The rejection email body must include application details containing the ID and [REDACTED].",
+      "status": "uncovered",
+      "covered_by_tasks": []
+    },
+    {
+      "req_id": "R-012",
+      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 112 when an application is approved.",
+      "status": "covered",
+      "covered_by_tasks": [
+        147,
+        148
+      ]
+    },
+    {
+      "req_id": "R-013",
+      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 113 when an application is rejected.",
+      "status": "covered",
+      "covered_by_tasks": [
+        148
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": 147,
+      "task_name": "Task 15",
+      "task_order": 15,
+      "status": "completed",
+      "req_refs": [
+        "R-012"
+      ],
+      "files_written": [
+        "CertEasy.Services/AdminService.cs"
+      ]
+    },
+    {
+      "task_id": 148,
+      "task_name": "Task 16",
+      "task_order": 16,
+      "status": "completed",
+      "req_refs": [
+        "R-012",
+        "R-013"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260911072740_SeedStatusesData.cs"
+      ]
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 13,
+    "covered": 2,
+    "partial": 0,
+    "uncovered": 11,
+    "coverage_pct": 15,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 3
+  }
+}
