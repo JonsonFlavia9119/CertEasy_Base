@@ -83,6 +83,12 @@ using (var scope = app.Services.CreateScope())
         var dbContext = services.GetRequiredService<CertEasyDbContext>();
         dbContext.Database.Migrate();
         Serilog.Log.Information("Database migrations applied successfully.");
+
+        var fileUploadsPath = Path.Combine(app.Environment.WebRootPath ?? Path.Combine(app.Environment.ContentRootPath, "wwwroot"), "FileUploads");
+        if (!Directory.Exists(fileUploadsPath))
+        {
+            Directory.CreateDirectory(fileUploadsPath);
+        }
     }
     catch (Exception ex)
     {

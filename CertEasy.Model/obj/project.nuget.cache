@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qjy2cTIN8C4=",
+  "dgSpecHash": "nQE3duVRvGM=",
   "success": true,
-  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_AdminActions_Phase1\\CertEasy.Model\\CertEasy.Model.csproj",
+  "projectFilePath": "C:\\DARTS-development-environment\\sandbox\\kjohnson\\CertEasy_AdminActions_Phase2_State2\\CertEasy.Model\\CertEasy.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kjohnson\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\kjohnson\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

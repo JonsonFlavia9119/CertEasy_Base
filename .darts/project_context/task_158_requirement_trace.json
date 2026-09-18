@@ -1,0 +1,131 @@
+{
+  "task_id": 158,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "Requirements\n\nAs an user, I would like to modify the application process and add additional field in the 'Education & Remarks' & Certification sections\n\nA new file upload control should be available and user should be able to choose and upload file.\n\n* users are able to choose and upload their educational documents and the certificate documents\n* A new table should be added to the database named \"FileUploads\"\n* My goal is the FileUpload table is open for all modules. \n* EntityId should be ApplicationId and EntityTypeId should be EducationId \n* EntityId should be ApplicationId and EntityTypeId should be CertificationId\n* Create a new folder namm=ed \"FIleUploads\" in the application directory and save the path in FileUploads table. \n\nCheck\n\n* Only specified changes has to be made\n* Existing functionalities should not get affected\n* File Upload should be working fine.\n* Ensure file upload code changes are fine below areas\n-> SQL DB\n-> Migration applied correctly\n-> Server side code changes\n-> viewmodel.js changes\n-> .cshtml controls are fine\n-> Ensure nothing is breaking\n\n",
+  "generated_at": "2026-09-17T10:56:41.011Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Add a new file upload control in the application process allowing users to select and upload educational and certificate documents.",
+      "status": "partial",
+      "covered_by": [
+        "T-002",
+        "T-003"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "Create a new database table named FileUploads with appropriate entity fields to support document uploads across modules.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Set specific EntityId and EntityTypeId mapping rules for certification and education uploaded documents.",
+      "status": "covered",
+      "covered_by": [
+        "T-003"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "Create a FileUploads directory in the application file system and store the file paths in the FileUploads table.",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-003"
+      ]
+    },
+    {
+      "req_id": "R-005",
+      "text": "Ensure file upload functionality works correctly across database migrations, server-side logic, view models, and Razor CSHTML views without affecting existing features.",
+      "status": "partial",
+      "covered_by": [
+        "T-001",
+        "T-002",
+        "T-003"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Implement FileUpload entity model, DbContext mapping, database migration, and storage directory initialization",
+      "status": "completed",
+      "req_refs": [
+        "R-002",
+        "R-004",
+        "R-005"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "FileUpload Infrastructure",
+      "feature": "Generic FileUpload Data & Storage Layer",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Add document upload controls to Application Wizard Razor View and Knockout ViewModel",
+      "status": "pending",
+      "req_refs": [
+        "R-001",
+        "R-005"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "Workflow Management",
+      "feature": "Application Document Upload & Wizard Integration",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-003",
+      "name": "Implement server-side document persistence and FileUpload record generation in Workflow Service",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-003",
+        "R-004",
+        "R-005"
+      ],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "Workflow Management",
+      "feature": "Application Document Upload & Wizard Integration",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 5,
+    "covered": 3,
+    "partial": 2,
+    "uncovered": 0,
+    "coverage_pct": 80,
+    "total_tasks": 3,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "task_id": 159,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "An unhandled exception occurred while processing the request.\nAmbiguousMatchException: The request matched multiple endpoints. Matches:\n\nCertEasy.Web.Controllers.WorkflowController.Apply (CertEasy.Web)\nCertEasy.Web.Controllers.WorkflowController.Index (CertEasy.Web)\nMicrosoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span<CandidateState> candidateState)",
+  "generated_at": "2026-09-17T11:01:51.879Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Resolve the AmbiguousMatchException by eliminating duplicate route matches in the web application.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Fix WorkflowController ambiguous endpoint routing",
+      "status": "completed",
+      "req_refs": [
+        "R-001"
+      ],
+      "files_written": [
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "An unhandled exception occurred while processing the requ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 1,
+    "covered": 1,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 1,
+    "validation_status": "passed"
+  }
+}

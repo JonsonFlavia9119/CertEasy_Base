@@ -1,0 +1,65 @@
+{
+  "task_id": 160,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "As an admin user, I would like to view badge for completed applications.\n\nChange the label to link for completed applications grid\nMy Idea if when the link is clicked then a new window should open and show their badges\nMy vision is the badge is like Accredible badge provider\nUse any badge provider to show this badge in new window",
+  "generated_at": "2026-09-17T11:35:35.310Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The system shall display the badge label as a link in the completed applications grid.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "The system shall open a new window to display the application badge when the badge link is clicked.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "The system shall render the application badge using an Accredible-style badge provider view.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Add ViewBadge action to AdminController, create ViewBadge.cshtml Accredible-style badge provider view, and update Completed Applications grid in Index.cshtml to render badge label as link opening in new window",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "As an admin user, I would like to view badge for complete...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 3,
+    "covered": 3,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

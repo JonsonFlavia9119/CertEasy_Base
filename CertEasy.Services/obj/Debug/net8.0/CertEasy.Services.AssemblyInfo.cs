@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CertEasy.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50d99d5ceee818c1ce90f5dccc031a1aa926ef52")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be42ddd51202f4d2db7984a98bac65a9dec3620f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CertEasy.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CertEasy.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,88 @@
+{
+  "task_id": 152,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Implement logic and UI support allowing users to resubmit previously rejected applications. Enable the resubmit link/action exclusively for rejected applications while disabling or hiding it for approved applications, allowing admin users to re-evaluate and approve resubmitted applications.\n\nAcceptance Criteria:\n- Verify that only applications with a rejected status display an active 'Resubmit' link or button.\n- Verify that approved or in-progress applications do not display the 'Resubmit' link.\n- Verify that submitting a rejected application updates its state appropriately so that admin users can re-review and re-approve it.\n- Ensure existing application submission and approval workflows remain unaffected.",
+  "generated_at": "2026-09-16T07:48:25.459Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Display an active 'Resubmit' link or button exclusively for applications with a rejected status.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "Disable or hide the 'Resubmit' link/button for approved or in-progress applications.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Update the application state upon resubmission to allow admin users to re-evaluate and re-approve it.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "Ensure existing application submission and approval workflows remain unaffected.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Implement Resubmit logic in Workflow Service and Controller",
+      "status": "completed",
+      "req_refs": [
+        "R-003",
+        "R-004"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement logic and UI support allowing users to resubmit...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Update Applications UI to display Resubmit button for rejected applications",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Implement logic and UI support allowing users to resubmit...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 4,
+    "covered": 4,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

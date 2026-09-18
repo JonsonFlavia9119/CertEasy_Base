@@ -5,6 +5,21 @@
 }
 
 <div class="container-fluid" id="dashboardContainer">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     <div class="row mb-4">
         <div class="col-md-12">
             <div class="card shadow-sm">
@@ -15,6 +30,9 @@
                     <ul class="nav nav-tabs" id="adminTabs" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="applications-tab" data-bs-toggle="tab" data-bs-target="#applications" type="button" role="tab">All Invoices / Applications</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="completed-applications-tab" data-bs-toggle="tab" data-bs-target="#completedApplications" type="button" role="tab">Completed Applications</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="addresses-tab" data-bs-toggle="tab" data-bs-target="#addresses" type="button" role="tab">Addresses</button>
@@ -32,14 +50,14 @@
                     <div class="tab-content p-3" id="adminTabsContent">
                         <div class="tab-pane fade show active" id="applications" role="tabpanel">
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-hover align-middle">
                                     <thead>
                                         <tr>
                                             <th>User</th>
                                             <th>Certification</th>
                                             <th>Submission Date</th>
                                             <th>Status</th>
-                                            <th style="width: 200px;">Actions</th>
+                                            <th style="width: 260px;">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,18 +68,24 @@
                                                 <td>@app.Certification?.Name</td>
                                                 <td>@app.CreatedDate.ToShortDateString()</td>
                                                 <td>
-                                                    <span class="badge @(app.StatusID == 112 ? "bg-success" : (app.StatusID == 113 ? "bg-danger" : "bg-warning"))">
-                                                        @(app.StatusID == 112 ? "Approved" : (app.StatusID == 113 ? "Rejected" : "In Review"))
+                                                    <span class="badge @(app.StatusID == 200 ? "bg-success" : (app.StatusID == 112 || app.StatusID == 7 ? "bg-success" : (app.StatusID == 113 || app.StatusID == 8 ? "bg-danger" : "bg-warning")))">
+                                                        @(app.StatusID == 200 ? "Completed" : (app.StatusID == 112 || app.StatusID == 7 ? "Approved" : (app.StatusID == 113 || app.StatusID == 8 ? "Rejected" : "In Review")))
                                                     </span>
                                                 </td>
                                                 <td>
                                                     <div class="btn-group btn-group-sm">
                                                         <form asp-action="Approve" asp-route-id="@app.Id" method="post" style="display:inline;">
-                                                            <button type="submit" class="btn btn-success" @(app.StatusID == 112 ? "disabled" : "")>Approve</button>
+                                                            <button type="submit" class="btn btn-success" @(app.StatusID == 112 || app.StatusID == 7 || app.StatusID == 200 ? "disabled" : "")>Approve</button>
                                                         </form>
                                                         <form asp-action="Reject" asp-route-id="@app.Id" method="post" class="ms-1" style="display:inline;">
-                                                            <button type="submit" class="btn btn-danger" @(app.StatusID == 113 ? "disabled" : "")>Reject</button>
+                                                            <button type="submit" class="btn btn-danger" @(app.StatusID == 113 || app.StatusID == 8 || app.StatusID == 200 ? "disabled" : "")>Reject</button>
                                                         </form>
+                                                        @if (app.StatusID == 7 || app.StatusID == 112)
+                                                        {
+                                                            <a asp-action="AssignBadge" asp-route-id="@app.Id" class="btn btn-primary ms-1">
+                                                                <i class="bi bi-award me-1"></i>Assign Badge
+                                                            </a>
+                                                        }
                                                     </div>
                                                 </td>
                                             </tr>
@@ -69,6 +93,48 @@
                                         @if (!Model.PendingApplications.Any())
                                         {
                                             <tr><td colspan="5" class="text-center">No applications found.</td></tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="completedApplications" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered align-middle" id="completedApplicationsGrid">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>App ID</th>
+                                            <th>User Name</th>
+                                            <th>Certification</th>
+                                            <th>Assigned Badge Name</th>
+                                            <th>Badge ID</th>
+                                            <th>Badge Assigned Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var app in Model.CompletedApplications)
+                                        {
+                                            var displayBadgeName = !string.IsNullOrEmpty(app.BadgeName) ? app.BadgeName : (app.Certification?.Name ?? "Certified Professional");
+                                            <tr>
+                                                <td>#@app.Id</td>
+                                                <td>@(app.User != null ? (app.User.FirstName + " " + app.User.LastName) : "N/A")</td>
+                                                <td>@(app.Certification?.Name ?? "N/A")</td>
+                                                <td>
+                                                    <a asp-action="ViewBadge" asp-route-id="@app.Id" target="_blank" class="badge bg-primary text-wrap text-decoration-none shadow-sm fs-6 p-2">
+                                                        <i class="bi bi-award-fill me-1"></i>@displayBadgeName <i class="bi bi-box-arrow-up-right ms-1 small"></i>
+                                                    </a>
+                                                </td>
+                                                <td><code>@(app.BadgeId ?? ("BDG-" + app.Id.ToString("D5")))</code></td>
+                                                <td>@(app.BadgeAssignedDate?.ToShortDateString() ?? app.UpdatedDate?.ToShortDateString() ?? "N/A")</td>
+                                                <td>
+                                                    <span class="badge bg-success">Completed (200)</span>
+                                                </td>
+                                            </tr>
+                                        }
+                                        @if (!Model.CompletedApplications.Any())
+                                        {
+                                            <tr><td colspan="7" class="text-center text-muted py-4">No completed applications found.</td></tr>
                                         }
                                     </tbody>
                                 </table>

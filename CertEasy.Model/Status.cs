@@ -11,7 +11,8 @@ namespace CertEasy.Model
         Invoice = 5,
         Review = 6,
         Approved = 7,
-        Rejection = 8
+        Rejection = 8,
+        Completed = 200
     }
 
     public enum UserRole

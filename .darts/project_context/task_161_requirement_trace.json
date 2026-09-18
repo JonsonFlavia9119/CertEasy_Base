@@ -1,0 +1,70 @@
+{
+  "task_id": 161,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "As an admin user, I would like to have a check box in user registration page so during user registration if the checkbox is checked it will consider as a admin user. Set the RoleId =1 if the check box is enabled during registration.",
+  "generated_at": "2026-09-18T06:18:43.457Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The user registration page shall include an 'Is Admin' checkbox.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "The system shall consider a user as an admin user if the admin checkbox is checked during registration.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "The system shall set RoleId to 1 if the admin checkbox is enabled during registration.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Add IsAdmin checkbox to RegisterViewModel, Register.cshtml, AccountController, and AccountService",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Services/AccountService.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "As an admin user, I would like to have a check box in use...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 3,
+    "covered": 3,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 4,
+    "validation_status": "passed"
+  }
+}

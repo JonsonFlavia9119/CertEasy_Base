@@ -1,0 +1,97 @@
+{
+  "task_id": 156,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "simple",
+  "requirement_text": "Getting exception while clicking \"Assign Badge & Complete Application\"\n\n* Assign badge throwing error \"The UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_Applications_Statuses_StatusID\". The conflict occurred in database \"CertEasyDb\", table \"dbo.Statuses\", column 'Id'.\"\n* Fix this issue, if needed, you can add/edit migration\n* Do unit testing and ensure badge assign is working fine\n* Ensure existing functionality is not breaking",
+  "generated_at": "2026-09-17T07:21:12.222Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Fix the foreign key constraint exception occurring when clicking Assign Badge & Complete Application.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "Add or edit database migrations if needed to resolve the status foreign key issue.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Add unit tests to verify that badge assignment and application completion work properly.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "Ensure that existing functionality remains intact and is not broken.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Seed Completed status (Id 200) in DbContext & Migrations",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.cs",
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Tests/ServiceTests.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Getting exception while clicking \"Assign Badge & Complete...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Add unit testing for AssignBadgeAsync and status verification",
+      "status": "completed",
+      "req_refs": [
+        "R-003"
+      ],
+      "files_written": [
+        "CertEasy.Data/CertEasyDbContext.cs",
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.cs",
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Tests/ServiceTests.cs"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Getting exception while clicking \"Assign Badge & Complete...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 4,
+    "covered": 3,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 75,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 5,
+    "validation_status": "passed"
+  }
+}

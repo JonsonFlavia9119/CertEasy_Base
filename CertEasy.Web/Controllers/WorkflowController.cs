@@ -1,12 +1,14 @@
 using CertEasy.Web.Models;
 using CertEasy.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using CertEasy.Model;
 using System.Security.Claims;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.IO;
 using System;
 
 namespace CertEasy.Web.Controllers
@@ -16,12 +18,18 @@ namespace CertEasy.Web.Controllers
     {
         private readonly IWorkflowService _workflowService;
         private readonly IAdminService _adminService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly ILogger<WorkflowController> _logger;
 
-        public WorkflowController(IWorkflowService workflowService, IAdminService adminService, ILogger<WorkflowController> logger)
+        public WorkflowController(
+            IWorkflowService workflowService, 
+            IAdminService adminService, 
+            IWebHostEnvironment webHostEnvironment, 
+            ILogger<WorkflowController> logger)
         {
             _workflowService = workflowService;
             _adminService = adminService;
+            _webHostEnvironment = webHostEnvironment;
             _logger = logger;
         }
 
@@ -75,7 +83,7 @@ namespace CertEasy.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SubmitApplication([FromBody] ApplicationViewModel model)
+        public async Task<IActionResult> SubmitApplication([FromForm] ApplicationViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -97,16 +105,51 @@ namespace CertEasy.Web.Controllers
                         UpdatedDate = DateTime.UtcNow
                     };
 
-                    var success = await _workflowService.SubmitApplicationAsync(application);
+                    string webRoot = _webHostEnvironment.WebRootPath ?? Path.Combine(_webHostEnvironment.ContentRootPath, "wwwroot");
+                    string uploadsFolder = Path.Combine(webRoot, "FileUploads");
+
+                    var success = await _workflowService.SubmitApplicationAsync(
+                        application,
+                        model.CertificationDocument,
+                        model.EducationDocument,
+                        uploadsFolder
+                    );
+
                     if (success)
                     {
+                        _logger.LogInformation("Application submitted successfully for user {UserId}", userId);
                         return Json(new { success = true, message = "Application submitted successfully!" });
                     }
+                    _logger.LogWarning("Duplicate application attempt by user {UserId}", userId);
                     return Json(new { success = false, message = "You already have a pending application for this certification." });
                 }
                 return Unauthorized();
             }
             return BadRequest(ModelState);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Resubmit(int id)
+        {
+            var userIdStr = User.FindFirst("UserId")?.Value;
+            int userId = 0;
+            int.TryParse(userIdStr, out userId);
+
+            var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+            int checkUserId = userRole == "Admin" ? 0 : userId;
+
+            var result = await _workflowService.ResubmitApplicationAsync(id, checkUserId);
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Application resubmitted successfully for review.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to resubmit application or application is not in rejected status.";
+            }
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }

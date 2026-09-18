@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace CertEasy.Web.Models
 {
@@ -14,5 +15,9 @@ namespace CertEasy.Web.Models
         public int ExamID { get; set; }
 
         public string? Remarks { get; set; }
+
+        public IFormFile? CertificationDocument { get; set; }
+
+        public IFormFile? EducationDocument { get; set; }
     }
 }

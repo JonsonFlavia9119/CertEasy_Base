@@ -1,8 +1,12 @@
 using CertEasy.Model;
 using CertEasy.Data;
+using CertEasy.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging.Abstractions;
+using Moq;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace CertEasy.Tests
@@ -35,23 +39,57 @@ namespace CertEasy.Tests
             var adminRole = context.Roles.FirstOrDefault(r => r.RoleName == "Admin");
             Assert.NotNull(adminRole);
             Assert.Equal("System", adminRole.UpdatedBy);
+
+            // Verify Completed status (Id 200)
+            var completedStatus = context.Statuses.FirstOrDefault(s => s.Id == 200);
+            Assert.NotNull(completedStatus);
+            Assert.Equal("Completed", completedStatus.StatusName);
         }
 
         [Fact]
         public void Database_Connection_IsWorking()
         {
-            // This test verifies that the DbContext can be instantiated and interact with a provider.
-            // For real SQL testing, a real connection string would be needed, but for CI/CD, InMemory validates the model mapping.
             using var context = GetDbContext();
-            var canConnect = context.Database.CanConnect();
-            // Note: CanConnect returns false for InMemory databases in some EF versions, 
-            // so we check if we can add and retrieve an entity instead.
             var testRole = new Role { RoleName = "Test", CreatedBy = "Test" };
             context.Roles.Add(testRole);
             context.SaveChanges();
 
             var savedRole = context.Roles.FirstOrDefault(r => r.RoleName == "Test");
             Assert.NotNull(savedRole);
+        }
+
+        [Fact]
+        public async Task AssignBadgeAsync_WithApprovedStatus_SuccessfullyAssignsBadgeAndUpdatesStatusTo200()
+        {
+            // Arrange
+            using var context = GetDbContext();
+            var mockNotification = new Mock<INotificationService>();
+            var mockEmail = new Mock<IEmailService>();
+            var adminService = new AdminService(context, NullLogger<AdminService>.Instance, mockNotification.Object, mockEmail.Object);
+
+            var app = new Application
+            {
+                UserID = 1,
+                CertificationID = 1,
+                EducationLevelID = 1,
+                StatusID = 7, // Approved status
+                SubmittedDate = DateTime.UtcNow
+            };
+            context.Applications.Add(app);
+            await context.SaveChangesAsync();
+
+            // Act
+            var result = await adminService.AssignBadgeAsync(app.Id, "Gold Safety Badge", "BDG-10001", "AdminUser");
+
+            // Assert
+            Assert.True(result);
+            var updatedApp = await context.Applications.FindAsync(app.Id);
+            Assert.NotNull(updatedApp);
+            Assert.Equal(200, updatedApp.StatusID);
+            Assert.Equal("Gold Safety Badge", updatedApp.BadgeName);
+            Assert.Equal("BDG-10001", updatedApp.BadgeId);
+            Assert.NotNull(updatedApp.BadgeAssignedDate);
+            Assert.Equal("AdminUser", updatedApp.UpdatedBy);
         }
     }
 }

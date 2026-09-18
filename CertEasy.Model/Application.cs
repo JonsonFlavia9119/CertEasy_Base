@@ -70,6 +70,21 @@ namespace CertEasy.Model
             set;
         }
 
+        public string? BadgeId {
+            get;
+            set;
+        }
+
+        public string? BadgeName {
+            get;
+            set;
+        }
+
+        public DateTime? BadgeAssignedDate {
+            get;
+            set;
+        }
+
         public DateTime SubmittedDate {
             get;
             set;

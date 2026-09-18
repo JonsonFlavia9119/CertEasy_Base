@@ -27,10 +27,26 @@
             <!-- Step 2: Exam Selection -->
             <div data-bind="visible: currentStep() === 2">
                 <h4>Step 2: Select Exam Session</h4>
+                <p class="text-muted">Please select the exam name, location, and date session below.</p>
+                
+                <!-- 1. Exam Name Dropdown -->
                 <div class="mb-3">
-                    <label class="form-label">Choose Exam Center & Slot</label>
-                    <select class="form-select" data-bind="options: exams, optionsText: function(item) { return item.examName + ' - ' + item.examCenter + ' (' + new Date(item.examSlot).toLocaleString() + ')'; }, optionsValue: 'id', value: selectedExamID, optionsCaption: 'Choose...' "></select>
+                    <label class="form-label fw-bold">1. Exam Name</label>
+                    <select class="form-select" data-bind="options: uniqueExamNames, value: selectedExamName, optionsCaption: '-- Select Exam Name --'"></select>
                 </div>
+
+                <!-- 2. Location Dropdown -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">2. Location</label>
+                    <select class="form-select" data-bind="options: availableLocations, value: selectedLocation, optionsCaption: '-- Select Location --', enable: selectedExamName"></select>
+                </div>
+
+                <!-- 3. Exam Date Dropdown -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">3. Exam Date</label>
+                    <select class="form-select" data-bind="options: availableExamSlots, optionsText: function(item) { return new Date(item.examSlot).toLocaleString(); }, optionsValue: 'id', value: selectedExamID, optionsCaption: '-- Select Exam Date --', enable: selectedLocation"></select>
+                </div>
+
                 <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
                 <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedExamID">Next</button>
             </div>
@@ -42,6 +58,10 @@
                     <label class="form-label">Choose Certification</label>
                     <select class="form-select" data-bind="options: certifications, optionsText: 'name', optionsValue: 'id', value: selectedCertificationID, optionsCaption: 'Choose...' "></select>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload Certification Document (Optional)</label>
+                    <input type="file" id="certificationDocument" class="form-control" data-bind="event: { change: onCertificationDocumentChange }" />
+                </div>
                 <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
                 <button class="btn btn-primary" data-bind="click: nextStep, enable: selectedCertificationID">Next</button>
             </div>
@@ -52,6 +72,10 @@
                 <div class="mb-3">
                     <label class="form-label">Education Level</label>
                     <select class="form-select" data-bind="options: educationLevels, optionsText: 'name', optionsValue: 'id', value: selectedEducationLevelID, optionsCaption: 'Choose...' "></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload Education Document (Optional)</label>
+                    <input type="file" id="educationDocument" class="form-control" data-bind="event: { change: onEducationDocumentChange }" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Remarks</label>
@@ -66,8 +90,10 @@
                 <h4>Step 5: Review Application</h4>
                 <div class="alert alert-info">
                     <p><strong>Certification:</strong> <span data-bind="text: selectedCertificationName"></span></p>
-                    <p><strong>Exam:</strong> <span data-bind="text: selectedExamName"></span></p>
+                    <p><strong>Certification Document:</strong> <span data-bind="text: certificationDocumentName"></span></p>
+                    <p><strong>Exam:</strong> <span data-bind="text: selectedExamDisplay"></span></p>
                     <p><strong>Education:</strong> <span data-bind="text: selectedEducationName"></span></p>
+                    <p><strong>Education Document:</strong> <span data-bind="text: educationDocumentName"></span></p>
                     <p><strong>Remarks:</strong> <span data-bind="text: remarks"></span></p>
                 </div>
                 <button class="btn btn-secondary" data-bind="click: prevStep">Back</button>
