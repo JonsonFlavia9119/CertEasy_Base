@@ -1,0 +1,107 @@
+{
+  "task_id": 154,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "Create a specialized grid on the admin dashboard that lists only completed applications (statusId 200). Ensure admin users can view the specific badges assigned to each application within this grid.\n\nAcceptance Criteria:\n- Verify that a distinct grid is added to the admin dashboard specifically for completed applications.\n- Verify that only applications with 'Completed' status (statusId 200) are listed in this grid.\n- Verify that the assigned badge details for each completed application are clearly visible in the grid.\n- Ensure other admin dashboard grids and functionalities remain unaffected.\n\nDependencies: Task Badge Assignment Management for Approved Applications",
+  "generated_at": "2026-09-16T08:00:15.825Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "Add a distinct grid to the admin dashboard specifically for listing completed applications.",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "Filter the completed applications grid to display only applications with a 'Completed' status (statusId 200).",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "Display assigned badge details for each completed application clearly within the grid.",
+      "status": "covered",
+      "covered_by": [
+        "T-001",
+        "T-002"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "Ensure existing admin dashboard grids and functionalities remain unaffected.",
+      "status": "uncovered",
+      "covered_by": []
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Models, Admin Services, and ViewModels to support Completed Applications (StatusID 200) and assigned badge details",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [
+        "CertEasy.Model/Status.cs",
+        "CertEasy.Model/Application.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create a specialized grid on the admin dashboard that lis...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    },
+    {
+      "task_id": "T-002",
+      "name": "Update AdminController and Admin Dashboard View to add specialized completed applications grid displaying badge details",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": [
+        "CertEasy.Model/Status.cs",
+        "CertEasy.Model/Application.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ],
+      "module": "PlannerCoder",
+      "feature": "Create a specialized grid on the admin dashboard that lis...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 4,
+    "covered": 3,
+    "partial": 0,
+    "uncovered": 1,
+    "coverage_pct": 75,
+    "total_tasks": 2,
+    "tasks_completed": 2,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "passed"
+  }
+}

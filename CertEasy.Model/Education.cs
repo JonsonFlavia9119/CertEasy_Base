@@ -4,11 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CertEasy.Model
 {
     [Table("Educations")]
-    public class Education
+    public class Education : BaseEntity
     {
-        [Key]
-        public int Id { get; set; }
-
         [MaxLength(100)]
         public string? Name { get; set; }
 
@@ -16,17 +13,6 @@ namespace CertEasy.Model
         public string? Description { get; set; }
 
         public bool IsActive { get; set; }
-
-        [Required]
-        public DateTime CreatedDate { get; set; }
-
-        public DateTime? UpdatedDate { get; set; }
-
-        [MaxLength(100)]
-        public string? CreatedBy { get; set; }
-
-        [MaxLength(100)]
-        public string? UpdatedBy { get; set; }
 
         [MaxLength(200)]
         public string? InstituteName { get; set; }

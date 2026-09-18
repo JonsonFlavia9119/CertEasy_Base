@@ -1,57 +1,37 @@
 {
-  "hash": "97546413a6105984431d13287498a073",
+  "hash": "4f82769ff1deac1b786e16dbf5349c8a",
   "requirements": [
     {
       "req_id": "R-001",
-      "text": "Develop a [REDACTED] configuration page in the admin area so an admin user can configure the [REDACTED] settings for email configuration."
+      "text": "The system shall enable the resubmit link only for rejected applications."
     },
     {
       "req_id": "R-002",
-      "text": "Each application in the grid must display an Approve button."
+      "text": "The system shall disable the resubmit link for approved applications."
     },
     {
       "req_id": "R-003",
-      "text": "Each application in the grid must display a Reject button."
+      "text": "The system shall allow admin users to review and approve resubmitted applications."
     },
     {
       "req_id": "R-004",
-      "text": "Only admin users shall have permission to Approve or Reject applications."
+      "text": "The system shall provide a new link to assign badges that is enabled only for approved applications."
     },
     {
       "req_id": "R-005",
-      "text": "The Approve and Reject buttons must not be visible to non-admin users."
+      "text": "The system shall open a new page containing application details and badge options when the assign badges link is clicked by an admin."
     },
     {
       "req_id": "R-006",
-      "text": "When an admin user approves an application, an approval email must be sent to the recipient's emailId from the users table."
+      "text": "The system shall update the application status to completed (statusId 200) after a badge is assigned."
     },
     {
       "req_id": "R-007",
-      "text": "The approval email must have the subject 'Application Approved'."
+      "text": "The system shall display a new grid in the admin dashboard strictly listing completed applications."
     },
     {
       "req_id": "R-008",
-      "text": "The approval email body must include application details containing the ID and [REDACTED]."
-    },
-    {
-      "req_id": "R-009",
-      "text": "When an admin user rejects an application, a rejection email must be sent to the recipient's emailId from the users table."
-    },
-    {
-      "req_id": "R-010",
-      "text": "The rejection email must have the subject 'Application Rejected'."
-    },
-    {
-      "req_id": "R-011",
-      "text": "The rejection email body must include application details containing the ID and [REDACTED]."
-    },
-    {
-      "req_id": "R-012",
-      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 112 when an application is approved."
-    },
-    {
-      "req_id": "R-013",
-      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 113 when an application is rejected."
+      "text": "The system shall allow admin users to view assigned badges within the completed applications grid."
     }
   ]
 }

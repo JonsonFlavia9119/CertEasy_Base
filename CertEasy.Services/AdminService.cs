@@ -52,6 +52,30 @@ namespace CertEasy.Services
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Application>> GetCompletedApplicationsAsync()
+        {
+            return await _context.Applications
+                .Include(a => a.User)
+                .Include(a => a.Status)
+                .Include(a => a.Exam)
+                .Include(a => a.Certification)
+                .Include(a => a.Education)
+                .Where(a => a.StatusID == 200)
+                .OrderByDescending(a => a.SubmittedDate)
+                .ToListAsync();
+        }
+
+        public async Task<Application?> GetApplicationByIdAsync(int id)
+        {
+            return await _context.Applications
+                .Include(a => a.User)
+                .Include(a => a.Certification)
+                .Include(a => a.Status)
+                .Include(a => a.Exam)
+                .Include(a => a.Education)
+                .FirstOrDefaultAsync(a => a.Id == id);
+        }
+
         public async Task<bool> ApproveApplicationAsync(int id, string adminUser)
         {
             try
@@ -98,6 +122,35 @@ namespace CertEasy.Services
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error rejecting application {Id}", id);
+                return false;
+            }
+        }
+
+        public async Task<bool> AssignBadgeAsync(int applicationId, string badgeName, string? badgeId, string adminUser)
+        {
+            try
+            {
+                var app = await _context.Applications.FindAsync(applicationId);
+                if (app == null) return false;
+
+                if (app.StatusID != 7 && app.StatusID != 112)
+                {
+                    _logger.LogWarning("Attempted to assign badge to application {Id} with status {StatusID}", applicationId, app.StatusID);
+                    return false;
+                }
+
+                app.BadgeName = badgeName;
+                app.BadgeId = string.IsNullOrWhiteSpace(badgeId) ? $"BDG-{applicationId:D5}" : badgeId;
+                app.BadgeAssignedDate = DateTime.UtcNow;
+                app.StatusID = 200;
+                app.UpdatedDate = DateTime.UtcNow;
+                app.UpdatedBy = adminUser;
+
+                return await _context.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error assigning badge to application {Id}", applicationId);
                 return false;
             }
         }
@@ -430,7 +483,6 @@ namespace CertEasy.Services
                     existing.ProviderName = model.ProviderName;
                     existing.SenderEmail = model.SenderEmail;
                     existing.SenderName = model.SenderName;
-                    // Only update API Key if a new one is provided (security: do not expose or overwrite with empty/placeholder from UI)
                     if (!string.IsNullOrEmpty(model.ApiKey) && model.ApiKey != "********")
                     {
                         existing.ApiKey = model.ApiKey;

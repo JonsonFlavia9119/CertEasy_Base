@@ -77,17 +77,18 @@ namespace CertEasy.Web.Controllers
             _logger.LogInformation("Register POST requested for {Email}.", model.Email);
             if (ModelState.IsValid)
             {
+                int roleId = model.IsAdmin ? 1 : (int)UserRole.User;
                 var result = await _accountService.RegisterAsync(new Model.User
                 {
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     Email = model.Email,
-                    RoleID = (int)UserRole.User
+                    RoleID = roleId
                 }, model.Password);
 
                 if (result != null)
                 {
-                    _logger.LogInformation("User {Email} registered successfully.", model.Email);
+                    _logger.LogInformation("User {Email} registered successfully with RoleID {RoleId}.", model.Email, result.RoleID);
                     return RedirectToAction(nameof(Login));
                 }
                 _logger.LogWarning("Registration failed for {Email} (user might exist).", model.Email);
@@ -110,7 +111,7 @@ namespace CertEasy.Web.Controllers
         public async Task<IActionResult> WindowsLogin()
         {
             if (User.Identity?.IsAuthenticated == true)
-            { 
+            {
                 var windowsIdentifier = User.Identity.Name;
                 _logger.LogInformation("Windows Login for {WindowsUser}.", windowsIdentifier);
                 var user = await _accountService.GetUserByWindowsIdentityAsync(windowsIdentifier);

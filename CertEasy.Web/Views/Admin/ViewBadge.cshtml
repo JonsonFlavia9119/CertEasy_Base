@@ -1,0 +1,220 @@
+@model CertEasy.Model.Application
+@{
+    Layout = null;
+    var recipientName = Model.User != null ? $"{Model.User.FirstName} {Model.User.LastName}".Trim() : "Certificate Recipient";
+    var badgeTitle = !string.IsNullOrEmpty(Model.BadgeName) ? Model.BadgeName : (Model.Certification?.Name ?? "Certified Professional");
+    var badgeId = Model.BadgeId ?? ("BDG-" + Model.Id.ToString("D5"));
+    var issueDate = Model.BadgeAssignedDate?.ToString("MMMM dd, yyyy") ?? Model.UpdatedDate?.ToString("MMMM dd, yyyy") ?? DateTime.UtcNow.ToString("MMMM dd, yyyy");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credential - @badgeTitle | CertEasy Accredible Badge</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #2c3e50;
+        }
+        .credential-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .accredible-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            margin-top: -30px;
+        }
+        .badge-visual {
+            background: radial-gradient(circle, #ffffff 0%, #f8fafc 100%);
+            border-right: 1px solid #edf2f7;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .badge-shield {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.5rem;
+            box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+            border: 6px solid #ffffff;
+            outline: 2px solid #0d6efd;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .badge-verified-ribbon {
+            background-color: #198754;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            box-shadow: 0 2px 5px rgba(25, 135, 84, 0.2);
+        }
+        .credential-details {
+            padding: 3rem 2.5rem;
+        }
+        .issuer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+        }
+        .meta-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.25rem;
+        }
+        .credential-id-box {
+            background-color: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        .action-bar {
+            border-top: 1px solid #edf2f7;
+            padding: 1.25rem 2.5rem;
+            background-color: #fafbfc;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        @@media print {
+            .credential-header, .action-bar {
+                display: none !important;
+            }
+            .accredible-card {
+                box-shadow: none;
+                border: none;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="credential-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-patch-check-fill fs-3 text-warning"></i>
+                <span class="fs-5 fw-bold text-white">CertEasy Accredible Badge Portal</span>
+            </div>
+            <div>
+                <span class="badge bg-light text-dark px-3 py-2 fw-semibold"><i class="bi bi-shield-check text-success me-1"></i> Verified Credential</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <div class="accredible-card">
+                    <div class="row g-0">
+                        <!-- Left Visual Column -->
+                        <div class="col-md-5 badge-visual">
+                            <div class="badge-shield">
+                                <i class="bi bi-award-fill"></i>
+                            </div>
+                            <h4 class="fw-bold mb-1 text-center text-dark">@badgeTitle</h4>
+                            <p class="text-muted small mb-2">CertEasy Official Digital Badge</p>
+                            <div class="badge-verified-ribbon">
+                                <i class="bi bi-check-circle-fill"></i> Official & Verified
+                            </div>
+                        </div>
+
+                        <!-- Right Details Column -->
+                        <div class="col-md-7 credential-details">
+                            <div class="issuer-logo">
+                                <i class="bi bi-building-fill text-primary"></i>
+                                <span>CertEasy Credential Authority</span>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="meta-label">Recipient Name</div>
+                                <div class="meta-value text-primary fs-3 fw-bold">@recipientName</div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-sm-6 mb-3">
+                                    <div class="meta-label">Certification Name</div>
+                                    <div class="meta-value">@(Model.Certification?.Name ?? badgeTitle)</div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="meta-label">Issue Date</div>
+                                    <div class="meta-value">@issueDate</div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <div class="col-sm-6 mb-3">
+                                    <div class="meta-label">Issuer</div>
+                                    <div class="meta-value">CertEasy Admin Platform</div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="meta-label">Credential Status</div>
+                                    <div class="meta-value text-success"><i class="bi bi-check-circle me-1"></i> Active / Verified</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <div class="meta-label">Credential / Badge ID</div>
+                                <div class="credential-id-box d-flex justify-content-between align-items-center">
+                                    <span>@badgeId</span>
+                                    <i class="bi bi-qr-code text-muted fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Footer -->
+                    <div class="action-bar">
+                        <button type="button" onclick="window.print()" class="btn btn-outline-secondary">
+                            <i class="bi bi-printer me-1"></i> Print Credential
+                        </button>
+                        <button type="button" onclick="navigator.clipboard.writeText(window.location.href); alert('Badge link copied to clipboard!');" class="btn btn-primary">
+                            <i class="bi bi-share-fill me-1"></i> Share Badge
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

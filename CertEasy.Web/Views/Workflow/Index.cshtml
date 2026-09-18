@@ -5,6 +5,21 @@
 }
 
 <div class="container mt-4">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>@TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>@TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     <div class="d-flex justify-content-between align-items-center">
         <h2>@(isAdmin ? "All Submitted Applications" : "My Applications")</h2>
         @if (!isAdmin)
@@ -39,6 +54,7 @@
                                 <th>Exam Details</th>
                                 <th>Status</th>
                                 <th>Submitted On</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,6 +100,21 @@
                                         </span>
                                     </td>
                                     <td>@app.SubmittedDate.ToString("g")</td>
+                                    <td>
+                                        @if (app.StatusID == (int)CertEasy.Model.ApplicationStatus.Rejection)
+                                        {
+                                            <form asp-controller="Workflow" asp-action="Resubmit" asp-route-id="@app.Id" method="post" class="d-inline">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-sm btn-outline-warning">
+                                                    <i class="bi bi-arrow-counterclockwise"></i> Resubmit
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted small">-</span>
+                                        }
+                                    </td>
                                 </tr>
                             }
                         </tbody>

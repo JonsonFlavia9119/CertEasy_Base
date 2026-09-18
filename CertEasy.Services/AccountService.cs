@@ -44,7 +44,10 @@ namespace CertEasy.Services
                 }
 
                 user.PasswordHash = _passwordService.HashPassword(password);
-                user.RoleID = (int)UserRole.User;
+                if (user.RoleID <= 0)
+                {
+                    user.RoleID = (int)UserRole.User;
+                }
                 user.StatusID = (int)ApplicationStatus.New;
                 user.CreatedDate = DateTime.UtcNow;
                 user.CreatedBy = user.Email;

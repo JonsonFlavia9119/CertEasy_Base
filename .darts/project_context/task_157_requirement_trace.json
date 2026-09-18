@@ -1,0 +1,78 @@
+{
+  "task_id": 157,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "planner_coder",
+  "complexity_tier": "medium",
+  "requirement_text": "As an user, I would like to modify the application process and add additional fields in 'Select Exam Session'\nDuring exam selection, there is possibilities to have same exam with different location and exam date so these are all be selected during the application process. So there will be 3 dropdowns \n1. Exam name\n2. Location\n3. Exam Date",
+  "generated_at": "2026-09-17T07:53:15.395Z",
+  "requirements": [
+    {
+      "req_id": "R-001",
+      "text": "The application process shall include an Exam Name dropdown field in the Select Exam Session section.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-002",
+      "text": "The application process shall include a Location dropdown field in the Select Exam Session section.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "The application process shall include an Exam Date dropdown field in the Select Exam Session section.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "The exam selection dropdowns shall operate as cascading dropdowns to allow selecting different locations and dates for the same exam.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Update Frontend UI and Knockout JS for 3 cascading dropdowns in Exam Selection",
+      "status": "completed",
+      "req_refs": [
+        "R-001",
+        "R-002",
+        "R-003",
+        "R-004"
+      ],
+      "files_written": [
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml",
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js"
+      ],
+      "module": "PlannerCoder",
+      "feature": "As an user, I would like to modify the application proces...",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 4,
+    "covered": 4,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 3,
+    "validation_status": "passed"
+  }
+}

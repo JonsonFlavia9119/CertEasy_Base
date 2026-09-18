@@ -1,0 +1,100 @@
+{
+  "task_id": 155,
+  "task_name": "CertEasy_AdminActions_Phase2_State2",
+  "execution_path": "full_pipeline",
+  "complexity_tier": "medium",
+  "requirement_text": "As an admin user, I would like to assign badges to the approved applications.\n\nFollow,\n\n* Place a new link to the approved applications\n* A new page should get open when the link is clicked\n* Once admin uses assigns badge to the application then it will be moved to completed application's grid\n\nCheck\n\n* Ensure the existing logic should not get affected\n* Assign badge only enabled for approved applications\n",
+  "generated_at": "2026-09-16T11:05:23.872Z",
+  "requirements": [
+    {
+      "req_id": "REQ-001",
+      "text": "The admin user must be able to assign badges to approved applications.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "REQ-002",
+      "text": "A new link to assign badges must be added to the approved applications list.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "REQ-003",
+      "text": "Clicking the badge assignment link must open a dedicated new page.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "REQ-004",
+      "text": "Assigning a badge to an application must move it to the completed applications grid.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "REQ-005",
+      "text": "Existing logic and workflows must not be affected by the new badge assignment feature.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    },
+    {
+      "req_id": "REQ-006",
+      "text": "Badge assignment functionality must only be enabled for applications in approved status.",
+      "status": "covered",
+      "covered_by": [
+        "T-001"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "T-001",
+      "name": "Implement badge assignment workflow for approved applications — view model, service layer, controller actions, dedicated Razor view, and dashboard UI link",
+      "status": "completed",
+      "req_refs": [
+        "REQ-001",
+        "REQ-002",
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-006"
+      ],
+      "files_written": [
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/AssignBadge.cshtml",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ],
+      "module": "AdminManagement",
+      "feature": "BadgeAssignment",
+      "validation": {
+        "compiled": true,
+        "spec_alignment": "unchecked"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "total_requirements": 6,
+    "covered": 6,
+    "partial": 0,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 1,
+    "tasks_completed": 1,
+    "tasks_failed": 0,
+    "files_written": 7,
+    "validation_status": "passed"
+  }
+}

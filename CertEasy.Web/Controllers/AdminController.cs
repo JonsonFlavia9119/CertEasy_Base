@@ -18,7 +18,7 @@ namespace CertEasy.Web.Controllers
         private readonly ILogger<AdminController> _logger;
 
         public AdminController(IAdminService adminService, ILogger<AdminController> logger)
-        { 
+        {
             _adminService = adminService;
             _logger = logger;
         }
@@ -28,14 +28,16 @@ namespace CertEasy.Web.Controllers
             try
             {
                 var applications = await _adminService.GetAllApplicationsAsync();
+                var completedApplications = await _adminService.GetCompletedApplicationsAsync();
                 var addresses = await _adminService.GetAllAddressesAsync();
                 var certifications = await _adminService.GetCertificationsAsync();
                 var educations = await _adminService.GetAllEducationAsync();
                 var exams = await _adminService.GetAllExamsAsync();
 
                 var viewModel = new AdminDashboardViewModel
-                { 
+                {
                     PendingApplications = applications ?? new List<Application>(),
+                    CompletedApplications = completedApplications ?? new List<Application>(),
                     Addresses = addresses ?? new List<Address>(),
                     Certifications = certifications ?? new List<Certification>(),
                     Educations = educations ?? new List<Education>(),
@@ -50,11 +52,97 @@ namespace CertEasy.Web.Controllers
             }
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ViewBadge(int id)
+        {
+            var application = await _adminService.GetApplicationByIdAsync(id);
+            if (application == null)
+            {
+                return NotFound("Badge or application not found.");
+            }
+
+            return View(application);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AssignBadge(int id)
+        {
+            var application = await _adminService.GetApplicationByIdAsync(id);
+            if (application == null)
+            {
+                TempData["ErrorMessage"] = "Application not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (application.StatusID != 7 && application.StatusID != 112)
+            {
+                TempData["ErrorMessage"] = "Only approved applications can be assigned a badge.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var viewModel = new AssignBadgeViewModel
+            {
+                ApplicationId = application.Id,
+                UserFullName = application.User != null ? $"{application.User.FirstName} {application.User.LastName}".Trim() : "N/A",
+                UserEmail = application.User?.Email ?? "N/A",
+                CertificationName = application.Certification?.Name ?? "N/A",
+                StatusID = application.StatusID,
+                StatusName = application.Status?.StatusName ?? "Approved",
+                SubmittedDate = application.SubmittedDate,
+                BadgeName = application.Certification?.Name ?? string.Empty,
+                BadgeId = application.BadgeId
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AssignBadge(AssignBadgeViewModel model)
+        {
+            var application = await _adminService.GetApplicationByIdAsync(model.ApplicationId);
+            if (application == null)
+            {
+                TempData["ErrorMessage"] = "Application not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (application.StatusID != 7 && application.StatusID != 112)
+            {
+                TempData["ErrorMessage"] = "Only approved applications can be assigned a badge.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (!ModelState.IsValid)
+            {
+                model.UserFullName = application.User != null ? $"{application.User.FirstName} {application.User.LastName}".Trim() : "N/A";
+                model.UserEmail = application.User?.Email ?? "N/A";
+                model.CertificationName = application.Certification?.Name ?? "N/A";
+                model.StatusID = application.StatusID;
+                model.StatusName = application.Status?.StatusName ?? "Approved";
+                model.SubmittedDate = application.SubmittedDate;
+                return View(model);
+            }
+
+            var result = await _adminService.AssignBadgeAsync(model.ApplicationId, model.BadgeName, model.BadgeId, User.Identity?.Name ?? "Admin");
+            if (result)
+            {
+                TempData["SuccessMessage"] = "Badge assigned successfully and application marked as completed.";
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to assign badge to application.";
+                return View(model);
+            }
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Approve(int id)
         {
-            var result = await _adminService.ApproveApplicationAsync(id, User.Identity.Name ?? "Unknown");
+            var result = await _adminService.ApproveApplicationAsync(id, User.Identity?.Name ?? "Unknown");
             if (result)
             {
                 TempData["SuccessMessage"] = "Application approved successfully.";
@@ -70,7 +158,7 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Reject(int id, string remarks)
         {
-            var result = await _adminService.RejectApplicationAsync(id, User.Identity.Name ?? "Unknown");
+            var result = await _adminService.RejectApplicationAsync(id, User.Identity?.Name ?? "Unknown");
             if (result)
             {
                 TempData["SuccessMessage"] = "Application rejected successfully.";
@@ -99,7 +187,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.AddCertificationAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.AddCertificationAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Certification created successfully.";
@@ -123,7 +211,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.UpdateCertificationAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.UpdateCertificationAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Certification updated successfully.";
@@ -154,7 +242,7 @@ namespace CertEasy.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ToggleCertification(int id)
         {
-            await _adminService.ToggleCertificationStatusAsync(id, User.Identity.Name ?? "Unknown");
+            await _adminService.ToggleCertificationStatusAsync(id, User.Identity?.Name ?? "Unknown");
             return RedirectToAction(nameof(ManageCertifications));
         }
 
@@ -175,7 +263,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.AddAddressAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.AddAddressAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Address created successfully.";
@@ -199,7 +287,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.UpdateAddressAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.UpdateAddressAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Address updated successfully.";
@@ -243,7 +331,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.AddEducationAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.AddEducationAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Education qualification created successfully.";
@@ -267,7 +355,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.UpdateEducationAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.UpdateEducationAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Education qualification updated successfully.";
@@ -311,7 +399,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.AddExamAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.AddExamAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Exam created successfully.";
@@ -335,7 +423,7 @@ namespace CertEasy.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _adminService.UpdateExamAsync(model, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.UpdateExamAsync(model, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Exam updated successfully.";
@@ -371,7 +459,7 @@ namespace CertEasy.Web.Controllers
             }
 
             var viewModel = new EmailConfigurationViewModel
-            { 
+            {
                 Id = config.Id,
                 ProviderName = config.ProviderName,
                 SenderEmail = config.SenderEmail,
@@ -389,7 +477,7 @@ namespace CertEasy.Web.Controllers
             if (ModelState.IsValid)
             {
                 var config = new EmailConfiguration
-                { 
+                {
                     Id = model.Id,
                     ProviderName = model.ProviderName,
                     SenderEmail = model.SenderEmail,
@@ -398,7 +486,7 @@ namespace CertEasy.Web.Controllers
                     EnableSsl = model.EnableSsl
                 };
 
-                var result = await _adminService.UpdateEmailConfigurationAsync(config, User.Identity.Name ?? "Unknown");
+                var result = await _adminService.UpdateEmailConfigurationAsync(config, User.Identity?.Name ?? "Unknown");
                 if (result)
                 {
                     TempData["SuccessMessage"] = "Email configuration updated successfully.";

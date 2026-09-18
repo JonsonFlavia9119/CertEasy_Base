@@ -1,131 +1,229 @@
 {
-  "project_id": 11,
-  "project_name": "CertEasy_AdminActions_Phase1",
-  "source_requirement_hash": "97546413a6105984431d13287498a073",
-  "generated_at": "2026-09-09T12:40:37.964Z",
-  "last_updated_at": "2026-09-11T08:11:31.632Z",
+  "project_id": 13,
+  "project_name": "CertEasy_AdminActions_Phase2_State2",
+  "source_requirement_hash": "4f82769ff1deac1b786e16dbf5349c8a",
+  "generated_at": "2026-09-16T07:50:02.798Z",
+  "last_updated_at": "2026-09-18T06:20:57.996Z",
   "requirements": [
     {
       "req_id": "R-001",
-      "text": "Develop a [REDACTED] configuration page in the admin area so an admin user can configure the [REDACTED] settings for email configuration.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-002",
-      "text": "Each application in the grid must display an Approve button.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-003",
-      "text": "Each application in the grid must display a Reject button.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-004",
-      "text": "Only admin users shall have permission to Approve or Reject applications.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-005",
-      "text": "The Approve and Reject buttons must not be visible to non-admin users.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-006",
-      "text": "When an admin user approves an application, an approval email must be sent to the recipient's emailId from the users table.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-007",
-      "text": "The approval email must have the subject 'Application Approved'.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-008",
-      "text": "The approval email body must include application details containing the ID and [REDACTED].",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-009",
-      "text": "When an admin user rejects an application, a rejection email must be sent to the recipient's emailId from the users table.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-010",
-      "text": "The rejection email must have the subject 'Application Rejected'.",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-011",
-      "text": "The rejection email body must include application details containing the ID and [REDACTED].",
-      "status": "uncovered",
-      "covered_by_tasks": []
-    },
-    {
-      "req_id": "R-012",
-      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 112 when an application is approved.",
+      "text": "The system shall enable the resubmit link only for rejected applications.",
       "status": "covered",
       "covered_by_tasks": [
-        147,
-        148
+        152
       ]
     },
     {
-      "req_id": "R-013",
-      "text": "The [REDACTED_LOCATION] field in the [REDACTED]'s table must be updated with StatusID 113 when an application is rejected.",
+      "req_id": "R-002",
+      "text": "The system shall disable the resubmit link for approved applications.",
       "status": "covered",
       "covered_by_tasks": [
-        148
+        152
+      ]
+    },
+    {
+      "req_id": "R-003",
+      "text": "The system shall allow admin users to review and approve resubmitted applications.",
+      "status": "covered",
+      "covered_by_tasks": [
+        152
+      ]
+    },
+    {
+      "req_id": "R-004",
+      "text": "The system shall provide a new link to assign badges that is enabled only for approved applications.",
+      "status": "covered",
+      "covered_by_tasks": [
+        153,
+        155
+      ]
+    },
+    {
+      "req_id": "R-005",
+      "text": "The system shall open a new page containing application details and badge options when the assign badges link is clicked by an admin.",
+      "status": "covered",
+      "covered_by_tasks": [
+        153,
+        155
+      ]
+    },
+    {
+      "req_id": "R-006",
+      "text": "The system shall update the application status to completed (statusId 200) after a badge is assigned.",
+      "status": "covered",
+      "covered_by_tasks": [
+        153,
+        155,
+        156
+      ]
+    },
+    {
+      "req_id": "R-007",
+      "text": "The system shall display a new grid in the admin dashboard strictly listing completed applications.",
+      "status": "covered",
+      "covered_by_tasks": [
+        154,
+        155
+      ]
+    },
+    {
+      "req_id": "R-008",
+      "text": "The system shall allow admin users to view assigned badges within the completed applications grid.",
+      "status": "covered",
+      "covered_by_tasks": [
+        154,
+        155,
+        160
       ]
     }
   ],
   "tasks": [
     {
-      "task_id": 147,
-      "task_name": "Task 15",
-      "task_order": 15,
+      "task_id": 152,
+      "task_name": "Implement Resubmission for Rejected Applications",
+      "task_order": 1,
       "status": "completed",
       "req_refs": [
-        "R-012"
+        "R-001",
+        "R-002",
+        "R-003"
+      ],
+      "files_written": []
+    },
+    {
+      "task_id": 153,
+      "task_name": "Badge Assignment Management for Approved Applications",
+      "task_order": 2,
+      "status": "completed",
+      "req_refs": [
+        "R-004",
+        "R-005",
+        "R-006"
+      ],
+      "files_written": []
+    },
+    {
+      "task_id": 154,
+      "task_name": "Admin Dashboard Grid for Completed Applications",
+      "task_order": 3,
+      "status": "completed",
+      "req_refs": [
+        "R-007",
+        "R-008"
       ],
       "files_written": [
-        "CertEasy.Services/AdminService.cs"
+        "CertEasy.Model/Status.cs",
+        "CertEasy.Model/Application.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
       ]
     },
     {
-      "task_id": 148,
-      "task_name": "Task 16",
-      "task_order": 16,
+      "task_id": 155,
+      "task_name": "Task 4",
+      "task_order": 4,
       "status": "completed",
       "req_refs": [
-        "R-012",
-        "R-013"
+        "R-004",
+        "R-005",
+        "R-006",
+        "R-007",
+        "R-008"
+      ],
+      "files_written": [
+        "CertEasy.Web/Models/AdminViewModels.cs",
+        "CertEasy.Services/IAdminService.cs",
+        "CertEasy.Services/AdminService.cs",
+        "CertEasy.Web/Controllers/AdminController.cs",
+        "CertEasy.Web/Views/Admin/AssignBadge.cshtml",
+        "CertEasy.Web/Views/Admin/Index.cshtml"
+      ]
+    },
+    {
+      "task_id": 156,
+      "task_name": "Task 5",
+      "task_order": 5,
+      "status": "completed",
+      "req_refs": [
+        "R-006"
       ],
       "files_written": [
         "CertEasy.Data/CertEasyDbContext.cs",
-        "CertEasy.Data/Migrations/20260911072740_SeedStatusesData.cs"
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.cs",
+        "CertEasy.Data/Migrations/20260917090000_AddCompletedStatus.Designer.cs",
+        "CertEasy.Data/Migrations/CertEasyDbContextModelSnapshot.cs",
+        "CertEasy.Tests/ServiceTests.cs"
+      ]
+    },
+    {
+      "task_id": 157,
+      "task_name": "Task 6",
+      "task_order": 6,
+      "status": "completed",
+      "req_refs": [],
+      "files_written": [
+        "CertEasy.Web/wwwroot/js/workflow-wizard.js",
+        "CertEasy.Web/Views/Workflow/Apply.cshtml"
+      ]
+    },
+    {
+      "task_id": 158,
+      "task_name": "Task 7",
+      "task_order": 7,
+      "status": "completed",
+      "req_refs": [],
+      "files_written": [
+        "CertEasy.Services/IWorkflowService.cs",
+        "CertEasy.Services/WorkflowService.cs",
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ]
+    },
+    {
+      "task_id": 159,
+      "task_name": "Task 8",
+      "task_order": 8,
+      "status": "completed",
+      "req_refs": [],
+      "files_written": [
+        "CertEasy.Web/Controllers/WorkflowController.cs"
+      ]
+    },
+    {
+      "task_id": 160,
+      "task_name": "Task 9",
+      "task_order": 9,
+      "status": "completed",
+      "req_refs": [
+        "R-008"
+      ],
+      "files_written": []
+    },
+    {
+      "task_id": 161,
+      "task_name": "Task 10",
+      "task_order": 10,
+      "status": "completed",
+      "req_refs": [],
+      "files_written": [
+        "CertEasy.Web/Models/LoginViewModel.cs",
+        "CertEasy.Web/Views/Account/Register.cshtml",
+        "CertEasy.Web/Controllers/AccountController.cs",
+        "CertEasy.Services/AccountService.cs"
       ]
     }
   ],
   "coverage_summary": {
-    "total_requirements": 13,
-    "covered": 2,
+    "total_requirements": 8,
+    "covered": 8,
     "partial": 0,
-    "uncovered": 11,
-    "coverage_pct": 15,
-    "total_tasks": 2,
-    "tasks_completed": 2,
+    "uncovered": 0,
+    "coverage_pct": 100,
+    "total_tasks": 10,
+    "tasks_completed": 10,
     "tasks_failed": 0,
-    "files_written": 3
+    "files_written": 22
   }
 }

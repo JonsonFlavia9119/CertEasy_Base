@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <ProjectReference Include="..\CertEasy.Model\CertEasy.Model.csproj" />
     <ProjectReference Include="..\CertEasy.Data\CertEasy.Data.csproj" />
   </ItemGroup>

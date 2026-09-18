@@ -8,8 +8,11 @@ namespace CertEasy.Services
     {
         Task<IEnumerable<Application>> GetAllApplicationsAsync();
         Task<IEnumerable<Application>> GetApplicationsInReviewAsync();
+        Task<IEnumerable<Application>> GetCompletedApplicationsAsync();
+        Task<Application?> GetApplicationByIdAsync(int id);
         Task<bool> ApproveApplicationAsync(int id, string adminUser);
         Task<bool> RejectApplicationAsync(int id, string adminUser);
+        Task<bool> AssignBadgeAsync(int applicationId, string badgeName, string? badgeId, string adminUser);
 
         // Certification Management
         Task<IEnumerable<Certification>> GetCertificationsAsync();
